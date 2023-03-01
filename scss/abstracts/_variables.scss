@@ -1,0 +1,22 @@
+//colors
+$black: rgb(0, 0, 0);
+$white: rgb(252, 252, 252);
+
+
+//utilities
+$m-auto: 0 auto;
+
+//size
+$sizes: (
+    small: (
+        500: 1.4rem
+    ),
+    large: (
+        500: 3rem
+    )
+);
+
+//elements - custom value
+html {
+    --fs-10: 10px;
+}

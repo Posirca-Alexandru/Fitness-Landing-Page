@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+@use './fonts' as *;
+
+html {
+    color: $white;
+    font-size: var(--fs-10);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font;
+    background-color: var(--background-color);
+}

@@ -1,3 +1,145 @@
+html {
+  --fs-10: 10px;
+}
 
+:root {
+  --background-color: rgb(23, 23, 23);
+  --fs-small-500: 1.4rem;
+  --fs-large-500: 3rem;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b,
+u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot,
+thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+h2,
+h3 {
+  font-weight: 600;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+html {
+  color: rgb(252, 252, 252);
+  font-size: var(--fs-10);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-jc-fs {
+  justify-content: flex-start;
+}
+.flex-fd-c {
+  flex-direction: column;
+}
+.flex-fd-cr {
+  flex-direction: column-reverse;
+}
+.flex-fd-r {
+  flex-direction: row;
+}
+.flex-fw-w {
+  flex-wrap: wrap;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-ai-s {
+  align-items: start;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
 
 /*# sourceMappingURL=style.css.map */

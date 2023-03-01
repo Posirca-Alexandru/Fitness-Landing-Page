@@ -1,0 +1,58 @@
+@use '../abstracts' as *;
+
+//flexbox
+.flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-jc-fs {
+    justify-content: flex-start;
+  }
+  &-fd-c {
+    flex-direction: column;
+  }
+  &-fd-cr {
+    flex-direction: column-reverse;
+  }
+  &-fd-r {
+    flex-direction: row;
+  }
+  &-fw-w {
+    flex-wrap: wrap;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+  &-ai-s {
+    align-items: start;
+  }
+}
+
+
+//position
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.fixed {
+    position: fixed;
+}
+
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
