@@ -2,21 +2,28 @@
 $black: rgb(0, 0, 0);
 $white: rgb(252, 252, 252);
 
-
 //utilities
 $m-auto: 0 auto;
 
 //size
 $sizes: (
-    small: (
-        500: 1.4rem
-    ),
-    large: (
-        500: 3rem
-    )
+  small: (
+    400: 1rem,
+    500: 1.2rem,
+    600: 1.4rem,
+    700: 1.6rem,
+    800: 1.8rem,
+  ),
+  large: (
+    300: 2rem,
+    400: 2.5rem,
+    500: 3rem,
+    600: 4rem,
+    700: 6rem,
+  ),
 );
 
 //elements - custom value
 html {
-    --fs-10: 10px;
+  --fs-10: 10px;
 }

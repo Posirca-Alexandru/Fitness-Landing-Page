@@ -4,8 +4,16 @@ html {
 
 :root {
   --background-color: rgb(23, 23, 23);
-  --fs-small-500: 1.4rem;
+  --fs-small-400: 1rem;
+  --fs-small-500: 1.2rem;
+  --fs-small-600: 1.4rem;
+  --fs-small-700: 1.6rem;
+  --fs-small-800: 1.8rem;
+  --fs-large-300: 2rem;
+  --fs-large-400: 2.5rem;
   --fs-large-500: 3rem;
+  --fs-large-600: 4rem;
+  --fs-large-700: 6rem;
 }
 
 *, *:before, *:after {
@@ -58,6 +66,10 @@ input {
   border-radius: 0;
 }
 
+h1 {
+  font-weight: 700;
+}
+
 h2,
 h3 {
   font-weight: 600;
@@ -67,7 +79,7 @@ a,
 a:visited,
 a:active {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 html {
@@ -81,6 +93,40 @@ body {
   background-color: var(--background-color);
 }
 
+.content-header {
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 49px;
+  max-width: 1312px;
+}
+.content-header .brand {
+  margin-left: 40px;
+  font-size: var(--fs-large-500);
+}
+.content-header .nav-list {
+  margin: 15px 40px 0;
+  white-space: nowrap;
+  font-size: var(--fs-small-600);
+  overflow-x: scroll;
+}
+.content-header .nav-list ul {
+  gap: 20px;
+}
+
+@media only screen and (min-width: 48rem) {
+  .content-header {
+    flex-direction: unset;
+  }
+  .content-header .brand {
+    font-size: var(--fs-small-700);
+  }
+  .content-header .nav-list {
+    padding-right: 20px;
+    margin: 0;
+    font-size: var(--fs-small-500);
+    overflow-x: unset;
+  }
+}
 .flex {
   display: flex;
 }
@@ -133,6 +179,10 @@ body {
 
 .pointer {
   cursor: pointer;
+}
+
+.m-auto {
+  margin: 0 auto;
 }
 
 .container {

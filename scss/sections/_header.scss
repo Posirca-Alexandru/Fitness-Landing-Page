@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.content-header {
+  flex-direction: column;
+  margin: $m-auto;
+  margin-top: 49px;
+  max-width: 1312px;
+  .brand {
+    margin-left: 40px;
+    font-size: var(--fs-large-500);
+  }
+  .nav-list {
+    margin: 15px 40px 0;
+    white-space: nowrap;
+    font-size: var(--fs-small-600);
+    overflow-x: scroll;
+    ul {
+      gap: 20px;
+    }
+  }
+}
+
+@include mq(small) {
+  .content-header {
+    flex-direction: unset;
+    .brand {
+      font-size: var(--fs-small-700);
+    }
+    .nav-list {
+      padding-right: 20px;
+      margin: 0;
+      font-size: var(--fs-small-500);
+      overflow-x: unset;
+    }
+  }
+}

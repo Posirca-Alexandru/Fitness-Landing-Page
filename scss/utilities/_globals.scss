@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 //flexbox
 .flex {
@@ -32,27 +32,30 @@
   }
 }
 
-
 //position
 .relative {
-    position: relative;
+  position: relative;
 }
 .absolute {
-    position: absolute;
+  position: absolute;
 }
 .fixed {
-    position: fixed;
+  position: fixed;
 }
 
 .text {
-    &-center {
-        text-align: center;
-    }
-    &-uppercase {
-        text-transform: uppercase;
-    }
+  &-center {
+    text-align: center;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.m-auto {
+  margin: 0 auto;
 }
