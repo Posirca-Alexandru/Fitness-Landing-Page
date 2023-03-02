@@ -108,6 +108,7 @@ body {
   white-space: nowrap;
   font-size: var(--fs-small-600);
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 .content-header .nav-list ul {
   gap: 20px;
