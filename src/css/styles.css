@@ -1,5 +1,14 @@
 @import "tailwindcss/base";
 
+/* Custom components styles */
 @import "tailwindcss/components";
+@import "./components/nav.css";
+@import "./components/common.css";
 
 @import "tailwindcss/utilities";
+
+@layer components {
+    h1 {
+      @apply font-bold;
+    }
+  }
