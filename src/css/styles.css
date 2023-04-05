@@ -11,4 +11,7 @@
     h1 {
       @apply font-bold;
     }
+    p, span {
+      color: theme(colors.gray-dark.100)
+    }
   }

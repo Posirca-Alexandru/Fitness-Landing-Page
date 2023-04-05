@@ -1,3 +1,7 @@
 .content {
   max-width: 1440px;
 }
+
+#triangle {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
