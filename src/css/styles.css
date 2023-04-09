@@ -4,6 +4,7 @@
 @import "tailwindcss/components";
 @import "./components/nav.css";
 @import "./components/common.css";
+@import "./components/card-workout.css";
 
 @import "tailwindcss/utilities";
 
@@ -12,6 +13,9 @@
       @apply font-bold;
     }
     p, span {
-      color: theme(colors.gray-dark.100)
+      @apply tracking-[0.3px] text-gray-dark-100
+    }
+    h2 {
+      @apply font-semibold;
     }
   }

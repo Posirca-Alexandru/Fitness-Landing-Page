@@ -1,0 +1,39 @@
+.cards-workout {
+  .card-workout {
+    @apply w-max rounded-xl bg-gray-light-100 px-6 py-8;
+    h2 {
+      @apply mb-2 tracking-[0.5px];
+    }
+    .content-card-w {
+      @apply flex items-end;
+      p {
+        @apply w-[174px] text-xs tracking-[0.3px];
+      }
+    }
+    &:nth-child(even) {
+      @apply bg-gray-light-200;
+    }
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-workout {
+    .card-workout {
+      @apply mb-0 px-10 py-[53px];
+      h2 {
+        @apply mb-3;
+      }
+      .content-card-w {
+        p {
+          @apply w-[192px] text-sm leading-6;
+        }
+        img {
+          @apply ml-2;
+        }
+      }
+    }
+  }
+}
