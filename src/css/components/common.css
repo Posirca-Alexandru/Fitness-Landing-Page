@@ -5,3 +5,31 @@
 #triangle {
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
+
+.text-programs {
+  @apply mb-2 max-w-[642px] text-sm;
+}
+@media (min-width: 768px) {
+  .text-programs {
+    @apply mb-4 max-w-[480px];
+  }
+}
+@media (min-width: 1024px) {
+  .text-programs {
+    @apply mb-7;
+  }
+}
+
+.more-details {
+  @apply mb-2 flex;
+  a {
+    @apply mr-1 font-semibold tracking-[0.5px] text-blue;
+  }
+}
+@media (min-width: 768px) {
+  .more-details {
+    a {
+      @apply mr-[9px];
+    }
+  }
+}
