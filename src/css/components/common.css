@@ -21,7 +21,7 @@
 }
 
 .more-details {
-  @apply mb-2 flex;
+  @apply mb-2 flex items-center;
   a {
     @apply mr-1 font-semibold tracking-[0.5px] text-blue;
   }
@@ -30,6 +30,9 @@
   .more-details {
     a {
       @apply mr-[9px];
+    }
+    img {
+      @apply w-7
     }
   }
 }
