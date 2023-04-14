@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="bg-black-main font-inter text-white-main">
-    <header class="content mx-auto px-6 md:px-16">
+    <header class="content md:px-16">
       <div class="mt-[49px] items-center justify-between uppercase md:flex">
         <div class="mb-6 text-[14vw] md:mb-0 md:text-base">
           <a href="#">
@@ -29,14 +29,16 @@
               <li><a href="#healthy">Healthy Living</a></li>
               <li><a href="#comunity">Comunity</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#store">Store</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <div class="content mx-auto px-6 md:mt-[90px] md:px-0 lg:mt-[183px]">
-      <section class="first-section mb-10 md:mb-0 md:px-[92px]" id="workouts">
+    <div class="content md:px-0 lg:mt-[183px]">
+      <section
+        class="first-section mb-10 md:mb-0 md:mt-[42px] md:px-[92px] md:pt-12"
+        id="workouts"
+      >
         <h1
           class="text-[14vw] uppercase leading-none md:text-[10vw] lg:text-[11vw] xl:text-[172px] xl:leading-[170px] xl:tracking-[-2px]"
         >
@@ -118,7 +120,10 @@
           </div>
         </div>
       </section>
-      <section class="second-section md:mt-[-43px] md:px-[64px]" id="programs">
+      <section
+        class="second-section md:mt-[-91px] md:px-[64px] md:pt-12"
+        id="programs"
+      >
         <h1 class="mb-2 text-[25px] leading-[50px] md:mb-6 md:text-[40px]">
           Not sure where to start?
         </h1>
@@ -168,7 +173,7 @@
         </div>
       </section>
       <section
-        class="third-section mt-10 md:mt-[184px] md:px-[64px]"
+        class="third-section mt-10 md:mt-[136px] md:px-[64px] md:pt-12"
         id="healthy"
       >
         <div class="mb-10 md:mb-[50px] md:flex md:items-center lg:mb-[121px]">
@@ -225,13 +230,16 @@
         </div>
       </section>
       <section
-        class="fourth-section mb-[60px] mt-10 md:mb-[147px] md:mt-[172px] md:px-[142px]"
+        class="fourth-section mb-[60px] mt-10 md:mb-[147px] md:mt-[124px] md:px-[142px] md:pt-12"
+        id="comunity"
       >
         <h1 class="text-[25px] leading-[50px] md:text-[50px] md:leading-[70px]">
           Membership
         </h1>
         <hr class="mb-5 mt-1 opacity-[0.5] md:mb-12 md:mt-7" />
-        <div class="relative md:flex md:flex-col md:items-center xl:flex-row">
+        <div
+          class="relative md:flex md:flex-col md:items-center md:justify-between xl:flex-row"
+        >
           <div
             class="card-membership mb-4 bg-gray-light-100 pb-3 md:mb-6 md:pb-[77px] xl:mb-0 xl:mr-[69px]"
           >
@@ -283,17 +291,63 @@
             </a>
           </div>
           <div
-            class="absolute right-0 mt-3 flex w-max items-center bg-white-main p-1 text-sm font-semibold text-black-main md:bottom-[-123px] md:right-auto md:mt-0 md:p-2 md:text-[18px] md:leading-[22px] xl:right-[-76px]"
+            class="absolute right-0 mt-3 w-max items-center bg-white-main p-1 text-sm font-semibold text-black-main md:bottom-[-123px] md:right-auto md:mt-0 md:px-2 md:py-[6px] md:text-[18px] md:leading-[22px] xl:right-[-76px]"
           >
-            <a class="mr-2 w-max" href="#">Back to Top</a>
-            <img
-              class="w-5 md:w-auto"
-              src="./img/arrow-top.png"
-              alt="arrow-top"
-            />
+            <a class="flex w-max" href="#"
+              >Back to Top
+              <img
+                class="ml-1 w-5 md:ml-2 md:w-auto"
+                src="./img/arrow-top.png"
+                alt="arrow-top"
+              />
+            </a>
           </div>
         </div>
       </section>
     </div>
+    <footer class="content py-5 md:px-[142px]" id="about">
+      <div class="pb-10">
+        <div>
+          <div class="mb-2 flex justify-center">
+            <h2 class="text-xl">Nagivate</h2>
+          </div>
+          <ul class="flex justify-center gap-[14px] text-sm">
+            <li><a href="#workouts">Workouts</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#healthy">Healthy Living</a></li>
+            <li><a href="#comunity">Comunity</a></li>
+          </ul>
+        </div>
+        <div class="mt-4">
+          <div class="mb-2 flex justify-center">
+            <h2 class="text-xl">Social Media</h2>
+          </div>
+          <div class="flex justify-center gap-[14px]">
+            <a href="#">
+              <img class="w-[80%]" src="./img/linkedin.png" alt="linkedin" />
+            </a>
+            <a href="#">
+              <img class="w-[80%]" src="./img/twitter.png" alt="twitter" />
+            </a>
+            <a href="#">
+              <img class="w-[80%]" src="./img/instagram.png" alt="instagram" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center text-sm text-gray-dark-100">
+        <a href="#">Terms & Conditions</a>
+        <img
+          class="mx-2 w-[8px]"
+          src="./img/privacy-bullet.png"
+          alt="privacy-bullet"
+        />
+        <a href="#">Privacy Policy</a>
+      </div>
+      <hr class="my-1 opacity-[0.5]" />
+      <div class="flex justify-center text-sm">
+        <p><span>&#169;</span>Workout 2023. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
