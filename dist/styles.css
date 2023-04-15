@@ -1474,12 +1474,12 @@ ul {
     padding-right: 230px;
   }
 
-  .md\:pt-12 {
-    padding-top: 3rem;
-  }
-
   .md\:pt-10 {
     padding-top: 2.5rem;
+  }
+
+  .md\:pt-12 {
+    padding-top: 3rem;
   }
 
   .md\:text-2xl {
