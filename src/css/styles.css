@@ -17,6 +17,19 @@
       @apply tracking-[0.3px] text-gray-dark-100
     }
     h2 {
-      @apply font-semibold;
+      @apply font-semibold text-xl;
+    }
+    @media (min-width: 768px) {
+      h2 {
+        @apply text-[40px] leading-[50px]
+      }
+    }
+    ul {
+      @apply text-sm;
+    }
+    @media (min-width: 768px) {
+      ul {
+        @apply text-[18px] leading-[24px] text-gray-dark-100 tracking-[0.5px]
+      }
     }
   }

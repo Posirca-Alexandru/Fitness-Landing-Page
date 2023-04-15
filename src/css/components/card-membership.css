@@ -1,13 +1,13 @@
 .card-membership {
   @apply px-4 pt-10;
   h2 {
-    @apply mb-3 flex justify-center text-xl tracking-[0.3px];
+    @apply mb-3 flex justify-center tracking-[0.3px];
   }
   p {
     @apply mb-2 text-sm;
   }
   ul {
-    @apply list-disc pl-[14px] text-gray-dark-100 text-sm tracking-[0.5px];
+    @apply list-disc pl-[14px];
   }
 }
 
@@ -15,15 +15,10 @@
   .card-membership {
     @apply px-[68px] pt-[71px] w-max;
     h2 {
-      @apply mb-[34px] text-[40px] leading-[50px];
+      @apply mb-[34px];
     }
     p {
       @apply mb-4 w-[402px] text-[18px] leading-[24px];
-    }
-    ul {
-        @apply text-[18px] leading-[24px] ;
-        li {
-        }
     }
   }
 }

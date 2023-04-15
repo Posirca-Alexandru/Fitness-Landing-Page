@@ -176,7 +176,9 @@
         class="third-section mt-10 md:mt-[136px] md:px-[64px] md:pt-12"
         id="healthy"
       >
-        <div class="mb-10 md:mb-[50px] md:flex md:items-center lg:mb-[121px]">
+        <div
+          class="mb-10 md:mb-[50px] md:flex md:items-center md:justify-end lg:mb-[121px]"
+        >
           <div class="md:mr-[65px]">
             <h2
               class="mb-2 text-[25px] leading-[50px] md:mb-4 md:text-[40px] md:tracking-[0.9px] lg:mb-8"
@@ -305,24 +307,26 @@
         </div>
       </section>
     </div>
-    <footer class="content py-5 md:px-[142px]" id="about">
-      <div class="pb-10">
+    <footer class="content py-5 md:px-[142px] md:pt-10" id="about">
+      <div class="pb-10 md:flex md:justify-between">
         <div>
-          <div class="mb-2 flex justify-center">
-            <h2 class="text-xl">Nagivate</h2>
+          <div class="mb:mb-3 mb-2 flex justify-center md:justify-start">
+            <h2>Navigate</h2>
           </div>
-          <ul class="flex justify-center gap-[14px] text-sm">
+          <ul
+            class="flex justify-center gap-[14px] md:flex-col md:justify-start"
+          >
             <li><a href="#workouts">Workouts</a></li>
             <li><a href="#programs">Programs</a></li>
             <li><a href="#healthy">Healthy Living</a></li>
             <li><a href="#comunity">Comunity</a></li>
           </ul>
         </div>
-        <div class="mt-4">
-          <div class="mb-2 flex justify-center">
-            <h2 class="text-xl">Social Media</h2>
+        <div class="mt-4 md:mt-0">
+          <div class="mb:mb-3 mb-2 flex justify-center md:justify-start">
+            <h2>Social Media</h2>
           </div>
-          <div class="flex justify-center gap-[14px]">
+          <div class="flex justify-center gap-[14px] md:justify-around">
             <a href="#">
               <img class="w-[80%]" src="./img/linkedin.png" alt="linkedin" />
             </a>
@@ -335,7 +339,9 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center text-sm text-gray-dark-100">
+      <div
+        class="flex items-center justify-center text-sm text-gray-dark-100 md:text-base"
+      >
         <a href="#">Terms & Conditions</a>
         <img
           class="mx-2 w-[8px]"
@@ -345,7 +351,7 @@
         <a href="#">Privacy Policy</a>
       </div>
       <hr class="my-1 opacity-[0.5]" />
-      <div class="flex justify-center text-sm">
+      <div class="flex justify-center text-sm md:text-base">
         <p><span>&#169;</span>Workout 2023. All rights reserved.</p>
       </div>
     </footer>

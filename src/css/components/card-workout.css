@@ -21,7 +21,7 @@
   .card-workout {
     @apply mb-0 px-[38px] py-[53px];
     h2 {
-      @apply mb-3;
+      @apply mb-3 text-base;
     }
     .content-card-w {
       p {
