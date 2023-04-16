@@ -785,6 +785,11 @@ ul {
   position: relative;
 }
 
+.inset-x-0 {
+  left: 0px;
+  right: 0px;
+}
+
 .bottom-12 {
   bottom: 3rem;
 }
@@ -1186,8 +1191,17 @@ ul {
     position: static;
   }
 
+  .md\:fixed {
+    position: fixed;
+  }
+
   .md\:relative {
     position: relative;
+  }
+
+  .md\:inset-x-0 {
+    left: 0px;
+    right: 0px;
   }
 
   .md\:bottom-0 {
@@ -1228,6 +1242,14 @@ ul {
 
   .md\:top-\[52px\] {
     top: 52px;
+  }
+
+  .md\:top-0 {
+    top: 0px;
+  }
+
+  .md\:z-10 {
+    z-index: 10;
   }
 
   .md\:my-9 {
@@ -1315,6 +1337,22 @@ ul {
     margin-top: 42px;
   }
 
+  .md\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .md\:mt-\[114px\] {
+    margin-top: 114px;
+  }
+
+  .md\:mt-\[-116px\] {
+    margin-top: -116px;
+  }
+
+  .md\:mt-\[102px\] {
+    margin-top: 102px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1352,6 +1390,10 @@ ul {
     width: max-content;
   }
 
+  .md\:w-full {
+    width: 100%;
+  }
+
   .md\:flex-row-reverse {
     flex-direction: row-reverse;
   }
@@ -1386,6 +1428,11 @@ ul {
 
   .md\:justify-around {
     justify-content: space-around;
+  }
+
+  .md\:bg-black-main {
+    --tw-bg-opacity: 1;
+    background-color: rgb(23 23 23 / var(--tw-bg-opacity));
   }
 
   .md\:p-4 {
@@ -1480,6 +1527,10 @@ ul {
 
   .md\:pt-12 {
     padding-top: 3rem;
+  }
+
+  .md\:pt-\[70px\] {
+    padding-top: 70px;
   }
 
   .md\:text-2xl {
@@ -1607,6 +1658,10 @@ ul {
 
   .lg\:mt-\[183px\] {
     margin-top: 183px;
+  }
+
+  .lg\:mt-\[181px\] {
+    margin-top: 181px;
   }
 
   .lg\:w-\[172\%\] {
