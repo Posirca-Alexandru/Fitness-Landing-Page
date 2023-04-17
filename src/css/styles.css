@@ -25,11 +25,11 @@
       }
     }
     ul {
-      @apply text-sm;
+      @apply text-sm text-gray-dark-100 tracking-[0.5px];
     }
     @media (min-width: 768px) {
       ul {
-        @apply text-[18px] leading-[24px] text-gray-dark-100 tracking-[0.5px]
+        @apply text-[18px] leading-[24px];
       }
     }
   }

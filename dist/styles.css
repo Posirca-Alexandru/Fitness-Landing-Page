@@ -543,14 +543,14 @@ h2 {
 ul {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  letter-spacing: 0.5px;
+  color: #EFEDE8a6;
 }
 
 @media (min-width: 768px) {
   ul {
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: 0.5px;
-    color: #EFEDE8a6;
   }
 }
 
@@ -785,11 +785,6 @@ ul {
   position: relative;
 }
 
-.inset-x-0 {
-  left: 0px;
-  right: 0px;
-}
-
 .bottom-12 {
   bottom: 3rem;
 }
@@ -878,6 +873,46 @@ ul {
 
 .mt-\[49px\] {
   margin-top: 49px;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mb-\[68px\] {
+  margin-bottom: 68px;
+}
+
+.mb-\[40px\] {
+  margin-bottom: 40px;
+}
+
+.mb-\[50px\] {
+  margin-bottom: 50px;
+}
+
+.mb-\[70px\] {
+  margin-bottom: 70px;
+}
+
+.mb-\[8px\] {
+  margin-bottom: 8px;
+}
+
+.mb-\[80px\] {
+  margin-bottom: 80px;
+}
+
+.mb-\[120px\] {
+  margin-bottom: 120px;
+}
+
+.mb-\[130px\] {
+  margin-bottom: 130px;
 }
 
 .block {
@@ -1093,6 +1128,14 @@ ul {
   padding-right: 2rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .font-inter {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -1168,6 +1211,14 @@ ul {
   letter-spacing: 1px;
 }
 
+.tracking-\[0\.2px\] {
+  letter-spacing: 0.2px;
+}
+
+.tracking-normal {
+  letter-spacing: 0em;
+}
+
 .text-black-main {
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity));
@@ -1236,6 +1287,10 @@ ul {
     right: auto;
   }
 
+  .md\:top-0 {
+    top: 0px;
+  }
+
   .md\:top-\[-4px\] {
     top: -4px;
   }
@@ -1244,8 +1299,8 @@ ul {
     top: 52px;
   }
 
-  .md\:top-0 {
-    top: 0px;
+  .md\:bottom-\[-118px\] {
+    bottom: -118px;
   }
 
   .md\:z-10 {
@@ -1309,24 +1364,28 @@ ul {
     margin-top: 0px;
   }
 
+  .md\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
   .md\:mt-7 {
     margin-top: 1.75rem;
   }
 
-  .md\:mt-\[-91px\] {
-    margin-top: -91px;
+  .md\:mt-\[-116px\] {
+    margin-top: -116px;
   }
 
   .md\:mt-\[100px\] {
     margin-top: 100px;
   }
 
-  .md\:mt-\[124px\] {
-    margin-top: 124px;
+  .md\:mt-\[102px\] {
+    margin-top: 102px;
   }
 
-  .md\:mt-\[136px\] {
-    margin-top: 136px;
+  .md\:mt-\[114px\] {
+    margin-top: 114px;
   }
 
   .md\:mt-\[28px\] {
@@ -1337,20 +1396,60 @@ ul {
     margin-top: 42px;
   }
 
-  .md\:mt-2 {
-    margin-top: 0.5rem;
+  .md\:mt-\[41px\] {
+    margin-top: 41px;
   }
 
-  .md\:mt-\[114px\] {
-    margin-top: 114px;
+  .md\:mt-\[-156px\] {
+    margin-top: -156px;
   }
 
-  .md\:mt-\[-116px\] {
-    margin-top: -116px;
+  .md\:mt-\[74px\] {
+    margin-top: 74px;
   }
 
-  .md\:mt-\[102px\] {
-    margin-top: 102px;
+  .md\:mt-\[64px\] {
+    margin-top: 64px;
+  }
+
+  .md\:mt-\[62px\] {
+    margin-top: 62px;
+  }
+
+  .md\:mt-\[-168px\] {
+    margin-top: -168px;
+  }
+
+  .md\:mt-\[50px\] {
+    margin-top: 50px;
+  }
+
+  .md\:mt-\[200\] {
+    margin-top: 200;
+  }
+
+  .md\:mt-\[193\] {
+    margin-top: 193;
+  }
+
+  .md\:mt-\[207\] {
+    margin-top: 207;
+  }
+
+  .md\:mt-\[207px\] {
+    margin-top: 207px;
+  }
+
+  .md\:mt-\[202px\] {
+    margin-top: 202px;
+  }
+
+  .md\:mt-\[197px\] {
+    margin-top: 197px;
+  }
+
+  .md\:mt-\[129px\] {
+    margin-top: 129px;
   }
 
   .md\:block {
@@ -1385,13 +1484,13 @@ ul {
     width: auto;
   }
 
+  .md\:w-full {
+    width: 100%;
+  }
+
   .md\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 
   .md\:flex-row-reverse {
@@ -1525,12 +1624,52 @@ ul {
     padding-top: 2.5rem;
   }
 
-  .md\:pt-12 {
-    padding-top: 3rem;
-  }
-
   .md\:pt-\[70px\] {
     padding-top: 70px;
+  }
+
+  .md\:pt-\[60px\] {
+    padding-top: 60px;
+  }
+
+  .md\:pt-\[112px\] {
+    padding-top: 112px;
+  }
+
+  .md\:pt-\[153px\] {
+    padding-top: 153px;
+  }
+
+  .md\:pt-\[293px\] {
+    padding-top: 293px;
+  }
+
+  .md\:pt-\[110px\] {
+    padding-top: 110px;
+  }
+
+  .md\:pt-\[120px\] {
+    padding-top: 120px;
+  }
+
+  .md\:pt-\[122px\] {
+    padding-top: 122px;
+  }
+
+  .md\:pt-\[329px\] {
+    padding-top: 329px;
+  }
+
+  .md\:pt-\[129px\] {
+    padding-top: 129px;
+  }
+
+  .md\:pt-\[117px\] {
+    padding-top: 117px;
+  }
+
+  .md\:pt-\[127px\] {
+    padding-top: 127px;
   }
 
   .md\:text-2xl {
@@ -1656,12 +1795,12 @@ ul {
     margin-top: -60px;
   }
 
-  .lg\:mt-\[183px\] {
-    margin-top: 183px;
-  }
-
   .lg\:mt-\[181px\] {
     margin-top: 181px;
+  }
+
+  .lg\:mt-\[140px\] {
+    margin-top: 140px;
   }
 
   .lg\:w-\[172\%\] {
