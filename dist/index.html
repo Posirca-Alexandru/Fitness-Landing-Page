@@ -11,9 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script> -->
+    <script src="js/main.js" defer type="module"></script>
+    <script src="js/login.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="bg-black-main font-inter text-white-main">
@@ -38,6 +38,12 @@
               <li><a href="#about">About</a></li>
             </ul>
           </nav>
+        </div>
+        <div class="hidden" id="login">
+          <button class="btn" id="login-btn">Sign in</button>
+        </div>
+        <div class="hidden" id="logout">
+          <button class="btn" id="logout-btn">Log out</button>
         </div>
       </div>
     </header>
@@ -362,6 +368,5 @@
         <p><span>&#169;</span>Workout 2023. All rights reserved.</p>
       </div>
     </footer>
-    <script src="js/config.js"></script>
   </body>
 </html>
