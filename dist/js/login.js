@@ -10,7 +10,7 @@ const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
     .then((response) => {
-        window.location.assign('./profile.html');
+        // window.location.assign('./profile.html');
         console.log(response.user)
         alert('merge')
     })
