@@ -1,9 +1,8 @@
 import {onAuthStateChanged, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
-
 import { auth } from "./main.js";
 
-const logInSection = document.getElementById("login");
-const logInWithGoogleButton = document.getElementById("login-btn");
+const logInSection = document.querySelectorAll("#login, #login-modal")
+const logInWithGoogleButton = document.querySelectorAll("#login-btn, #login-modal-btn",);
 
 
 const signInWithGoogle = () => {
@@ -25,13 +24,17 @@ const signInWithGoogle = () => {
     })
 }
 
-logInWithGoogleButton.addEventListener('click', signInWithGoogle)
+logInWithGoogleButton.forEach((element) => {
+  element.addEventListener('click', signInWithGoogle);
+})
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, user => {
   if (user != null) {
     console.log("User logat", user);
     logInSection.style.display = "none";
   } else {
-    logInSection.style.display = "block";
+    logInSection.forEach((element) => {
+      element.style.display = "block";
+    })
   }
 });

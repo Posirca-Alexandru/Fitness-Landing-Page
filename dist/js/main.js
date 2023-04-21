@@ -1,9 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
-// import { auth } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import {
-  getAuth,
-  onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCtq_X2AQEZQQwMQJ2XawGp3OgZzW3MQ2I",
@@ -16,40 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const logoutBtn = document.getElementById("logout");
-const joinClub = document.getElementById("join-club");
 
 export const auth = getAuth(app);
-// const db = getFirestore(app);
-
-const logoutWithGoogle = () => {
-  auth
-    .signOut()
-    .then(() => {
-      // window.location.assign('./profile.html');
-      console.log("user logout");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-logoutBtn.addEventListener("click", logoutWithGoogle);
-
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    logoutBtn.style.display = "block";
-  }
-});
-
-const joinClubNow = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user != null) {
-      console.log("User logat", user);
-    } else {
-      console.log("nelogat")
-    }
-  })
-};
-
-joinClub.addEventListener("click", joinClubNow);
+export const db = getFirestore(app);
