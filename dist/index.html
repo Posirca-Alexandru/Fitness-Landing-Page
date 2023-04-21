@@ -11,9 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script> -->
     <script src="js/main.js" defer type="module"></script>
     <script src="js/login.js" defer type="module"></script>
+    <script src="js/logout.js" defer type="module"></script>
+    <script src="js/join-club.js" defer type="module"></script>
+    <script src="js/info-list.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="bg-black-main font-inter text-white-main">
@@ -45,6 +47,12 @@
         <div class="hidden" id="logout">
           <button class="btn" id="logout-btn">Log out</button>
         </div>
+        <div id="form-join-club" class="modal">
+            <!-- <form method="post" id="join">  -->
+              <input id="name-joiner" type="text" placeholder="Name">
+              <button id="submit-join">Submit</button>
+            <!-- </form> -->
+        </div>
       </div>
     </header>
     <div class="content md:px-0">
@@ -70,6 +78,17 @@
               <button id="join-club">Join Club Now</button>
               <!-- <a href="#"> Join Club Now!</a> -->
             </div>
+            <div class="modal-join-club fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] border-2" id="modal-join-club">
+              <div class="modal-header">
+                <button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="" id="login-modal">
+                  <button class="btn" id="login-modal-btn">Sign in</button>
+                </div>
+              </div>
+            </div>
+            <div id="overlay"></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"
