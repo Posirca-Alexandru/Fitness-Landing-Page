@@ -75,20 +75,21 @@
             <div
               class="mt-4 w-max rounded-xl bg-orange-400 p-4 text-xs font-semibold md:static md:mt-0 md:p-4 md:text-base lg:p-6 lg:text-lg lg:tracking-[1px]"
             >
-              <button id="join-club">Join Club Now</button>
-              <!-- <a href="#"> Join Club Now!</a> -->
+              <button data-modal-target="#modal-join-club">Join Club Now</button>
             </div>
-            <div class="modal-join-club fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] border-2" id="modal-join-club">
-              <div class="modal-header">
-                <button class="close-button">&times;</button>
+            <div class="modal-join-club p-3 fixed top-1/2 left-1/2 rounded-lg z-30 bg-gray-light-200 transition ease-in-out delay-150" id="modal-join-club">
+              <div class="modal-header flex justify-end pr-1">
+                <button data-close-button class="close-button">&times;</button>
               </div>
-              <div class="modal-body">
-                <div class="" id="login-modal">
-                  <button class="btn" id="login-modal-btn">Sign in</button>
+              <div class="modal-body flex flex-col items-center">
+                <p class="w-max mt-3">To join the club you must log in</p>
+                <div class="bg-white-main rounded-lg my-5" id="login-modal">
+                  <button class="flex items-center btn p-3 text-black-main" id="login-modal-btn">
+                    <img class="mr-3" src="./img/google.png" alt="google-auth">Login with Google</button>
                 </div>
               </div>
             </div>
-            <div id="overlay"></div>
+            <div class="fixed inset-0 bg-gray-dark-100 z-20  transition ease-in-out delay-150" id="overlay"></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"

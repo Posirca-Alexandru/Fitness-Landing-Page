@@ -34,7 +34,7 @@ onAuthStateChanged(auth, user => {
     logInSection.style.display = "none";
   } else {
     logInSection.forEach((element) => {
-      element.style.display = "block";
+      element.style.display = "flex";
     })
   }
 });
