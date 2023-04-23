@@ -814,6 +814,52 @@ ul {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+.form-container span, .form-container p {
+    --tw-text-opacity: 1;
+    color: rgb(23 23 23 / var(--tw-text-opacity));
+  }
+
+.form-container .form-sidebar .circle {
+      display: flex;
+    }
+
+.form-container .form-sidebar .circle {
+      height: 2.5rem;
+    }
+
+.form-container .form-sidebar .circle {
+      width: 2.5rem;
+    }
+
+.form-container .form-sidebar .circle {
+      align-items: center;
+    }
+
+.form-container .form-sidebar .circle {
+      justify-content: center;
+    }
+
+.form-container .form-sidebar .circle {
+      border-radius: 9999px;
+    }
+
+.form-container .form-sidebar .circle {
+      border-width: 2px;
+    }
+
+.form-container .form-sidebar .circle {
+      border-style: solid;
+    }
+
+.form-container .form-sidebar .circle {
+      font-weight: 700;
+    }
+
+.form-container .form-sidebar .circle {
+      --tw-text-opacity: 1;
+      color: rgb(250 250 249 / var(--tw-text-opacity));
+    }
+
 .fixed {
   position: fixed;
 }
@@ -870,6 +916,11 @@ ul {
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-5 {
@@ -973,9 +1024,17 @@ ul {
   height: 2rem;
 }
 
+.h-\[568px\] {
+  height: 568px;
+}
+
 .h-max {
   height: -moz-max-content;
   height: max-content;
+}
+
+.min-h-\[100vh\] {
+  min-height: 100vh;
 }
 
 .w-5 {
@@ -990,12 +1049,20 @@ ul {
   width: 2rem;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
 
 .w-\[8px\] {
   width: 8px;
+}
+
+.w-\[900px\] {
+  width: 900px;
 }
 
 .w-max {
@@ -1054,6 +1121,10 @@ ul {
 
 .scroll-smooth {
   scroll-behavior: smooth;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-\[10px\] {
@@ -1131,6 +1202,14 @@ ul {
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
 }
 
+.bg-\[url\(\'\.\/img\/sidebar\.png\'\)\] {
+  background-image: url('./img/sidebar.png');
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1147,6 +1226,11 @@ ul {
   padding: 1rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1155,6 +1239,11 @@ ul {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-10 {
@@ -1272,6 +1361,12 @@ ul {
 
 .opacity-\[0\.5\] {
   opacity: 0.5;
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .transition {

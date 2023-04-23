@@ -1,0 +1,10 @@
+.form-container {
+    span, p {
+        @apply text-black-main;
+    }
+    .form-sidebar {
+        .circle {
+            @apply w-10 h-10 border-solid text-white-main border-2 flex items-center justify-center rounded-full font-bold;
+        }
+    }
+}
