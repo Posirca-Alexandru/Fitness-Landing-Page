@@ -31,7 +31,12 @@ module.exports = {
         400: "#E6533C",
       },
       "purple": "#7A29DC",
-      "blue": "#0070C9",
+      "blue": {
+        100: "#ABBCFF",
+        200: "#BEE2FD",
+        300: "#0070C9",
+        400: "#022959"
+      },
     },
     fontFamily: {
       inter: ["Inter", ...defaultTheme.fontFamily.sans],

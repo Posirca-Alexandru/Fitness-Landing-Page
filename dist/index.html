@@ -18,7 +18,7 @@
     <script src="js/info-list.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-black-main font-inter text-white-main min-h-[100vh]">
+  <body class="min-h-[100vh] bg-black-main font-inter text-white-main">
     <header
       class="content md:fixed md:inset-x-0 md:top-0 md:z-10 md:mt-[41px] md:w-full md:bg-black-main md:px-16 md:py-2"
     >
@@ -49,195 +49,213 @@
         </div>
         <div id="form-join-club" class="modal">
           <!-- <form method="post" id="join">  -->
-            <input id="name-joiner" type="text" placeholder="Name">
-            <button id="submit-join">Submit</button>
-            <!-- </form> -->
+          <input id="name-joiner" type="text" placeholder="Name" />
+          <button id="submit-join">Submit</button>
+          <!-- </form> -->
+        </div>
+      </div>
+    </header>
+    <div
+      class="form my-10 bg-white-main text-black-main shadow"
+    >
+      <div class="form-container">
+        <!-- sidebar -->
+        <div
+          class="form-sidebar h-[172px] items-start justify-center flex md:flex-col gap-4 bg-[url('./img/sidebar.png')] bg-no-repeat px-12 py-8"
+        >
+          <div class="step active">
+            <div class="circle">1</div>
+            <div class="step-content">
+              <span>Step 1</span>
+              <b>Your info</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <div class="step-content">
+              <span>Step 2</span>
+              <b>Select plan</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <div class="step-content">
+              <span>Step 3</span>
+              <b>Add-ons</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">4</div>
+            <div class="step-content">
+              <span>Step 4</span>
+              <b>Summary</b>
+            </div>
           </div>
         </div>
-      </header>
-      <div class="content form my-10 w-[900px] bg-white-main rounded-2xl shadow text-black-main">
-        <div class="form-container flex p-4">
-          <!-- sidebar -->
-          <div class="form-sidebar bg-[url('./img/sidebar.png')] bg-no-repeat w-[400px] h-[568px] px-12 py-8 flex flex-col gap-4">
-            <div class="step active"> 
-              <div class="circle">1</div>
-                <div class="step-content">
-                  <span>Step 1</span>
-                  <b>Your info</b>
-                </div>
-              </div>
-            <div class="step">
-              <div class="circle">2</div>
-                <div class="step-content">
-                  <span>Step 2</span>
-                  <b>Select plan</b>
-                </div>
-              </div>
-            <div class="step">
-              <div class="circle">3</div>
-                <div class="step-content">
-                  <span>Step 3</span>
-                  <b>Add-ons</b>
-                </div>
-              </div>
-            <div class="step">
-              <div class="circle">4</div>
-                <div class="step-content">
-                  <span>Step 4</span>
-                  <b>Summary</b>
-                </div>
-              </div>
+        <!-- step-1 -->
+        <div class="stp step-1">
+          <div class="content-step">
+            <div class="header">
+              <h1 class="title">Personal info</h1>
+            <p class="exp">
+              Please provide your name, email address, and phone number.
+            </p>
           </div>
-            <!-- step-1 -->
-            <div class="stp step-1">
-              <div class="header">
-                <h1 class="title">Personal info</h1>
-                <p class="exp">Please provide your name, email address, and phone number.</p>
-              </div>
-              <form>
-                <div class="label">
-                  <label for="name">Name</label>
-                  <p class="error">This Field Is Required</p>
-                </div>
-                <input type="text" required id="name" placeholder="Your name">
-                <div class="label">
-                  <label for="name">Email Address</label>
-                  <p class="error">This Field Is Required</p>
-                </div>
-                <input type="text" required id="email" placeholder="Your email">
-                <div class="label">
-                  <label for="name">Phone Number</label>
-                  <p class="error">This Field Is Required</p>
-                </div>
-                <input type="tel" required id="name" placeholder="Your phone">
-              </form>
-              <div class="bttns">
-                <button class="next-stp" type="submit">Next Step</button>
-              </div>
+          <form>
+            <div class="label">
+              <label for="name">Name</label>
+              <p class="error">This Field Is Required</p>
             </div>
-            <!-- step-2 -->
-            <div class="stp step-2">
-              <div class="header">
-                <h1 class="title">Select your plan</h1>
-                <p>You have the option of monthly or yearly billing.</p>
-              </div>
-              <form>
-                <div class="plan-card selected">
-                  <img class="rounded-full" src="./img/basic.png" alt="basic-lv">
-                 <div class="plan-info chosen">
-                    <b>Basic</b>
-                    <span class="plan-priced">$9/mo</span>
-                 </div>
-                </div>
-                <div class="plan-card">
-                  <img class="rounded-full" src="./img/advanced.png" alt="advanced-lv">
-                 <div class="plan-info chosen">
-                    <b>Advanced</b>
-                    <span class="plan-priced">$12/mo</span>
-                 </div>
-                </div>
-                <div class="plan-card">
-                  <img class="rounded-full" src="./img/pro.png" alt="pro-lv">
-                 <div class="plan-info chosen">
-                    <b>Pro</b>
-                    <span class="plan-priced">$15/mo</span>
-                 </div>
-                </div>
-              </form>
-              <div class="switcher">
-                <p class="monthly sw-active">Monthly</p>
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-                <p class="yearly">Yearly</p>
-              </div>
-              <div class="bttns">
-                <button class="prev-stp" type="button">Go Back</button>
-                <button class="next-stp" type="submit">Next Step</button>
-              </div>
+            <input type="text" required id="name" placeholder="Your name" />
+            <div class="label">
+              <label for="name">Email Address</label>
+              <p class="error">This Field Is Required</p>
             </div>
-            <!-- step-3 -->
-            <div class="stp step-3">
-              <div class="header">
-                <h1 class="tittle">Pick add-ons</h1>
-                <p class="exp">Add-ons help enhance your workout experience</p>
-              </div>
-              <form>
-                <div class="box" data-id="1">
-                  <input type="checkbox" id="online">
-                  <div class="description">
-                    <label for="online">Online service</label>
-                    <small>Access to workout videos</small>
-                  </div>
-                  <p class="price">+$1/mo</p>
-                </div>
-                <div class="box" data-id="2">
-                  <input type="checkbox" id="larger">
-                  <div class="description">
-                    <label for="online">Larger storage</label>
-                    <small>Access to workout videos and plans</small>
-                  </div>
-                  <p class="price">+$2/mo</p>
-                </div>
-                <div class="box" data-id="3">
-                  <input type="checkbox" id="profile">
-                  <div class="description">
-                    <label for="online">Customizable Profile</label>
-                    <small>Access to workout videos, plans and programs</small>
-                  </div>
-                  <p class="price">+3/mo</p>
-                </div>
-              </form>
-              <div class="bttns">
-                <button class="prev-stp" type="button">Go Back</button>
-                <button class="next-stp" type="submit">Next Step</button>
-              </div>
+            <input type="text" required id="email" placeholder="Your email" />
+            <div class="label">
+              <label for="name">Phone Number</label>
+              <p class="error">This Field Is Required</p>
             </div>
-            <!-- step-4 -->
-            <div class="stp step-4">
-              <div class="header">
-                <h1 class="title">Finishing up</h1>
-                <p class="exp">
-                  Double-check everything looks OK before confirming
-                </p>
-              </div>
-              <div class="selection-box">
-                <div class="selection-container">
-                  <div class="selected-plan">
-                    <p class="plan-name">
-                      Basic(Monthly)
-                    </p>
-                    <p class="plan-price">$9/mo</p>
-                  </div>
-                  <hr>
-                  <div class="addons">
-                    <template>
-                      <div class="selected-addon">
-                        <span class="service-name">Online service</span>
-                        <span class="service-price">+$1/mo</span>
-                      </div>
-                    </template>
-                  </div>
-                </div> 
-                <p class="total">Total (per month) <b>+$12/mo</b></p>
-              </div>
-              <div class="bttns">
-                <button class="prev-stp" type="button">Go Back</button>
-                <button class="next-stp" type="submit">Next Step</button>
-              </div>
-            </div>
-            <!-- step-5 -->
-            <div class="stp step-5">
-              <img src="./img/check.png" alt="thank">
-              <div class="header">
-                <h1 class="title">Thank you!</h1>
-                <p class="exp">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@workout.com</p>
-              </div>
-              <button class="next-stp"></button>
-            </div>
+            <input type="tel" required id="name" placeholder="Your phone" />
+          </form>
+        </div>
+          <div class="bttns">
+            <button class="next-stp" type="submit">Next Step</button>
           </div>
+        </div>
+        <!-- step-2 -->
+        <div class="stp step-2">
+          <div class="content-step">
+          <div class="header">
+            <h1 class="title">Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <form>
+            <div class="plan-card selected">
+              <img class="rounded-full" src="./img/basic.png" alt="basic-lv" />
+              <div class="plan-info chosen">
+                <b>Basic</b>
+                <span class="plan-priced">$9/mo</span>
+              </div>
+            </div>
+            <div class="plan-card">
+              <img
+                class="rounded-full"
+                src="./img/advanced.png"
+                alt="advanced-lv"
+              />
+              <div class="plan-info chosen">
+                <b>Advanced</b>
+                <span class="plan-priced">$12/mo</span>
+              </div>
+            </div>
+            <div class="plan-card">
+              <img class="rounded-full" src="./img/pro.png" alt="pro-lv" />
+              <div class="plan-info chosen">
+                <b>Pro</b>
+                <span class="plan-priced">$15/mo</span>
+              </div>
+            </div>
+          </form>
+          </div>
+          <div class="switcher">
+            <p class="monthly sw-active">Monthly</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <p class="yearly">Yearly</p>
+          </div>
+          <div class="bttns">
+            <button class="prev-stp" type="button">Go Back</button>
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- step-3 -->
+        <div class="stp step-3">
+          <div class="content-step">
+          <div class="header">
+            <h1 class="tittle">Pick add-ons</h1>
+            <p class="exp">Add-ons help enhance your workout experience</p>
+          </div>
+          <form>
+            <div class="box" data-id="1">
+              <input type="checkbox" id="online" />
+              <div class="description">
+                <label for="online">Online service</label>
+                <small>Access to workout videos</small>
+              </div>
+              <p class="price">+$1/mo</p>
+            </div>
+            <div class="box" data-id="2">
+              <input type="checkbox" id="larger" />
+              <div class="description">
+                <label for="online">Larger storage</label>
+                <small>Access to workout videos and plans</small>
+              </div>
+              <p class="price">+$2/mo</p>
+            </div>
+            <div class="box" data-id="3">
+              <input type="checkbox" id="profile" />
+              <div class="description">
+                <label for="online">Customizable Profile</label>
+                <small>Access to workout videos, plans and programs</small>
+              </div>
+              <p class="price">+3/mo</p>
+            </div>
+          </form>
+        </div>
+          <div class="bttns">
+            <button class="prev-stp" type="button">Go Back</button>
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- step-4 -->
+        <div class="stp step-4">
+          <div class="header">
+            <h1 class="title">Finishing up</h1>
+            <p class="exp">
+              Double-check everything looks OK before confirming
+            </p>
+          </div>
+          <div class="selection-box">
+            <div class="selection-container">
+              <div class="selected-plan">
+                <p class="plan-name">Basic(Monthly)</p>
+                <p class="plan-price">$9/mo</p>
+              </div>
+              <hr />
+              <div class="addons">
+                <template>
+                  <div class="selected-addon">
+                    <span class="service-name">Online service</span>
+                    <span class="service-price">+$1/mo</span>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <p class="total">Total (per month) <b>+$12/mo</b></p>
+          </div>
+          <div class="bttns">
+            <button class="prev-stp" type="button">Go Back</button>
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- step-5 -->
+        <div class="stp step-5">
+          <img src="./img/check.png" alt="thank" />
+          <div class="header">
+            <h1 class="title">Thank you!</h1>
+            <p class="exp">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@workout.com
+            </p>
+          </div>
+          <button class="next-stp"></button>
+        </div>
       </div>
+    </div>
     <div class="content md:px-0">
       <section
         class="first-section mb-12 md:mb-0 md:mt-[129px] md:px-[92px] md:pt-[122px]"
@@ -258,21 +276,37 @@
             <div
               class="mt-4 w-max rounded-xl bg-orange-400 p-4 text-xs font-semibold md:static md:mt-0 md:p-4 md:text-base lg:p-6 lg:text-lg lg:tracking-[1px]"
             >
-              <button data-modal-target="#modal-join-club">Join Club Now</button>
+              <button data-modal-target="#modal-join-club">
+                Join Club Now
+              </button>
             </div>
-            <div class="modal-join-club p-3 fixed top-1/2 left-1/2 rounded-lg z-30 bg-gray-light-200 transition ease-in-out delay-150" id="modal-join-club">
+            <div
+              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-lg bg-gray-light-200 p-3 transition delay-150 ease-in-out"
+              id="modal-join-club"
+            >
               <div class="modal-header flex justify-end pr-1">
                 <button data-close-button class="close-button">&times;</button>
               </div>
               <div class="modal-body flex flex-col items-center">
-                <p class="w-max mt-3">To join the club you must log in</p>
-                <div class="bg-white-main rounded-lg my-5" id="login-modal">
-                  <button class="flex items-center btn p-3 text-black-main" id="login-modal-btn">
-                    <img class="mr-3" src="./img/google.png" alt="google-auth">Login with Google</button>
+                <p class="mt-3 w-max">To join the club you must log in</p>
+                <div class="my-5 rounded-lg bg-white-main" id="login-modal">
+                  <button
+                    class="btn flex items-center p-3 text-black-main"
+                    id="login-modal-btn"
+                  >
+                    <img
+                      class="mr-3"
+                      src="./img/google.png"
+                      alt="google-auth"
+                    />Login with Google
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="fixed inset-0 bg-gray-dark-100 z-20  transition ease-in-out delay-150" id="overlay"></div>
+            <div
+              class="fixed inset-0 z-20 bg-gray-dark-100 transition delay-150 ease-in-out"
+              id="overlay"
+            ></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"
@@ -503,7 +537,7 @@
               <li>Rest Day Complete</li>
             </ul>
             <a
-              class="mb-3 mt-4 block w-max rounded-[10px] bg-blue px-2 py-1 text-sm leading-[22px] md:mb-0 md:mt-[28px] md:px-[14px] md:text-base"
+              class="mb-3 mt-4 block w-max rounded-[10px] bg-blue-300 px-2 py-1 text-sm leading-[22px] md:mb-0 md:mt-[28px] md:px-[14px] md:text-base"
               href="#"
             >
               Join Club Now!
