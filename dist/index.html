@@ -55,13 +55,11 @@
         </div>
       </div>
     </header>
-    <div
-      class="form my-10 bg-white-main text-black-main shadow"
-    >
+    <div class="form mx-auto my-10 max-w-[375px] text-black-main shadow">
       <div class="form-container">
         <!-- sidebar -->
         <div
-          class="form-sidebar h-[172px] items-start justify-center flex md:flex-col gap-4 bg-[url('./img/sidebar.png')] bg-no-repeat px-12 py-8"
+          class="form-sidebar flex h-[172px] items-start justify-center gap-4 bg-[url('./img/sidebar.png')] bg-cover bg-no-repeat px-12 py-8 md:flex-col"
         >
           <div class="step active">
             <div class="circle">1</div>
@@ -94,79 +92,85 @@
         </div>
         <!-- step-1 -->
         <div class="stp step-1">
-          <div class="content-step">
+          <div class="content-step mb-[47px]">
             <div class="header">
               <h1 class="title">Personal info</h1>
-            <p class="exp">
-              Please provide your name, email address, and phone number.
-            </p>
+              <p class="exp">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
+            <form>
+              <div class="label">
+                <label for="name">Name</label>
+                <p class="error">This Field Is Required</p>
+              </div>
+              <input type="text" required id="name" placeholder="Your name" />
+              <div class="label">
+                <label for="name">Email Address</label>
+                <p class="error">This Field Is Required</p>
+              </div>
+              <input type="text" required id="email" placeholder="Your email" />
+              <div class="label">
+                <label for="name">Phone Number</label>
+                <p class="error">This Field Is Required</p>
+              </div>
+              <input type="tel" required id="name" placeholder="Your phone" />
+            </form>
           </div>
-          <form>
-            <div class="label">
-              <label for="name">Name</label>
-              <p class="error">This Field Is Required</p>
-            </div>
-            <input type="text" required id="name" placeholder="Your name" />
-            <div class="label">
-              <label for="name">Email Address</label>
-              <p class="error">This Field Is Required</p>
-            </div>
-            <input type="text" required id="email" placeholder="Your email" />
-            <div class="label">
-              <label for="name">Phone Number</label>
-              <p class="error">This Field Is Required</p>
-            </div>
-            <input type="tel" required id="name" placeholder="Your phone" />
-          </form>
-        </div>
-          <div class="bttns">
+          <div class="bttns justify-end">
             <button class="next-stp" type="submit">Next Step</button>
           </div>
         </div>
         <!-- step-2 -->
         <div class="stp step-2">
           <div class="content-step">
-          <div class="header">
-            <h1 class="title">Select your plan</h1>
-            <p>You have the option of monthly or yearly billing.</p>
-          </div>
-          <form>
-            <div class="plan-card selected">
-              <img class="rounded-full" src="./img/basic.png" alt="basic-lv" />
-              <div class="plan-info chosen">
-                <b>Basic</b>
-                <span class="plan-priced">$9/mo</span>
-              </div>
+            <div class="header">
+              <h1 class="title">Select your plan</h1>
+              <p class="exp">
+                You have the option of monthly or yearly billing.
+              </p>
             </div>
-            <div class="plan-card">
-              <img
-                class="rounded-full"
-                src="./img/advanced.png"
-                alt="advanced-lv"
-              />
-              <div class="plan-info chosen">
-                <b>Advanced</b>
-                <span class="plan-priced">$12/mo</span>
+            <form>
+              <div class="plan-card selected">
+                <div class="icon-plan bg-purple-200">
+                  <img src="./img/basic.png" alt="basic-lv" />
+                </div>
+                <div class="plan-info chosen">
+                  <b>Basic</b>
+                  <span class="plan-priced">$9/mo</span>
+                </div>
               </div>
-            </div>
-            <div class="plan-card">
-              <img class="rounded-full" src="./img/pro.png" alt="pro-lv" />
-              <div class="plan-info chosen">
-                <b>Pro</b>
-                <span class="plan-priced">$15/mo</span>
+              <div class="plan-card">
+                <div class="icon-plan bg-orange-100">
+                  <img src="./img/advanced.png" alt="advanced-lv" />
+                </div>
+                <div class="plan-info chosen">
+                  <b>Advanced</b>
+                  <span class="plan-priced">$12/mo</span>
+                </div>
               </div>
+              <div class="plan-card">
+                <div class="icon-plan bg-pink">
+                  <img src="./img/pro.png" alt="pro-lv" />
+                </div>
+                <div class="plan-info chosen">
+                  <b>Pro</b>
+                  <span class="plan-priced">$15/mo</span>
+                </div>
+              </div>
+            </form>
+            <div
+              class="switcher flex items-center justify-center rounded-lg bg-gray-light-100 p-[14px]"
+            >
+              <p class="monthly sw-active">Monthly</p>
+              <label class="switch relative mx-6 inline-block h-5 w-[50px]">
+                <input type="checkbox" class="h-0 w-0 opacity-0" />
+                <span class="slider round"></span>
+              </label>
+              <p class="yearly">Yearly</p>
             </div>
-          </form>
           </div>
-          <div class="switcher">
-            <p class="monthly sw-active">Monthly</p>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
-            </label>
-            <p class="yearly">Yearly</p>
-          </div>
-          <div class="bttns">
+          <div class="bttns flex items-center justify-between mt-[-43px]">
             <button class="prev-stp" type="button">Go Back</button>
             <button class="next-stp" type="submit">Next Step</button>
           </div>
@@ -174,37 +178,37 @@
         <!-- step-3 -->
         <div class="stp step-3">
           <div class="content-step">
-          <div class="header">
-            <h1 class="tittle">Pick add-ons</h1>
-            <p class="exp">Add-ons help enhance your workout experience</p>
+            <div class="header">
+              <h1 class="tittle">Pick add-ons</h1>
+              <p class="exp">Add-ons help enhance your workout experience</p>
+            </div>
+            <form>
+              <div class="box" data-id="1">
+                <input type="checkbox" id="online" />
+                <div class="description">
+                  <label for="online">Online service</label>
+                  <small>Access to workout videos</small>
+                </div>
+                <p class="price">+$1/mo</p>
+              </div>
+              <div class="box" data-id="2">
+                <input type="checkbox" id="larger" />
+                <div class="description">
+                  <label for="online">Larger storage</label>
+                  <small>Access to workout videos and plans</small>
+                </div>
+                <p class="price">+$2/mo</p>
+              </div>
+              <div class="box" data-id="3">
+                <input type="checkbox" id="profile" />
+                <div class="description">
+                  <label for="online">Customizable Profile</label>
+                  <small>Access to workout videos, plans and programs</small>
+                </div>
+                <p class="price">+3/mo</p>
+              </div>
+            </form>
           </div>
-          <form>
-            <div class="box" data-id="1">
-              <input type="checkbox" id="online" />
-              <div class="description">
-                <label for="online">Online service</label>
-                <small>Access to workout videos</small>
-              </div>
-              <p class="price">+$1/mo</p>
-            </div>
-            <div class="box" data-id="2">
-              <input type="checkbox" id="larger" />
-              <div class="description">
-                <label for="online">Larger storage</label>
-                <small>Access to workout videos and plans</small>
-              </div>
-              <p class="price">+$2/mo</p>
-            </div>
-            <div class="box" data-id="3">
-              <input type="checkbox" id="profile" />
-              <div class="description">
-                <label for="online">Customizable Profile</label>
-                <small>Access to workout videos, plans and programs</small>
-              </div>
-              <p class="price">+3/mo</p>
-            </div>
-          </form>
-        </div>
           <div class="bttns">
             <button class="prev-stp" type="button">Go Back</button>
             <button class="next-stp" type="submit">Next Step</button>
@@ -274,14 +278,14 @@
               and transformation stories to help you get fit and stay fit!
             </p>
             <div
-              class="mt-4 w-max rounded-xl bg-orange-400 p-4 text-xs font-semibold md:static md:mt-0 md:p-4 md:text-base lg:p-6 lg:text-lg lg:tracking-[1px]"
+              class="mt-4 w-max rounded-xl bg-orange-500 p-4 text-xs font-semibold md:static md:mt-0 md:p-4 md:text-base lg:p-6 lg:text-lg lg:tracking-[1px]"
             >
               <button data-modal-target="#modal-join-club">
                 Join Club Now
               </button>
             </div>
             <div
-              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-lg bg-gray-light-200 p-3 transition delay-150 ease-in-out"
+              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-lg bg-gray-light-400 p-3 transition delay-150 ease-in-out"
               id="modal-join-club"
             >
               <div class="modal-header flex justify-end pr-1">
@@ -318,7 +322,7 @@
                 class="absolute bottom-[-64px] hidden h-max w-max items-center justify-between rounded-xl bg-gray-dark-200 p-2 md:relative md:bottom-0 md:top-[52px] md:flex md:px-[18px] md:py-[15px] lg:top-[56px] lg:px-[23px] lg:py-[20px]"
               >
                 <div
-                  class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-300 md:h-10 md:w-10"
+                  class="flex h-8 w-8 items-center justify-center rounded-full bg-orange-400 md:h-10 md:w-10"
                 >
                   <a
                     class="ml-1 h-5 w-5 rotate-90 bg-white-main"
@@ -338,9 +342,9 @@
             </div>
             <img class="xl:h-[684px]" src="./img/athlete.png" alt="athlete" />
             <div
-              class="absolute right-[-10px] h-max rounded-xl bg-orange-200 p-2 md:right-7 md:top-[-4px] md:mt-0 md:px-4 md:py-2 lg:right-[-80px] lg:top-[-30px] lg:px-[26px] lg:py-[14px] xl:right-[-246px] xl:top-[-23px]"
+              class="absolute right-[-10px] h-max rounded-xl bg-orange-300 p-2 md:right-7 md:top-[-4px] md:mt-0 md:px-4 md:py-2 lg:right-[-80px] lg:top-[-30px] lg:px-[26px] lg:py-[14px] xl:right-[-246px] xl:top-[-23px]"
             >
-              <div class="h-6 w-6 rounded-full bg-orange-100 p-1 md:mb-[8px]">
+              <div class="h-6 w-6 rounded-full bg-orange-300 p-1 md:mb-[8px]">
                 <img src="./img/runner.png" alt="runner" />
               </div>
               <p
@@ -352,7 +356,7 @@
               </p>
             </div>
             <div
-              class="absolute bottom-12 right-[-10px] flex h-max flex-col items-center rounded-xl bg-purple p-2 md:bottom-[112px] md:right-[-74px] md:items-start md:px-3 md:py-3 lg:bottom-[112px] lg:right-[-138px] lg:px-6 lg:py-4 xl:bottom-[126px] xl:right-[-305px]"
+              class="absolute bottom-12 right-[-10px] flex h-max flex-col items-center rounded-xl bg-purple-100 p-2 md:bottom-[112px] md:right-[-74px] md:items-start md:px-3 md:py-3 lg:bottom-[112px] lg:right-[-138px] lg:px-6 lg:py-4 xl:bottom-[126px] xl:right-[-305px]"
             >
               <p
                 class="text-sm font-bold leading-none text-white-main md:mb-[5px] md:text-xl md:font-semibold lg:text-[40px] lg:leading-[40px] lg:tracking-[1px]"
@@ -494,7 +498,7 @@
           class="relative md:flex md:flex-col md:items-center md:justify-between xl:flex-row"
         >
           <div
-            class="card-membership mb-4 bg-gray-light-100 pb-3 md:mb-6 md:pb-[77px] xl:mb-0 xl:mr-[69px]"
+            class="card-membership mb-4 bg-gray-light-300 pb-3 md:mb-6 md:pb-[77px] xl:mb-0 xl:mr-[69px]"
           >
             <h2>Join for Free</h2>
             <div>
@@ -517,7 +521,7 @@
               <img src="./img/arrow-right.png" alt="arrow-right" />
             </div>
           </div>
-          <div class="card-membership bg-gray-light-200 pb-3 md:pb-[75px]">
+          <div class="card-membership bg-gray-light-400 pb-3 md:pb-[75px]">
             <h2>WO Plus</h2>
             <p>
               WO Plus includes everything you get with a free membership and
