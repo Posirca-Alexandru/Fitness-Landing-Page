@@ -1,9 +1,9 @@
 import {onAuthStateChanged, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { auth } from "./main.js";
 
-const logInSection = document.querySelectorAll("#login, #login-modal")
-const logInWithGoogleButton = document.querySelectorAll("#login-btn, #login-modal-btn",);
-
+const logInSection = document.querySelectorAll("#login, #login-modal");
+const modalJoinClub = document.querySelectorAll("#modal-join-club, #overlay");
+const logInWithGoogleButton = document.querySelectorAll("#login-btn, #login-modal-btn");
 
 const signInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
@@ -31,7 +31,12 @@ logInWithGoogleButton.forEach((element) => {
 onAuthStateChanged(auth, user => {
   if (user != null) {
     console.log("User logat", user);
-    logInSection.style.display = "none";
+    logInSection.forEach((element) => {
+      element.style.display = "none";
+    });
+    modalJoinClub.forEach((element) => {
+      element.style.display = "none";
+    });
   } else {
     logInSection.forEach((element) => {
       element.style.display = "flex";

@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { auth } from "./main.js";
 
-const joinClub = document.getElementById("join-club");
+// const joinClub = document.getElementById("join-club");
 const openModalBtn = document.querySelectorAll("[data-modal-target]");
 const closeModalBtn = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
@@ -39,14 +39,14 @@ closeModalBtn.forEach((button) => {
   });
 });
 
-const joinClubNow = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user != null) {
-      console.log("User logat", user);
-    } else {
-      console.log("nelogat");
-    }
-  });
-};
-
-joinClub.addEventListener("click", joinClubNow);
+// const joinClubNow = () => {
+//   onAuthStateChanged(auth, (user) => {
+//     if (user != null) {
+//       alert('alalalala');
+//       console.log("User logatt", user);
+//     } else {
+//       console.log("nelogat");
+//     }
+//   });
+// };
+// joinClub.addEventListener("click", joinClubNow);

@@ -170,24 +170,24 @@
               <p class="yearly">Yearly</p>
             </div>
           </div>
-          <div class="bttns flex items-center justify-between mt-[-43px]">
+          <div class="bttns mt-[-50px]">
             <button class="prev-stp" type="button">Go Back</button>
             <button class="next-stp" type="submit">Next Step</button>
           </div>
         </div>
         <!-- step-3 -->
         <div class="stp step-3">
-          <div class="content-step">
+          <div class="content-step mb-[66px]">
             <div class="header">
-              <h1 class="tittle">Pick add-ons</h1>
+              <h1 class="title">Pick add-ons</h1>
               <p class="exp">Add-ons help enhance your workout experience</p>
             </div>
             <form>
-              <div class="box" data-id="1">
+              <div class="box ad-selected" data-id="1">
                 <input type="checkbox" id="online" />
                 <div class="description">
                   <label for="online">Online service</label>
-                  <small>Access to workout videos</small>
+                  <small>Workout Videos</small>
                 </div>
                 <p class="price">+$1/mo</p>
               </div>
@@ -195,7 +195,7 @@
                 <input type="checkbox" id="larger" />
                 <div class="description">
                   <label for="online">Larger storage</label>
-                  <small>Access to workout videos and plans</small>
+                  <small>Workout Videos and plans</small>
                 </div>
                 <p class="price">+$2/mo</p>
               </div>
@@ -203,7 +203,7 @@
                 <input type="checkbox" id="profile" />
                 <div class="description">
                   <label for="online">Customizable Profile</label>
-                  <small>Access to workout videos, plans and programs</small>
+                  <small>Videos, plans and programs</small>
                 </div>
                 <p class="price">+3/mo</p>
               </div>
@@ -216,29 +216,35 @@
         </div>
         <!-- step-4 -->
         <div class="stp step-4">
-          <div class="header">
-            <h1 class="title">Finishing up</h1>
-            <p class="exp">
-              Double-check everything looks OK before confirming
-            </p>
-          </div>
-          <div class="selection-box">
-            <div class="selection-container">
-              <div class="selected-plan">
-                <p class="plan-name">Basic(Monthly)</p>
-                <p class="plan-price">$9/mo</p>
-              </div>
-              <hr />
-              <div class="addons">
-                <template>
-                  <div class="selected-addon">
-                    <span class="service-name">Online service</span>
-                    <span class="service-price">+$1/mo</span>
-                  </div>
-                </template>
-              </div>
+          <div class="content-step mb-[86px]">
+            <div class="header">
+              <h1 class="title">Finishing up</h1>
+              <p class="exp">
+                Double-check everything looks OK before confirming
+              </p>
             </div>
-            <p class="total">Total (per month) <b>+$12/mo</b></p>
+            <div class="selection-box flex flex-1 flex-col justify-center">
+              <div class="selection-container mb-6 rounded-lg bg-gray-light-50">
+                <div
+                  class="selected-plan flex justify-between p-4 text-sm font-medium"
+                >
+                  <p class="plan-name">Basic(Monthly)</p>
+                  <p class="plan-price">$9/mo</p>
+                </div>
+                <hr class="text-gray-light-200 opacity-[0.2]" />
+                <div class="addons">
+                  <template>
+                    <div
+                      class="selected-addon flex justify-between p-4 text-sm font-medium text-gray-light-100"
+                    >
+                      <span class="service-name">Online service</span>
+                      <span class="service-price">+$1/mo</span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+              <p class="total">Total (per month) <b>+$12/mo</b></p>
+            </div>
           </div>
           <div class="bttns">
             <button class="prev-stp" type="button">Go Back</button>
@@ -247,16 +253,20 @@
         </div>
         <!-- step-5 -->
         <div class="stp step-5">
-          <img src="./img/check.png" alt="thank" />
-          <div class="header">
-            <h1 class="title">Thank you!</h1>
-            <p class="exp">
-              Thanks for confirming your subscription! We hope you have fun
-              using our platform. If you ever need support, please feel free to
-              email us at support@workout.com
-            </p>
+          <div class="content-step mb-[67px] flex items-center flex-col">
+            <img class="mb-6" src="./img/check.png" alt="thank" />
+            <div class="header flex items-center flex-col mb-[25px]">
+              <h1 class="title">Thank you!</h1>
+              <p class="exp w-[99%] exp-thank text-center">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@workout.com
+              </p>
+            </div>
           </div>
-          <button class="next-stp"></button>
+          <div class="bttns invisible">
+            <button class="next-stp"></button>
+          </div>
         </div>
       </div>
     </div>

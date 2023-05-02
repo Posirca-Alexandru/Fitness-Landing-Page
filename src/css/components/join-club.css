@@ -5,13 +5,13 @@
   }
   .form-sidebar {
     .step {
-      @apply flex items-center text-sm leading-[16px];
+      @apply flex items-center text-sm leading-4;
       .circle {
         @apply flex h-[33px] w-[33px] items-center justify-center rounded-full border-2 border-solid border-white-main font-bold text-white-main;
       }
       &.active {
         .circle {
-          @apply bg-blue-100 text-blue-400;
+          @apply bg-blue-100 text-blue-400 border-none;
         }
       }
       .step-content {
@@ -24,14 +24,18 @@
   }
   .stp {
     @apply bg-blue-100;
+
     .content-step {
       @apply relative bottom-[73px] mx-4 rounded-[10px] bg-white-main px-6 py-8;
       .header {
         .title {
-          @apply text-2xl leading-[28px];
+          @apply text-2xl leading-7 text-blue-400;
         }
         .exp {
           @apply mb-[22px] mt-[9px] text-[15px] leading-[25px] tracking-[1px] text-gray-light-200;
+        }
+        .exp-thank {
+          @apply tracking-normal;
         }
       }
       form {
@@ -41,7 +45,7 @@
             @apply mb-1 text-xs leading-[14px];
           }
           .error {
-            @apply hidden text-sm font-bold leading-[16px] text-red;
+            @apply hidden text-sm font-bold leading-4 text-red;
           }
         }
         input {
@@ -51,7 +55,7 @@
           }
         }
         .plan-card {
-          @apply mb-3 flex items-center rounded-lg border-2 border-solid border-gray-dark-100 p-[15px];
+          @apply mb-4 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 p-[14px];
           .icon-plan {
             @apply mr-[14px] h-max rounded-full;
             img {
@@ -71,15 +75,64 @@
             @apply mb-6;
           }
         }
+
+        .box {
+          @apply mb-3 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 px-4 pb-[10px] pt-3;
+          input {
+            @apply mb-0 h-5 w-5 select-none accent-purple-200;
+          }
+          .description {
+            @apply ml-4 flex flex-col;
+            label {
+              @apply mb-[3px] text-sm font-medium leading-4 text-blue-400;
+            }
+            small {
+              @apply text-xs leading-5 text-gray-light-200;
+            }
+          }
+          .price {
+            @apply ml-auto text-xs leading-5 text-purple-200;
+          }
+          &:last-child {
+            @apply mb-0;
+          }
+          &.ad-selected {
+            @apply border-[1px] border-solid border-purple-200 bg-gray-light-50;
+          }
+        }
+      }
+      .selection-box {
+        .selected {
+          @apply border-2 border-solid border-purple-200 bg-gray-light-50;
+        }
+        .selected-plan {
+          .plan-name {
+            @apply mb-[3px] leading-4 text-blue-400;
+          }
+          .plan-price {
+            @apply font-bold text-blue-400;
+          }
+        }
+        .selected-addon {
+          .service-price {
+            @apply text-purple-200;
+          }
+        }
+        .total {
+          @apply flex justify-between px-4 text-sm text-gray-light-200;
+          & b {
+            @apply h-max text-base font-bold leading-5 text-purple-200;
+          }
+        }
       }
     }
     .bttns {
-      @apply flex bg-white-main p-4 text-sm leading-[16px];
+      @apply flex items-center justify-between bg-white-main p-4 text-sm leading-4;
       .next-stp {
         @apply rounded-[4px] bg-blue-400 px-4 py-3 font-medium text-white-main;
       }
       .prev-stp {
-        @apply text-sm font-medium leading-[16px] text-gray-light-200;
+        @apply text-sm font-medium leading-4 text-gray-light-200;
       }
     }
     .switcher {
@@ -105,14 +158,14 @@
         }
       }
       p {
-        @apply text-sm font-semibold leading-[16px];
+        @apply text-sm font-semibold leading-4;
       }
     }
   }
   .step-1,
+  .step-2,
   .step-3,
-  .step-4,
-  .step-5 {
+  .step-4 {
     @apply hidden;
   }
 }
