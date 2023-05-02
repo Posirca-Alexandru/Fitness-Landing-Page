@@ -1,5 +1,5 @@
 .content {
-  @apply max-w-[1440px] mx-auto px-6;
+  @apply mx-auto max-w-[1440px] px-6;
 }
 
 #triangle {
@@ -32,10 +32,7 @@
       @apply mr-[9px];
     }
     img {
-      @apply w-7
+      @apply w-7;
     }
   }
 }
-
-
-

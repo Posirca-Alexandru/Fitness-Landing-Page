@@ -16,6 +16,7 @@
     <script src="js/logout.js" defer type="module"></script>
     <script src="js/join-club.js" defer type="module"></script>
     <script src="js/info-list.js" defer type="module"></script>
+    <script src="js/login-notification.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="min-h-[100vh] bg-black-main font-inter text-white-main">
@@ -56,7 +57,7 @@
       </div>
     </header>
     <div class="form mx-auto my-10 max-w-[375px] text-black-main shadow">
-      <div class="form-container">
+      <div class="form-container hidden">
         <!-- sidebar -->
         <div
           class="form-sidebar flex h-[172px] items-start justify-center gap-4 bg-[url('./img/sidebar.png')] bg-cover bg-no-repeat px-12 py-8 md:flex-col"
@@ -253,11 +254,11 @@
         </div>
         <!-- step-5 -->
         <div class="stp step-5">
-          <div class="content-step mb-[67px] flex items-center flex-col">
+          <div class="content-step mb-[67px] flex flex-col items-center">
             <img class="mb-6" src="./img/check.png" alt="thank" />
-            <div class="header flex items-center flex-col mb-[25px]">
+            <div class="header mb-[25px] flex flex-col items-center">
               <h1 class="title">Thank you!</h1>
-              <p class="exp w-[99%] exp-thank text-center">
+              <p class="exp exp-thank w-[99%] text-center">
                 Thanks for confirming your subscription! We hope you have fun
                 using our platform. If you ever need support, please feel free
                 to email us at support@workout.com
@@ -271,6 +272,26 @@
       </div>
     </div>
     <div class="content md:px-0">
+      <div
+        class="fixed left-[50%] top-0 z-30 hidden w-[87%] translate-x-[-50%] translate-y-[-50%] scale-[0.1] flex-col items-center rounded-xl bg-gray-light-200 px-4 pb-4 text-center transition-transform md:w-auto"
+        id="popup"
+      >
+        <img
+          class="mt-[-20px] w-[60px] rounded-full shadow shadow-gray-light-300"
+          src="./img/tick-login.png"
+          alt="tick-login"
+        />
+        <p class="mb-3 mr-5 text-sm">
+          You are now logged in and have access to the content
+        </p>
+        <button
+          class="w-full cursor-pointer rounded-lg border-none bg-green py-[10px] text-lg font-semibold shadow shadow-gray-light-300 outline-none"
+          id="close-popup"
+          type="button"
+        >
+          OK
+        </button>
+      </div>
       <section
         class="first-section mb-12 md:mb-0 md:mt-[129px] md:px-[92px] md:pt-[122px]"
         id="workouts"

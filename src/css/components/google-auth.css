@@ -1,13 +1,27 @@
 #overlay {
-   @apply opacity-0 pointer-events-none;
-    &.active {
-        @apply opacity-100 pointer-events-auto;
-    }
+  @apply pointer-events-none opacity-0;
+  &.active {
+    @apply pointer-events-auto opacity-100;
+  }
 }
 
 .modal-join-club {
-    @apply translate-x-[-50%] translate-y-[-50%] scale-0;
-    &.active {
-        @apply translate-x-[-50%] translate-y-[-50%] scale-100;
-   }
+  @apply translate-x-[-50%] translate-y-[-50%] scale-0;
+  &.active {
+    @apply translate-x-[-50%] translate-y-[-50%] scale-100;
+  }
+}
+
+#popup {
+  &.open-popup {
+    @apply top-[25%] flex translate-y-[-50%] scale-100;
+  }
+}
+
+@media (min-width: 768px) {
+  #popup {
+    &.open-popup {
+      @apply top-[180px] flex translate-y-[-50%] scale-100;
+    }
+  }
 }
