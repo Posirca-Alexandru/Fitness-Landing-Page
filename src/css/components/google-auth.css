@@ -1,5 +1,5 @@
 #overlay {
-  @apply pointer-events-none opacity-0;
+  @apply pointer-events-none opacity-0 fixed inset-0 z-20 bg-gray-dark-100 transition delay-150 ease-in-out;
   &.active {
     @apply pointer-events-auto opacity-100;
   }

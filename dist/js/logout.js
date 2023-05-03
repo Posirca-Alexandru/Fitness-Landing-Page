@@ -2,6 +2,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/fi
 import { auth } from "./main.js";
 
 const logoutBtn = document.getElementById("logout");
+const popup = document.getElementById("popup");
 
 const logoutWithGoogle = () => {
   auth
@@ -22,5 +23,6 @@ onAuthStateChanged(auth, (user) => {
     logoutBtn.style.display = "block";
   } else {
     logoutBtn.style.display = "none";
+    popup.classList.remove("open-popup");
   }
 });

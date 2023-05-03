@@ -2,7 +2,7 @@ import {onAuthStateChanged, signInWithPopup, GoogleAuthProvider} from "https://w
 import { auth } from "./main.js";
 
 const logInSection = document.querySelectorAll("#login, #login-modal");
-const modalJoinClub = document.querySelectorAll("#modal-join-club, #overlay");
+const modalJoinClub = document.getElementById("modal-join-club");
 const logInWithGoogleButton = document.querySelectorAll("#login-btn, #login-modal-btn");
 const popup = document.getElementById('popup');
 const closePopup = document.getElementById('close-popup');
@@ -36,9 +36,7 @@ onAuthStateChanged(auth, user => {
     logInSection.forEach((element) => {
       element.style.display = "none";
     });
-    modalJoinClub.forEach((element) => {
-      element.style.display = "none";
-    });
+    modalJoinClub.style.display = "none";
     popup.classList.add("open-popup");
     closePopup.addEventListener('click', () => {
       popup.classList.remove("open-popup");

@@ -16,7 +16,7 @@
     <script src="js/logout.js" defer type="module"></script>
     <script src="js/join-club.js" defer type="module"></script>
     <script src="js/info-list.js" defer type="module"></script>
-    <script src="js/login-notification.js" defer type="module"></script>
+    <script src="js/multistep-form.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="min-h-[100vh] bg-black-main font-inter text-white-main">
@@ -56,8 +56,8 @@
         </div>
       </div>
     </header>
-    <div class="form mx-auto my-10 max-w-[375px] text-black-main shadow">
-      <div class="form-container hidden">
+    <div class="form mx-auto my-10 max-w-[375px] text-black-main shadow fixed top-1/2 left-1/2 z-40 transition delay-150 ease-in-out" id="form">
+      <div class="form-container"> 
         <!-- sidebar -->
         <div
           class="form-sidebar flex h-[172px] items-start justify-center gap-4 bg-[url('./img/sidebar.png')] bg-cover bg-no-repeat px-12 py-8 md:flex-col"
@@ -90,6 +90,7 @@
               <b>Summary</b>
             </div>
           </div>
+          <button data-close-button class="close-button pointer border-none outline-none bg-none font-semibold">&times;</button>
         </div>
         <!-- step-1 -->
         <div class="stp step-1">
@@ -271,6 +272,7 @@
         </div>
       </div>
     </div>
+    <div id="overlay"></div>
     <div class="content md:px-0">
       <div
         class="fixed left-[50%] top-0 z-30 hidden w-[87%] translate-x-[-50%] translate-y-[-50%] scale-[0.1] flex-col items-center rounded-xl bg-gray-light-200 px-4 pb-4 text-center transition-transform md:w-auto"
@@ -281,7 +283,7 @@
           src="./img/tick-login.png"
           alt="tick-login"
         />
-        <p class="mb-3 mr-5 text-sm">
+        <p class="mb-3 mt-2 text-xs md:text-base">
           You are now logged in and have access to the content
         </p>
         <button
@@ -320,7 +322,7 @@
               id="modal-join-club"
             >
               <div class="modal-header flex justify-end pr-1">
-                <button data-close-button class="close-button">&times;</button>
+                <button data-close-button class="close-button pointer border-none outline-none bg-none font-semibold">&times;</button>
               </div>
               <div class="modal-body flex flex-col items-center">
                 <p class="mt-3 w-max">To join the club you must log in</p>
@@ -339,7 +341,7 @@
               </div>
             </div>
             <div
-              class="fixed inset-0 z-20 bg-gray-dark-100 transition delay-150 ease-in-out"
+              class=""
               id="overlay"
             ></div>
           </div>

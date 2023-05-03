@@ -1,172 +1,178 @@
-.form-container {
-  span,
-  p {
-    @apply text-black-main;
+.form {
+  @apply translate-x-[-50%] translate-y-[-50%] scale-0;
+  &.active {
+    @apply translate-x-[-50%] translate-y-[-50%] scale-100;
   }
-  .form-sidebar {
-    .step {
-      @apply flex items-center text-sm leading-4;
-      .circle {
-        @apply flex h-[33px] w-[33px] items-center justify-center rounded-full border-2 border-solid border-white-main font-bold text-white-main;
-      }
-      &.active {
+  .form-container {
+    span,
+    p {
+      @apply text-black-main;
+    }
+    .form-sidebar {
+      .step {
+        @apply flex items-center text-sm leading-4;
         .circle {
-          @apply bg-blue-100 text-blue-400 border-none;
+          @apply flex h-[33px] w-[33px] items-center justify-center rounded-full border-2 border-solid border-white-main font-bold text-white-main;
         }
-      }
-      .step-content {
-        @apply hidden;
+        &.active {
+          .circle {
+            @apply border-none bg-blue-100 text-blue-400;
+          }
+        }
+        .step-content {
+          @apply hidden;
+        }
       }
     }
-  }
-  .err {
-    @apply border-2 border-solid border-orange-400;
-  }
-  .stp {
-    @apply bg-blue-100;
+    .err {
+      @apply border-2 border-solid border-orange-400;
+    }
+    .stp {
+      @apply bg-blue-100;
 
-    .content-step {
-      @apply relative bottom-[73px] mx-4 rounded-[10px] bg-white-main px-6 py-8;
-      .header {
-        .title {
-          @apply text-2xl leading-7 text-blue-400;
-        }
-        .exp {
-          @apply mb-[22px] mt-[9px] text-[15px] leading-[25px] tracking-[1px] text-gray-light-200;
-        }
-        .exp-thank {
-          @apply tracking-normal;
-        }
-      }
-      form {
-        .label {
-          @apply mb-[2px] leading-none;
-          label {
-            @apply mb-1 text-xs leading-[14px];
+      .content-step {
+        @apply relative bottom-[73px] mx-4 rounded-[10px] bg-white-main px-6 py-8;
+        .header {
+          .title {
+            @apply text-2xl leading-7 text-blue-400;
           }
-          .error {
-            @apply hidden text-sm font-bold leading-4 text-red;
+          .exp {
+            @apply mb-[22px] mt-[9px] text-[15px] leading-[25px] tracking-[1px] text-gray-light-200;
+          }
+          .exp-thank {
+            @apply tracking-normal;
           }
         }
-        input {
-          @apply mb-4 w-full rounded-[4px] border-[1px] border-solid border-gray-dark-100 px-4 py-[10px] text-[15px] leading-[17px];
-          &:last-child {
-            @apply mb-0;
-          }
-        }
-        .plan-card {
-          @apply mb-4 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 p-[14px];
-          .icon-plan {
-            @apply mr-[14px] h-max rounded-full;
-            img {
-              @apply p-1;
-            }
-          }
-          .plan-info {
-            @apply flex flex-col;
-            b {
-              @apply mb-[7px] font-medium leading-[18px];
-            }
-            span {
-              @apply text-sm text-gray-light-200;
-            }
-          }
-          &:last-child {
-            @apply mb-6;
-          }
-        }
-
-        .box {
-          @apply mb-3 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 px-4 pb-[10px] pt-3;
-          input {
-            @apply mb-0 h-5 w-5 select-none accent-purple-200;
-          }
-          .description {
-            @apply ml-4 flex flex-col;
+        form {
+          .label {
+            @apply mb-[2px] leading-none;
             label {
-              @apply mb-[3px] text-sm font-medium leading-4 text-blue-400;
+              @apply mb-1 text-xs leading-[14px];
             }
-            small {
-              @apply text-xs leading-5 text-gray-light-200;
+            .error {
+              @apply hidden text-sm font-bold leading-4 text-red;
             }
           }
-          .price {
-            @apply ml-auto text-xs leading-5 text-purple-200;
+          input {
+            @apply mb-4 w-full rounded-[4px] border-[1px] border-solid border-gray-dark-100 px-4 py-[10px] text-[15px] leading-[17px];
+            &:last-child {
+              @apply mb-0;
+            }
           }
-          &:last-child {
-            @apply mb-0;
+          .plan-card {
+            @apply mb-4 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 p-[14px];
+            .icon-plan {
+              @apply mr-[14px] h-max rounded-full;
+              img {
+                @apply p-1;
+              }
+            }
+            .plan-info {
+              @apply flex flex-col;
+              b {
+                @apply mb-[7px] font-medium leading-[18px];
+              }
+              span {
+                @apply text-sm text-gray-light-200;
+              }
+            }
+            &:last-child {
+              @apply mb-6;
+            }
           }
-          &.ad-selected {
-            @apply border-[1px] border-solid border-purple-200 bg-gray-light-50;
+
+          .box {
+            @apply mb-3 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 px-4 pb-[10px] pt-3;
+            input {
+              @apply mb-0 h-5 w-5 select-none accent-purple-200;
+            }
+            .description {
+              @apply ml-4 flex flex-col;
+              label {
+                @apply mb-[3px] text-sm font-medium leading-4 text-blue-400;
+              }
+              small {
+                @apply text-xs leading-5 text-gray-light-200;
+              }
+            }
+            .price {
+              @apply ml-auto text-xs leading-5 text-purple-200;
+            }
+            &:last-child {
+              @apply mb-0;
+            }
+            &.ad-selected {
+              @apply border-[1px] border-solid border-purple-200 bg-gray-light-50;
+            }
+          }
+        }
+        .selection-box {
+          .selected {
+            @apply border-2 border-solid border-purple-200 bg-gray-light-50;
+          }
+          .selected-plan {
+            .plan-name {
+              @apply mb-[3px] leading-4 text-blue-400;
+            }
+            .plan-price {
+              @apply font-bold text-blue-400;
+            }
+          }
+          .selected-addon {
+            .service-price {
+              @apply text-purple-200;
+            }
+          }
+          .total {
+            @apply flex justify-between px-4 text-sm text-gray-light-200;
+            & b {
+              @apply h-max text-base font-bold leading-5 text-purple-200;
+            }
           }
         }
       }
-      .selection-box {
-        .selected {
-          @apply border-2 border-solid border-purple-200 bg-gray-light-50;
+      .bttns {
+        @apply flex items-center justify-between bg-white-main p-4 text-sm leading-4;
+        .next-stp {
+          @apply rounded-[4px] bg-blue-400 px-4 py-3 font-medium text-white-main;
         }
-        .selected-plan {
-          .plan-name {
-            @apply mb-[3px] leading-4 text-blue-400;
-          }
-          .plan-price {
-            @apply font-bold text-blue-400;
-          }
-        }
-        .selected-addon {
-          .service-price {
-            @apply text-purple-200;
-          }
-        }
-        .total {
-          @apply flex justify-between px-4 text-sm text-gray-light-200;
-          & b {
-            @apply h-max text-base font-bold leading-5 text-purple-200;
-          }
+        .prev-stp {
+          @apply text-sm font-medium leading-4 text-gray-light-200;
         }
       }
-    }
-    .bttns {
-      @apply flex items-center justify-between bg-white-main p-4 text-sm leading-4;
-      .next-stp {
-        @apply rounded-[4px] bg-blue-400 px-4 py-3 font-medium text-white-main;
-      }
-      .prev-stp {
-        @apply text-sm font-medium leading-4 text-gray-light-200;
-      }
-    }
-    .switcher {
-      .slider {
-        @apply absolute inset-0 cursor-pointer bg-blue-400 transition duration-300;
-        -webkit-transition: 0.4s;
-        &.round {
-          @apply rounded-full;
-          &::before {
+      .switcher {
+        .slider {
+          @apply absolute inset-0 cursor-pointer bg-blue-400 transition duration-300;
+          -webkit-transition: 0.4s;
+          &.round {
             @apply rounded-full;
+            &::before {
+              @apply rounded-full;
+            }
+          }
+          &::before {
+            @apply absolute bottom-1 left-1 h-3 w-3 bg-white-main transition duration-300 content-[""];
           }
         }
-        &::before {
-          @apply absolute bottom-1 left-1 h-3 w-3 bg-white-main transition duration-300 content-[""];
+        .switch {
+          input:checked + .slider::before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            /* toDo */
+          }
         }
-      }
-      .switch {
-        input:checked + .slider::before {
-          -webkit-transform: translateX(26px);
-          -ms-transform: translateX(26px);
-          transform: translateX(26px);
-          /* toDo */
+        p {
+          @apply text-sm font-semibold leading-4;
         }
-      }
-      p {
-        @apply text-sm font-semibold leading-4;
       }
     }
-  }
-  .step-1,
-  .step-2,
-  .step-3,
-  .step-4 {
-    @apply hidden;
+    .step-1,
+    .step-2,
+    .step-3,
+    .step-4 {
+      @apply hidden;
+    }
   }
 }
 
