@@ -20,6 +20,11 @@
   }
 }
 
+.close-button {
+  @apply border-none outline-none bg-none font-semibold px-2 py-1 scale-[1.5] leading-none;
+}
+
+
 .more-details {
   @apply mb-2 flex items-center;
   a {
@@ -34,5 +39,8 @@
     img {
       @apply w-7;
     }
+  }
+  .close-button {
+    @apply scale-[2] px-2;
   }
 }

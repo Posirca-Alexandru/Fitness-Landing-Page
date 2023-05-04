@@ -10,6 +10,7 @@ const logoutWithGoogle = () => {
     .then(() => {
       // window.location.assign('./profile.html');
       console.log("user logout");
+      location.reload();
     })
     .catch((err) => {
       console.log(err);
@@ -23,6 +24,7 @@ onAuthStateChanged(auth, (user) => {
     logoutBtn.style.display = "block";
   } else {
     logoutBtn.style.display = "none";
+
     popup.classList.remove("open-popup");
   }
 });
