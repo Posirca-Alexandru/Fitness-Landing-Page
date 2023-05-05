@@ -56,11 +56,16 @@
         </div>
       </div>
     </header>
-    <div class="form mx-auto my-10 max-w-[375px] text-black-main shadow fixed top-1/2 left-1/2 z-40 transition delay-150 ease-in-out" id="form">
-      <div class="form-container"> 
+    <div
+      class="form fixed left-1/2 top-1/2 z-40 mx-auto w-[375px] text-black-main shadow transition delay-150 ease-in-out md:w-auto md:max-w-[100%]"
+      id="form"
+    >
+      <div
+        class="form-container md:flex md:h-[600px] md:rounded-[15px] md:bg-white-main md:p-4"
+      >
         <!-- sidebar -->
         <div
-          class="form-sidebar flex h-[172px] items-start justify-center gap-4 bg-[url('./img/sidebar.png')] bg-cover bg-no-repeat px-12 py-8 md:flex-col"
+          class="form-sidebar relative flex h-[172px] items-start justify-center gap-4 bg-[url('./img/sidebar.png')] bg-cover bg-no-repeat px-12 py-8 md:h-auto md:flex-col md:justify-start md:gap-8 md:rounded-[10px] md:bg-[url('./img/sidebar-desktop.png')] md:pl-8 md:pr-[89px] md:pt-[50px]"
         >
           <div class="step active">
             <div class="circle">1</div>
@@ -90,11 +95,15 @@
               <b>Summary</b>
             </div>
           </div>
+          <div class="absolute right-[9px] top-[10px] md:left-[9px] md:right-0">
+            <button data-close-button class="close-button scale-[1.8]">
+              &times;
+            </button>
+          </div>
         </div>
-       
         <!-- step-1 -->
         <div class="stp step-1">
-          <div class="content-step mb-[47px]">
+          <div class="content-step mb-[47px] md:mb-0">
             <div class="header">
               <h1 class="title">Personal info</h1>
               <p class="exp">
@@ -140,6 +149,7 @@
                 <div class="plan-info chosen">
                   <b>Basic</b>
                   <span class="plan-priced">$9/mo</span>
+                  <p>2 months free</p>
                 </div>
               </div>
               <div class="plan-card">
@@ -149,6 +159,7 @@
                 <div class="plan-info chosen">
                   <b>Advanced</b>
                   <span class="plan-priced">$12/mo</span>
+                  <p>2 months free</p>
                 </div>
               </div>
               <div class="plan-card">
@@ -158,6 +169,7 @@
                 <div class="plan-info chosen">
                   <b>Pro</b>
                   <span class="plan-priced">$15/mo</span>
+                  <p>2 months free</p>
                 </div>
               </div>
             </form>
@@ -271,9 +283,6 @@
           </div>
         </div>
       </div>
-      <div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
     </div>
     <!-- <div id="overlay"></div> -->
     <div class="content md:px-0">
@@ -321,17 +330,19 @@
               </button>
             </div>
             <div
-              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-xl bg-gray-light-400 p-3 md:pr-4 pr-1 pt-2 md:p-5 transition delay-150 ease-in-out"
+              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-xl bg-gray-light-400 p-3 pr-1 pt-2 transition delay-150 ease-in-out md:p-5 md:pr-4"
               id="modal-join-club"
             >
               <div class="modal-header flex justify-end pr-1">
                 <button data-close-button class="close-button">&times;</button>
               </div>
               <div class="modal-body flex flex-col items-center">
-                <p class="pr-2 mt-3 w-max md:text-xl md:mt-5">To join the club you must log in</p>
+                <p class="mt-3 w-max pr-2 md:mt-5 md:text-xl">
+                  To join the club you must log in
+                </p>
                 <div class="my-5 rounded-lg bg-white-main" id="login-modal">
                   <button
-                    class="btn flex items-center p-3 text-black-main text-sm md:text-lg"
+                    class="btn flex items-center p-3 text-sm text-black-main md:text-lg"
                     id="login-modal-btn"
                   >
                     <img
@@ -343,9 +354,7 @@
                 </div>
               </div>
             </div>
-            <div
-              id="overlay"
-            ></div>
+            <div id="overlay"></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"
@@ -575,12 +584,12 @@
               <li>FB Plus Routines</li>
               <li>Rest Day Complete</li>
             </ul>
-            <a
+            <button
               class="mb-3 mt-4 block w-max rounded-[10px] bg-blue-300 px-2 py-1 text-sm leading-[22px] md:mb-0 md:mt-[28px] md:px-[14px] md:text-base"
-              href="#"
+              data-modal-target="#modal-join-club"
             >
-              Join Club Now!
-            </a>
+              Join Club Now
+            </button>
           </div>
           <div
             class="absolute right-0 mt-3 w-max items-center bg-white-main p-1 text-sm font-semibold text-black-main md:bottom-[-118px] md:right-auto md:mt-0 md:px-2 md:py-[6px] md:text-[18px] md:leading-[22px] xl:right-[-76px]"
