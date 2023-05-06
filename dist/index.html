@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="absolute right-[9px] top-[10px] md:left-[9px] md:right-0">
-            <button data-close-button class="close-button scale-[1.8]">
+            <button data-close-button class="close-button scale-[1.8] text-gray-light-300">
               &times;
             </button>
           </div>
@@ -117,15 +117,15 @@
               </div>
               <input type="text" required id="name" placeholder="Your name" />
               <div class="label">
-                <label for="name">Email Address</label>
+                <label for="email">Email Address</label>
                 <p class="error">This Field Is Required</p>
               </div>
               <input type="text" required id="email" placeholder="Your email" />
               <div class="label">
-                <label for="name">Phone Number</label>
+                <label for="phone">Phone Number</label>
                 <p class="error">This Field Is Required</p>
               </div>
-              <input type="tel" required id="name" placeholder="Your phone" />
+              <input type="tel" required id="phone" placeholder="Your phone" />
             </form>
           </div>
           <div class="bttns justify-end">
@@ -268,7 +268,7 @@
         <!-- step-5 -->
         <div class="stp step-5">
           <div class="content-step mb-[67px] flex flex-col items-center">
-            <img class="mb-6" src="./img/check.png" alt="thank" />
+            <img class="mb-6 md:mb-8 md:w-[80px]" src="./img/check.png" alt="thank" />
             <div class="header mb-[25px] flex flex-col items-center">
               <h1 class="title">Thank you!</h1>
               <p class="exp exp-thank w-[99%] text-center">
@@ -284,7 +284,6 @@
         </div>
       </div>
     </div>
-    <!-- <div id="overlay"></div> -->
     <div class="content md:px-0">
       <div
         class="fixed left-[50%] top-0 z-30 hidden w-[87%] translate-x-[-50%] translate-y-[-50%] scale-[0.1] flex-col items-center rounded-xl bg-gray-light-200 px-4 pb-4 text-center transition-transform md:w-auto"
@@ -354,7 +353,7 @@
                 </div>
               </div>
             </div>
-            <div id="overlay"></div>
+            <div class="cursor-pointer" id="overlay"></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"

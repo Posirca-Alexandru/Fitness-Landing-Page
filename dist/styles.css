@@ -1094,7 +1094,7 @@ ul {
           }
 
 .form .form-container .stp .content-step form .label {
-            margin-bottom: 2px;
+            margin-bottom: 0.25rem;
           }
 
 .form .form-container .stp .content-step form .label {
@@ -1502,12 +1502,16 @@ ul {
             }
 
 .form .form-container .stp .content-step .selection-box .total b {
-              font-size: 0.875rem;
-              line-height: 1.25rem;
+              font-size: 1rem;
+              line-height: 1.5rem;
             }
 
 .form .form-container .stp .content-step .selection-box .total b {
               font-weight: 700;
+            }
+
+.form .form-container .stp .content-step .selection-box .total b {
+              line-height: 1.25rem;
             }
 
 .form .form-container .stp .content-step .selection-box .total b {
@@ -1701,9 +1705,9 @@ ul {
           justify-content: flex-end;
         }
 
-.form .form-container .step-1,
+.form .form-container .step-2,
     .form .form-container .step-3,
-    .form .form-container .step-2,
+    .form .form-container .step-4,
     .form .form-container .step-5 {
       display: none;
     }
@@ -1825,6 +1829,12 @@ ul {
             .form .form-container .stp .content-step .header .exp {
               letter-spacing: 0em;
             }
+            .form .form-container .stp .content-step .header .exp-thank {
+              margin-top: 14px;
+            }
+            .form .form-container .stp .content-step .header .exp-thank {
+              width: 100%;
+            }
             .form .form-container .stp .content-step form .label {
               margin-bottom: 0.5rem;
             }
@@ -1924,12 +1934,12 @@ ul {
                 margin-bottom: 0px;
               }
             .form .form-container .stp .content-step form .box {
-              padding-top: 14px;
-              padding-bottom: 14px;
-            }
-            .form .form-container .stp .content-step form .box {
               padding-left: 1.5rem;
               padding-right: 1.5rem;
+            }
+            .form .form-container .stp .content-step form .box {
+              padding-top: 14px;
+              padding-bottom: 14px;
             }
                 .form .form-container .stp .content-step form .box .description label {
                   margin-bottom: 7px;
@@ -1967,8 +1977,19 @@ ul {
                 line-height: 1.25rem;
               }
             .form .form-container .stp .content-step .selection-box .total {
-              /* @apply text */
+              padding-left: 1.5rem;
+              padding-right: 1.5rem;
             }
+              .form .form-container .stp .content-step .selection-box .total b {
+                margin-left: 50px;
+              }
+              .form .form-container .stp .content-step .selection-box .total b {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+              }
+              .form .form-container .stp .content-step .selection-box .total b {
+                line-height: 1.25rem;
+              }
         .form .form-container .stp .bttns {
           margin-bottom: 1rem;
         }
@@ -2016,9 +2037,24 @@ ul {
           .form .form-container .stp.step-2 form {
             gap: 18px;
           }
-      .form .form-container .step-1,
+        .form .form-container .stp.step-5 {
+          justify-content: center;
+        }
+          .form .form-container .stp.step-5 .content-step {
+            margin-top: 0px;
+          }
+            .form .form-container .stp.step-5 .content-step .header {
+              margin-bottom: 0px;
+            }
+              .form .form-container .stp.step-5 .content-step .header .exp {
+                margin-bottom: 0px;
+              }
+          .form .form-container .stp.step-5 .bttns {
+            display: none;
+          }
       .form .form-container .step-2,
       .form .form-container .step-3,
+      .form .form-container .step-4,
       .form .form-container .step-5 {
         display: none;
       }
@@ -2731,6 +2767,11 @@ ul {
   color: rgb(150 153 170 / var(--tw-text-opacity));
 }
 
+.text-gray-light-300 {
+  --tw-text-opacity: 1;
+  color: rgb(50 52 67 / var(--tw-text-opacity));
+}
+
 .text-white-main {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
@@ -2885,6 +2926,10 @@ ul {
     margin-bottom: 1.5rem;
   }
 
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
   .md\:mb-\[147px\] {
     margin-bottom: 147px;
   }
@@ -2987,6 +3032,10 @@ ul {
 
   .md\:w-\[50\%\] {
     width: 50%;
+  }
+
+  .md\:w-\[80px\] {
+    width: 80px;
   }
 
   .md\:w-auto {
