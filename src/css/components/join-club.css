@@ -59,7 +59,7 @@
             }
           }
           .plan-card {
-            @apply mb-4 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 p-[14px];
+            @apply mb-4 flex items-center cursor-pointer rounded-lg border-[1px] border-solid border-gray-dark-100 p-[14px];
             .icon-plan {
               @apply mr-[14px] h-max rounded-full;
               img {
@@ -80,6 +80,9 @@
             }
             &:last-child {
               @apply mb-6;
+            }
+            &.selected {
+              @apply border-[1px] border-solid border-blue-400 bg-gray-light-50;
             }
           }
 
@@ -165,10 +168,10 @@
           }
         }
         p {
-          @apply text-sm font-semibold leading-4;
-        }
-        .yearly {
-          @apply text-gray-light-200;
+          @apply text-sm font-semibold leading-4 text-gray-light-200;
+          &.sw-active {
+            @apply text-blue-400;
+          }
         }
       }
       &.step-1 {
@@ -250,7 +253,7 @@
               }
             }
             .box {
-              @apply px-6 py-[14px];
+              @apply px-6 py-[14px] cursor-pointer;
               .description {
                 label {
                   @apply mb-[7px] text-base leading-[18px];
