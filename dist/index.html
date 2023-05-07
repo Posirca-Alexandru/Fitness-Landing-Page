@@ -57,7 +57,7 @@
       </div>
     </header>
     <div
-      class="form fixed left-1/2 top-1/2 z-40 mx-auto w-[375px] text-black-main shadow transition delay-150 ease-in-out md:w-auto md:max-w-[100%]"
+      class="form fixed left-1/2 top-1/2 z-40 mx-auto w-[375px] text-black-main shadow transition delay-150 ease-in-out md:w-[700px] lg:w-[958px] xl:w-auto xl:max-w-[100%]"
       id="form"
     >
       <div
@@ -115,36 +115,31 @@
             </div>
             <form name="personal-data">
               <div class="label">
-                <label for="name" id="name-label">Name</label>
-                <p class="error">This Field Is Required</p>
+                <label for="name" id="name-label">Name<span>*</span></label>
+                <!-- <p class="error">This Field Is Required</p> -->
                 <span class="error-input hidden" id="name-error"
-                  >Incorrect name, it must be a with a capital letter, not a number.</span
+                  >Name with a capital letter, and not be a number.</span
+                >
+              </div>
+              <input type="text" required id="name" placeholder="Your name" />
+              <div class="label">
+                <label for="email" id="email-label">Email<span>*</span></label>
+                <!-- <p class="error">This Field Is Required</p> -->
+                <span class="error-input hidden" id="email-error"
+                  >The email must comply with email standards.</span
                 >
               </div>
               <input
-                type="text"
+                type="email"
                 required
-                id="name"
-                placeholder="Your name"
+                id="email"
+                placeholder="Your email"
               />
-                <div class="label">
-                  <label for="email" id="email-label">Email</label>
-                  <p class="error">This Field Is Required</p>
-                  <span class="error-input hidden" id="email-error"
-                    >Incorrect email, it should comply with email standards.</span
-                  >
-                </div>
-                <input
-                  type="email"
-                  required
-                  id="email"
-                  placeholder="Your email"
-                />
               <div class="label">
-                <label id="phone-label" for="phone">Phone Number</label>
-                <p class="error">This Field Is Required</p>
+                <label id="phone-label" for="phone">Phone Number<span>*</span></label>
+                <!-- <p class="error">This Field Is Required</p> -->
                 <span class="error-input hidden" id="phone-error"
-                  >Incorrect number, it should comply with Romania standards.</span
+                  >The number must comply with RO standards.</span
                 >
               </div>
               <input
@@ -157,7 +152,14 @@
             </form>
           </div>
           <div class="bttns justify-end">
-            <button class="next-stp" type="submit" disabled id="bttn-step-1">Next Step</button>
+            <button
+              class="next-stp disable"
+              type="submit"
+              disabled
+              id="bttn-step-1"
+            >
+              Next Step
+            </button>
           </div>
         </div>
         <!-- step-2 -->
@@ -326,8 +328,11 @@
           src="./img/tick-login.png"
           alt="tick-login"
         />
-        <p class="mb-3 mt-2 text-xs md:text-base">
-          You are now logged in and have access to the content
+        <p class="logged logged-in mb-3 mt-2 text-xs md:text-base" id="logged-in">
+          Successfully <b class="uppercase text-gray-light-300">logged in</b> and have access to the content.
+        </p>
+        <p class="logged logged-out mb-3 mt-2 hidden text-xs md:text-base" id="logged-out">
+          Successfully <b class="uppercase text-gray-light-300">logged out</b> and the content is now restricted.
         </p>
         <button
           class="w-full cursor-pointer rounded-lg border-none bg-green py-[10px] text-lg font-semibold shadow shadow-gray-light-300 outline-none"
@@ -338,7 +343,7 @@
         </button>
       </div>
       <section
-        class="first-section mb-12 md:mb-0 md:mt-[129px] md:px-[92px] md:pt-[122px]"
+        class="first-section mb-12 md:mb-0 md:px-[92px] md:pt-[251px]"
         id="workouts"
       >
         <h1
@@ -685,66 +690,5 @@
         <p><span>&#169;</span>Workout 2023. All rights reserved.</p>
       </div>
     </footer>
-    <script>
-      // const validateEmail = () => {
-      //   const emailField = document.getElementById("email");
-      //   const emailLabel = document.getElementById("email-label");
-      //   const emailError = document.getElementById("email-error");
-      //   if (
-      //     !emailField.value.match(
-      //       /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
-      //     )
-      //   ) {
-      //     emailError.style.display = "block";
-      //     if (emailField.value == null || emailField.value == "") {
-      //       emailError.style.display = "none";
-      //       return false;
-      //     }
-      //     return false;
-      //   }
-      //   emailError.style.display = "none";
-      //   return true;
-      // };
-
-      // const validatePhone = () => {
-      //   const phoneField = document.getElementById("phone");
-      //   const phoneLabel = document.getElementById("phone-label");
-      //   const phoneError = document.getElementById("phone-error");
-      //   if (
-      //     !phoneField.value.match(
-      //       /^(?:(?:(?:00\s?|\+)40\s?|0)(?:7\d{2}\s?\d{3}\s?\d{3}|(21|31)\d{1}\s?\d{3}\s?\d{3}|((2|3)[3-7]\d{1})\s?\d{3}\s?\d{3}|(8|9)0\d{1}\s?\d{3}\s?\d{3}))$/
-      //     )
-      //   ) {
-      //     phoneError.style.display = "block";
-      //     if (phoneField.value == null || phoneField.value == "") {
-      //       phoneError.style.display = "none";
-      //       return false;
-      //     }
-      //     return false;
-      //   }
-      //   phoneError.style.display = "none";
-      //   return true;
-      // };
-
-      // const validateName = () => {
-      //   const nameField = document.getElementById("name");
-      //   const nameLabel = document.getElementById("name-label");
-      //   const nameError = document.getElementById("name-error");
-
-      //   if (
-      //     !nameField.value.match(/^[A-Z]+[a-zA-Z_ ]*$/) ||
-      //     nameField.value.match(/^\s*$/)
-      //   ) {
-      //     nameError.style.display = "block";
-      //     if (nameField.value == null || nameField.value == "") {
-      //       nameError.style.display = "none";
-      //       return false;
-      //     }
-      //     return false;
-      //   }
-      //   nameError.style.display = "none";
-      //   return true;
-      // };
-    </script>
   </body>
 </html>
