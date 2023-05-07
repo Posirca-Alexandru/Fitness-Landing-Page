@@ -49,25 +49,6 @@ steps.forEach((step) => {
   });
 });
 
-const checkDisable = () => {
-  valuesInputs.forEach((input) => {
-    input.addEventListener("keyup", () => {
-      const value = input.value;
-      if (
-        value === "" ||
-        phoneError.style.display == "block" ||
-        nameError.style.display == "block" ||
-        emailError.style.display == "block"
-      ) {
-        bttnDisable.disabled = true;
-      } else {
-        bttnDisable.disabled = false;
-      }
-    });
-  });
-};
-checkDisable();
-
 const validateForm = () => {
   const nameField = document.getElementById("name");
   const emailField = document.getElementById("email");
@@ -126,6 +107,26 @@ const validateForm = () => {
 
 validateForm();
 
+const checkDisable = () => {
+  valuesInputs.forEach((input) => {
+    input.addEventListener("keyup", () => {
+      const value = input.value;
+      if (
+        value === "" ||
+        phoneError.style.display == "block" ||
+        nameError.style.display == "block" ||
+        emailError.style.display == "block"
+      ) {
+        bttnDisable.disabled = true;
+        bttnDisable.classList.add("disable");
+      } else {
+        bttnDisable.disabled = false;
+        bttnDisable.classList.remove("disable");
+      }
+    });
+  });
+};
+checkDisable();
 // const validateForm = () => {
 //   let valid = true;
 //   for (let i = 0; i < formInputs.length; i++) {
@@ -141,7 +142,6 @@ validateForm();
 //   }
 //   return valid;
 // };
-
 const findLabel = (el) => {
   const idVal = el.id;
   const labels = document.getElementsByTagName("label");

@@ -13,6 +13,8 @@ const logInWithGoogleButton = document.querySelectorAll(
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("close-popup");
 const overlay = document.getElementById("overlay");
+const loggedIn = document.getElementById("logged-in");
+const loggedOut = document.getElementById("logged-out");
 
 const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
@@ -52,6 +54,7 @@ onAuthStateChanged(auth, (user) => {
     closePopup.addEventListener("click", () => {
       popup.classList.remove("open-popup");
     });
+    loggedOut.style.display = "none";
   } else {
     logInSection.forEach((element) => {
       element.style.display = "flex";
