@@ -5,18 +5,15 @@ const logoutBtn = document.getElementById("logout");
 const popup = document.getElementById("popup");
 const loggedIn = document.getElementById("logged-in");
 const loggedOut = document.getElementById("logged-out");
-const closePopup = document.getElementById("close-popup");
-
-console.log(loggedOut);
-console.log(loggedIn);
 
 const logoutWithGoogle = () => {
   auth
     .signOut()
-    .then(() => {
+    .then((response) => {
+      console.log(response);
       // window.location.assign('./profile.html');
-      console.log("user logout");
-      location.reload();
+      popup.classList.add("open-popup");
+      confirm("Are you sure you want to log out?");
     })
     .catch((err) => {
       console.log(err);
@@ -31,16 +28,7 @@ onAuthStateChanged(auth, (user) => {
     loggedIn.style.display = "block";
   } else {
     logoutBtn.style.display = "none";
-    popup.classList.add("open-popup");
     loggedIn.style.display = "none";
     loggedOut.style.display = "block";
-    closePopup.addEventListener("click", () => {
-      popup.classList.remove("open-popup");
-      // window.location.reload();
-      console.log(location.href)
-    });
-    if(window.location.reload === true) {
-      popup.style.display = "none";
-    }
   }
 });

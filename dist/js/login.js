@@ -22,6 +22,7 @@ const signInWithGoogle = () => {
     .then((response) => {
       // window.location.assign('./profile.html');
       console.log(response.user);
+      popup.classList.add("open-popup");
     })
     .catch((err) => {
       const errorCode = err.code;
@@ -50,7 +51,6 @@ onAuthStateChanged(auth, (user) => {
       element.style.display = "none";
     });
     modalJoinClub.style.display = "none";
-    popup.classList.add("open-popup");
     closePopup.addEventListener("click", () => {
       popup.classList.remove("open-popup");
     });

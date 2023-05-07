@@ -17,7 +17,6 @@ openModalBtn.forEach((button) => {
         }
       });
     } else {
-      console.log("nelogat");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector(button.dataset.modalTarget);
         openModalJoin(modalJoin);
@@ -55,7 +54,6 @@ closeModalBtn.forEach((button) => {
         closeModalJoin(modalJoin);
       });
     } else {
-      console.log("logout succesfull");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector("#modal-join-club");
         closeModalJoin(modalJoin);
