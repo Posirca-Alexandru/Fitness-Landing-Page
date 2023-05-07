@@ -96,7 +96,10 @@
             </div>
           </div>
           <div class="absolute right-[9px] top-[10px] md:left-[9px] md:right-0">
-            <button data-close-button class="close-button scale-[1.8] text-gray-light-300">
+            <button
+              data-close-button
+              class="close-button scale-[1.8] text-gray-light-300"
+            >
               &times;
             </button>
           </div>
@@ -110,26 +113,51 @@
                 Please provide your name, email address, and phone number.
               </p>
             </div>
-            <form>
+            <form name="personal-data">
               <div class="label">
-                <label for="name">Name</label>
+                <label for="name" id="name-label">Name</label>
                 <p class="error">This Field Is Required</p>
+                <span class="error-input hidden" id="name-error"
+                  >Incorrect name, it must be a with a capital letter, not a number.</span
+                >
               </div>
-              <input type="text" required id="name" placeholder="Your name" />
+              <input
+                type="text"
+                required
+                id="name"
+                placeholder="Your name"
+              />
+                <div class="label">
+                  <label for="email" id="email-label">Email</label>
+                  <p class="error">This Field Is Required</p>
+                  <span class="error-input hidden" id="email-error"
+                    >Incorrect email, it should comply with email standards.</span
+                  >
+                </div>
+                <input
+                  type="email"
+                  required
+                  id="email"
+                  placeholder="Your email"
+                />
               <div class="label">
-                <label for="email">Email Address</label>
+                <label id="phone-label" for="phone">Phone Number</label>
                 <p class="error">This Field Is Required</p>
+                <span class="error-input hidden" id="phone-error"
+                  >Incorrect number, it should comply with Romania standards.</span
+                >
               </div>
-              <input type="text" required id="email" placeholder="Your email" />
-              <div class="label">
-                <label for="phone">Phone Number</label>
-                <p class="error">This Field Is Required</p>
-              </div>
-              <input type="tel" required id="phone" placeholder="Your phone" />
+              <input
+                id="phone"
+                type="tel"
+                required
+                id="phone"
+                placeholder="Your phone"
+              />
             </form>
           </div>
           <div class="bttns justify-end">
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="next-stp" type="submit" disabled id="bttn-step-1">Next Step</button>
           </div>
         </div>
         <!-- step-2 -->
@@ -268,7 +296,11 @@
         <!-- step-5 -->
         <div class="stp step-5">
           <div class="content-step mb-[67px] flex flex-col items-center">
-            <img class="mb-6 md:mb-8 md:w-[80px]" src="./img/check.png" alt="thank" />
+            <img
+              class="mb-6 md:mb-8 md:w-[80px]"
+              src="./img/check.png"
+              alt="thank"
+            />
             <div class="header mb-[25px] flex flex-col items-center">
               <h1 class="title">Thank you!</h1>
               <p class="exp exp-thank w-[99%] text-center">
@@ -653,5 +685,66 @@
         <p><span>&#169;</span>Workout 2023. All rights reserved.</p>
       </div>
     </footer>
+    <script>
+      // const validateEmail = () => {
+      //   const emailField = document.getElementById("email");
+      //   const emailLabel = document.getElementById("email-label");
+      //   const emailError = document.getElementById("email-error");
+      //   if (
+      //     !emailField.value.match(
+      //       /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/
+      //     )
+      //   ) {
+      //     emailError.style.display = "block";
+      //     if (emailField.value == null || emailField.value == "") {
+      //       emailError.style.display = "none";
+      //       return false;
+      //     }
+      //     return false;
+      //   }
+      //   emailError.style.display = "none";
+      //   return true;
+      // };
+
+      // const validatePhone = () => {
+      //   const phoneField = document.getElementById("phone");
+      //   const phoneLabel = document.getElementById("phone-label");
+      //   const phoneError = document.getElementById("phone-error");
+      //   if (
+      //     !phoneField.value.match(
+      //       /^(?:(?:(?:00\s?|\+)40\s?|0)(?:7\d{2}\s?\d{3}\s?\d{3}|(21|31)\d{1}\s?\d{3}\s?\d{3}|((2|3)[3-7]\d{1})\s?\d{3}\s?\d{3}|(8|9)0\d{1}\s?\d{3}\s?\d{3}))$/
+      //     )
+      //   ) {
+      //     phoneError.style.display = "block";
+      //     if (phoneField.value == null || phoneField.value == "") {
+      //       phoneError.style.display = "none";
+      //       return false;
+      //     }
+      //     return false;
+      //   }
+      //   phoneError.style.display = "none";
+      //   return true;
+      // };
+
+      // const validateName = () => {
+      //   const nameField = document.getElementById("name");
+      //   const nameLabel = document.getElementById("name-label");
+      //   const nameError = document.getElementById("name-error");
+
+      //   if (
+      //     !nameField.value.match(/^[A-Z]+[a-zA-Z_ ]*$/) ||
+      //     nameField.value.match(/^\s*$/)
+      //   ) {
+      //     nameError.style.display = "block";
+      //     if (nameField.value == null || nameField.value == "") {
+      //       nameError.style.display = "none";
+      //       return false;
+      //     }
+      //     return false;
+      //   }
+      //   nameError.style.display = "none";
+      //   return true;
+      // };
+    </script>
   </body>
 </html>

@@ -28,7 +28,7 @@
       @apply border-2 border-solid border-orange-400;
     }
     .stp {
-      @apply bg-blue-100;
+      @apply bg-blue-100 flex-col;
       .content-step {
         @apply relative bottom-[73px] mx-4 rounded-[10px] bg-white-main px-6 py-8;
         .header {
@@ -50,6 +50,9 @@
             }
             .error {
               @apply absolute right-0 top-[-3px] hidden font-bold text-red;
+            }
+            .error-input {
+              @apply text-red mt-1 mb-[-4px];
             }
           }
           input {

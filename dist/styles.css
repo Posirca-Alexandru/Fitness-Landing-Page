@@ -1010,6 +1010,10 @@ ul {
     }
 
 .form .form-container .stp {
+      flex-direction: column;
+    }
+
+.form .form-container .stp {
       --tw-bg-opacity: 1;
       background-color: rgb(190 226 253 / var(--tw-bg-opacity));
     }
@@ -1131,6 +1135,19 @@ ul {
             }
 
 .form .form-container .stp .content-step form .label .error {
+              --tw-text-opacity: 1;
+              color: rgb(238 55 74 / var(--tw-text-opacity));
+            }
+
+.form .form-container .stp .content-step form .label .error-input {
+              margin-top: 0.25rem;
+            }
+
+.form .form-container .stp .content-step form .label .error-input {
+              margin-bottom: -4px;
+            }
+
+.form .form-container .stp .content-step form .label .error-input {
               --tw-text-opacity: 1;
               color: rgb(238 55 74 / var(--tw-text-opacity));
             }
