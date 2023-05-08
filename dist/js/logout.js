@@ -7,17 +7,19 @@ const loggedIn = document.getElementById("logged-in");
 const loggedOut = document.getElementById("logged-out");
 
 const logoutWithGoogle = () => {
+  if (confirm("Are you sure you want to log out?") == true) {
   auth
     .signOut()
     .then((response) => {
       console.log(response);
       // window.location.assign('./profile.html');
+      scroll(0, 0);
       popup.classList.add("open-popup");
-      confirm("Are you sure you want to log out?");
     })
     .catch((err) => {
       console.log(err);
     });
+  }
 };
 
 logoutBtn.addEventListener("click", logoutWithGoogle);

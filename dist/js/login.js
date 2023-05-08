@@ -23,19 +23,11 @@ const signInWithGoogle = () => {
       // window.location.assign('./profile.html');
       console.log(response.user);
       popup.classList.add("open-popup");
+      scroll(0, 0);
     })
     .catch((err) => {
-      const errorCode = err.code;
       const errorMessage = err.message;
-
-      if (errorMessage) {
-        alert("popul inchis");
-      }
-      // The email of the user's account used.
-      const email = err.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(err);
-      alert(email + "bag email");
+      return errorMessage ? alert("Popup closed") : alert("Popup on")
     });
 };
 
