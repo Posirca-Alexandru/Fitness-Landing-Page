@@ -849,10 +849,6 @@ ul {
   }
 
 #popup.open-popup {
-    top: 25%;
-  }
-
-#popup.open-popup {
     display: flex;
   }
 
@@ -1010,12 +1006,30 @@ ul {
     }
 
 .form .form-container .stp {
+      display: flex;
+    }
+
+.form .form-container .stp {
+      height: 522.8px;
+    }
+
+.form .form-container .stp {
       flex-direction: column;
+    }
+
+.form .form-container .stp {
+      justify-content: space-between;
     }
 
 .form .form-container .stp {
       --tw-bg-opacity: 1;
       background-color: rgb(190 226 253 / var(--tw-bg-opacity));
+    }
+
+.form .form-container .stp {
+      /* &.step-4 {
+        @apply justify-between h-[522.8px];
+      } */
     }
 
 .form .form-container .stp .content-step {
@@ -1073,15 +1087,12 @@ ul {
           }
 
 .form .form-container .stp .content-step .header .exp {
-            font-size: 15px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
           }
 
 .form .form-container .stp .content-step .header .exp {
             line-height: 25px;
-          }
-
-.form .form-container .stp .content-step .header .exp {
-            letter-spacing: 1px;
           }
 
 .form .form-container .stp .content-step .header .exp {
@@ -1098,7 +1109,7 @@ ul {
           }
 
 .form .form-container .stp .content-step form .label {
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
           }
 
 .form .form-container .stp .content-step form .label {
@@ -1115,7 +1126,7 @@ ul {
             }
 
 .form .form-container .stp .content-step form .label label {
-              font-weight: 600;
+              font-weight: 500;
             }
 
 .form .form-container .stp .content-step form .label label span {
@@ -1138,10 +1149,6 @@ ul {
 .form .form-container .stp .content-step form .label .error-input {
               font-size: 0.75rem;
               line-height: 1rem;
-            }
-
-.form .form-container .stp .content-step form .label .error-input {
-              font-weight: 600;
             }
 
 .form .form-container .stp .content-step form .label .error-input {
@@ -1355,6 +1362,10 @@ ul {
           }
 
 .form .form-container .stp .content-step form .box input {
+              pointer-events: none;
+            }
+
+.form .form-container .stp .content-step form .box input {
               margin-bottom: 0px;
             }
 
@@ -1387,6 +1398,10 @@ ul {
 .form .form-container .stp .content-step form .box .description {
               flex-direction: column;
             }
+
+.form .form-container .stp .content-step form .box .description label {
+                pointer-events: none;
+              }
 
 .form .form-container .stp .content-step form .box .description label {
                 margin-bottom: 3px;
@@ -1742,6 +1757,8 @@ ul {
             color: rgb(2 41 89 / var(--tw-text-opacity));
           }
 
+/* @apply h-[522.8px] flex justify-between; */
+
 .form .form-container .stp.step-1 .bttns {
           justify-content: flex-end;
         }
@@ -1829,6 +1846,12 @@ ul {
       }
       .form .form-container .stp {
         display: flex;
+      }
+      .form .form-container .stp {
+        height: auto;
+      }
+      .form .form-container .stp {
+        width: 50%;
       }
       .form .form-container .stp {
         flex-direction: column;
@@ -2139,6 +2162,9 @@ ul {
 
 @media (min-width: 1440px) {
       .form .form-container .stp {
+        width: auto;
+      }
+      .form .form-container .stp {
         padding-left: 100px;
         padding-right: 100px;
       }
@@ -2308,10 +2334,6 @@ ul {
   margin-bottom: 67px;
 }
 
-.mb-\[86px\] {
-  margin-bottom: 86px;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -2354,6 +2376,10 @@ ul {
 
 .mt-\[-50px\] {
   margin-top: -50px;
+}
+
+.mt-\[110px\] {
+  margin-top: 110px;
 }
 
 .mt-\[49px\] {
@@ -2437,8 +2463,8 @@ ul {
   width: 80%;
 }
 
-.w-\[87\%\] {
-  width: 87%;
+.w-\[89\%\] {
+  width: 89%;
 }
 
 .w-\[8px\] {
