@@ -5,6 +5,7 @@ const openModalBtn = document.querySelectorAll("[data-modal-target]");
 const closeModalBtn = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 const popup = document.getElementById("popup");
+const formContent = document.querySelectorAll(".content-step");
 
 openModalBtn.forEach((button) => {
   onAuthStateChanged(auth, (user) => {
@@ -17,6 +18,7 @@ openModalBtn.forEach((button) => {
         }
       });
     } else {
+      console.log("nelogat");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector(button.dataset.modalTarget);
         openModalJoin(modalJoin);
@@ -52,8 +54,14 @@ closeModalBtn.forEach((button) => {
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector("#form");
         closeModalJoin(modalJoin);
+        formContent.forEach((elem) => {
+          const input = elem.querySelector("form input");
+          const form = elem.querySelector("form");
+          input !== null ? form.reset() : form;
+        });
       });
     } else {
+      console.log("logout succesfull");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector("#modal-join-club");
         closeModalJoin(modalJoin);
@@ -61,16 +69,3 @@ closeModalBtn.forEach((button) => {
     }
   });
 });
-
-// closeModalBtn.forEach((button) => {
-//   button.addEventListener("click", (modalJoin) => {
-//     if(modalJoin.id = "form") {
-//       const modalJoin = button.closest(".form");
-//       closeModalJoin(modalJoin)
-//     } else if(modalJoin.id = "modal-join-club") {
-//       const modalJoin = button.closest(".modal-join-club");
-//       closeModalJoin(modalJoin);
-//       console.log(modalJoin.id)
-//     }
-//   });
-// });
