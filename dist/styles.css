@@ -1284,19 +1284,27 @@ ul {
                 color: rgb(2 41 89 / var(--tw-text-opacity));
               }
 
-.form .form-container .stp .content-step form .plan-card .plan-info span {
-                font-size: 0.875rem;
-                line-height: 1.25rem;
+.form .form-container .stp .content-step form .plan-card .plan-info .plan-priced {
+                display: flex;
               }
 
-.form .form-container .stp .content-step form .plan-card .plan-info span {
-                --tw-text-opacity: 1;
-                color: rgb(150 153 170 / var(--tw-text-opacity));
+.form .form-container .stp .content-step form .plan-card .plan-info .plan-priced {
+                width: 100px;
               }
 
-.form .form-container .stp .content-step form .plan-card .plan-info p {
-                display: none;
-              }
+.form .form-container .stp .content-step form .plan-card .plan-info .plan-priced span {
+                  font-size: 0.875rem;
+                  line-height: 1.25rem;
+                }
+
+.form .form-container .stp .content-step form .plan-card .plan-info .plan-priced span {
+                  --tw-text-opacity: 1;
+                  color: rgb(150 153 170 / var(--tw-text-opacity));
+                }
+
+.form .form-container .stp .content-step form .plan-card .plan-info .plan-priced .plan-per {
+                  margin-left: 0.25rem;
+                }
 
 .form .form-container .stp .content-step form .plan-card:last-child {
               margin-bottom: 1.5rem;
@@ -1912,6 +1920,9 @@ ul {
           .form .form-container .stp .content-step form {
             margin-bottom: 8px;
           }
+          .form .form-container .stp .content-step form {
+            flex-direction: column;
+          }
             .form .form-container .stp .content-step form .label {
               margin-bottom: 0.5rem;
             }
@@ -1960,11 +1971,14 @@ ul {
               margin-bottom: 0px;
             }
             .form .form-container .stp .content-step form .plan-card {
+              display: flex;
+            }
+            .form .form-container .stp .content-step form .plan-card {
               height: -moz-max-content;
               height: max-content;
             }
             .form .form-container .stp .content-step form .plan-card {
-              flex-direction: column;
+              flex-direction: row;
             }
             .form .form-container .stp .content-step form .plan-card {
               align-items: flex-start;
@@ -1976,16 +1990,16 @@ ul {
               padding-left: 1rem;
             }
             .form .form-container .stp .content-step form .plan-card {
-              padding-right: 45px;
+              padding-right: 22px;
             }
             .form .form-container .stp .content-step form .plan-card {
               padding-top: 1.25rem;
             }
               .form .form-container .stp .content-step form .plan-card .icon-plan {
-                margin-bottom: 39px;
-              }
-              .form .form-container .stp .content-step form .plan-card .icon-plan {
                 margin-right: 0px;
+              }
+              .form .form-container .stp .content-step form .plan-card .plan-info {
+                margin-left: 1rem;
               }
               .form .form-container .stp .content-step form .plan-card .plan-info {
                 display: flex;
@@ -2003,9 +2017,9 @@ ul {
                 .form .form-container .stp .content-step form .plan-card .plan-info b {
                   line-height: 18px;
                 }
-                .form .form-container .stp .content-step form .plan-card .plan-info span {
-                  margin-bottom: 6px;
-                }
+                  .form .form-container .stp .content-step form .plan-card .plan-info .plan-priced span {
+                    margin-bottom: 6px;
+                  }
                 .form .form-container .stp .content-step form .plan-card .plan-info p {
                   margin-bottom: 3px;
                 }
@@ -2129,7 +2143,7 @@ ul {
               color: rgb(2 41 89 / var(--tw-text-opacity));
             }
         .form .form-container .stp .switcher {
-          margin-top: 2rem;
+          margin-top: 1rem;
         }
           .form .form-container .stp.step-2 form {
             display: flex;
@@ -2180,6 +2194,9 @@ ul {
             .form .form-container .stp .content-step .header .exp {
               margin-bottom: 25px;
             }
+          .form .form-container .stp .content-step form {
+            flex-direction: row;
+          }
             .form .form-container .stp .content-step form .label {
               flex-direction: row;
             }
@@ -2187,10 +2204,22 @@ ul {
                 font-size: 0.875rem;
                 line-height: 1.25rem;
               }
+            .form .form-container .stp .content-step form .plan-card {
+              flex-direction: column;
+            }
+              .form .form-container .stp .content-step form .plan-card .icon-plan {
+                margin-bottom: 39px;
+              }
+              .form .form-container .stp .content-step form .plan-card .plan-info {
+                margin-left: 0px;
+              }
             .form .form-container .stp .content-step form .box {
               padding-top: 18px;
               padding-bottom: 18px;
             }
+        .form .form-container .stp .switcher {
+          margin-top: 2rem;
+        }
 }
 
 .invisible {

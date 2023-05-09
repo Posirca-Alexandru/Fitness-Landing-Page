@@ -28,7 +28,7 @@
       @apply border-2 border-solid border-orange-400;
     }
     .stp {
-      @apply flex-col bg-blue-100 h-[522.8px] flex justify-between;
+      @apply flex h-[522.8px] flex-col justify-between bg-blue-100;
       .content-step {
         @apply relative bottom-[73px] mx-4 rounded-[10px] bg-white-main px-6 py-8;
         .header {
@@ -77,11 +77,14 @@
               b {
                 @apply mb-[7px] font-medium leading-[18px] text-blue-400;
               }
-              span {
-                @apply text-sm text-gray-light-200;
-              }
-              p {
-                @apply hidden;
+              .plan-priced {
+                @apply flex w-[100px];
+                span {
+                  @apply text-sm text-gray-light-200;
+                }
+                .plan-per {
+                  @apply ml-1;
+                }
               }
             }
             &:last-child {
@@ -95,12 +98,12 @@
           .box {
             @apply mb-3 flex items-center rounded-lg border-[1px] border-solid border-gray-dark-100 px-4 pb-[10px] pt-3;
             input {
-              @apply mb-0 h-5 w-5 select-none accent-purple-200 pointer-events-none;
+              @apply pointer-events-none mb-0 h-5 w-5 select-none accent-purple-200;
             }
             .description {
               @apply ml-4 flex flex-col;
               label {
-                @apply mb-[3px] text-sm font-medium leading-4 text-blue-400 pointer-events-none;
+                @apply pointer-events-none mb-[3px] text-sm font-medium leading-4 text-blue-400;
               }
               small {
                 @apply text-xs leading-5 text-gray-light-200;
@@ -223,7 +226,7 @@
         }
       }
       .stp {
-        @apply mx-auto flex flex-col justify-between bg-white-main pl-9 pr-6 h-auto w-1/2;
+        @apply mx-auto flex h-auto w-1/2 flex-col justify-between bg-white-main pl-9 pr-6;
         .content-step {
           @apply bottom-0 mx-0 mb-0 mt-7 p-0;
           .header {
@@ -238,7 +241,7 @@
             }
           }
           form {
-            @apply mb-[8px];
+            @apply mb-[8px] flex-col;
             .label {
               @apply mb-2 flex flex-col justify-between text-sm leading-4;
               label {
@@ -252,17 +255,19 @@
               @apply mb-6 py-[15px] text-base leading-[18px];
             }
             .plan-card {
-              @apply mb-0 h-max flex-col items-start pb-4 pl-4 pr-[45px] pt-5;
+              @apply mb-0 flex h-max flex-row items-start pb-4 pl-4 pr-[22px] pt-5;
               .icon-plan {
-                @apply mb-[39px] mr-0;
+                @apply mr-0;
               }
               .plan-info {
-                @apply flex flex-col;
+                @apply ml-4 flex flex-col;
                 b {
                   @apply mb-[7px] text-base leading-[18px];
                 }
-                span {
-                  @apply mb-[6px];
+                .plan-priced {
+                  span {
+                    @apply mb-[6px];
+                  }
                 }
                 p {
                   @apply mb-[3px] block w-max text-xs leading-[14px] text-blue-400;
@@ -317,7 +322,7 @@
           }
         }
         .switcher {
-          @apply mt-8;
+          @apply mt-4;
         }
         &.step-2 {
           form {
@@ -354,7 +359,7 @@
   .form {
     .form-container {
       .stp {
-        @apply px-[100px] w-auto;
+        @apply w-auto px-[100px];
         .content-step {
           @apply mt-10 w-[450px];
           .header {
@@ -366,16 +371,29 @@
             }
           }
           form {
+            @apply flex-row;
             .label {
               @apply flex-row;
               .error-input {
                 @apply text-sm;
               }
             }
+            .plan-card {
+              @apply flex-col;
+              .icon-plan {
+                @apply mb-[39px];
+              }
+              .plan-info {
+                @apply ml-0;
+              }
+            }
             .box {
               @apply py-[18px];
             }
           }
+        }
+        .switcher {
+          @apply mt-8;
         }
       }
     }

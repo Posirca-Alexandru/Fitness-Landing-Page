@@ -48,10 +48,10 @@
         <div class="hidden" id="logout">
           <button class="btn" id="logout-btn">Log out</button>
         </div>
-        <div id="form-join-club" class="modal hidden">
+        <div id="form-join-club" class="modal">
           <!-- <form method="post" id="join">  -->
           <input id="name-joiner" type="text" placeholder="Name" />
-          <button id="submit-join">Submit</button>
+          <!-- <button id="submit-join">Submit</button> -->
           <!-- </form> -->
         </div>
       </div>
@@ -99,6 +99,7 @@
             <button
               data-close-button
               class="close-button scale-[1.8] text-gray-light-300"
+              id="close-form"
             >
               &times;
             </button>
@@ -113,7 +114,7 @@
                 Provide your name, email and number.
               </p>
             </div>
-            <form name="personal-data">
+            <form name="personal-data" class="form-info">
               <div class="label">
                 <label for="name" id="name-label">Name<span>*</span></label>
                 <!-- <p class="error">This Field Is Required</p> -->
@@ -172,14 +173,16 @@
               </p>
             </div>
             <form>
-              <div class="plan-card selected">
+              <div class="plan-card selected" id="plan-selected">
                 <div class="icon-plan bg-purple-200">
                   <img src="./img/basic.png" alt="basic-lv" />
                 </div>
                 <div class="plan-info chosen">
                   <b>Basic</b>
-                  <span class="plan-priced">$9/mo</span>
-                  <p>2 months free</p>
+                  <div class="plan-priced flex w-max">
+                    <span>$9</span>
+                    <span class="plan-per">- Monthly</span>
+                  </div>
                 </div>
               </div>
               <div class="plan-card">
@@ -187,9 +190,11 @@
                   <img src="./img/advanced.png" alt="advanced-lv" />
                 </div>
                 <div class="plan-info chosen">
-                  <b>Advanced</b>
-                  <span class="plan-priced">$12/mo</span>
-                  <p>2 months free</p>
+                  <b id="advanced-plan">Advanced</b>
+                  <div class="plan-priced flex w-max">
+                    <span>$12</span>
+                    <span class="plan-per">- Monthly</span>
+                  </div>
                 </div>
               </div>
               <div class="plan-card">
@@ -198,8 +203,10 @@
                 </div>
                 <div class="plan-info chosen">
                   <b>Pro</b>
-                  <span class="plan-priced">$15/mo</span>
-                  <p>2 months free</p>
+                  <div class="plan-priced flex w-max">
+                    <span>$15</span>
+                    <span class="plan-per">- Monthly</span>
+                  </div>
                 </div>
               </div>
             </form>
@@ -292,7 +299,7 @@
           </div>
           <div class="bttns">
             <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Submit</button>
+            <button class="next-stp" type="submit" id="submit-join">Submit</button>
           </div>
         </div>
         <!-- step-5 -->
