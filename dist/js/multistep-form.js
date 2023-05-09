@@ -11,6 +11,7 @@ const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
 const total = document.querySelector(".total b");
 const planPrice = document.querySelector(".plan-price");
+const closeForm = document.getElementById('close-form');
 let time;
 let currentStep = 1;
 let currentCircle = 0;
@@ -58,7 +59,7 @@ const validateForm = () => {
   const phoneError = document.getElementById("phone-error");
 
   valuesInputs.forEach((input) => {
-    input.addEventListener("keyup", (key) => {
+    input.addEventListener("keyup", () => {
       const valueInput = input.value;
       if (input == emailField) {
         if (
@@ -161,6 +162,7 @@ plans.forEach((plan) => {
   });
 });
 
+
 switcher.addEventListener("click", () => {
   const val = switcher.querySelector("input").checked;
   if (val) {
@@ -196,14 +198,14 @@ const switchPrice = (checked) => {
   const monthlyPrice = [9, 12, 15];
   const prices = document.querySelectorAll(".plan-priced");
   if (checked) {
-    prices[0].innerHTML = `$${yearlyPrice[0]}/yr`;
-    prices[1].innerHTML = `$${yearlyPrice[1]}/yr`;
-    prices[2].innerHTML = `$${yearlyPrice[2]}/yr`;
+    prices[0].innerHTML = `<span>$${yearlyPrice[0]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
+    prices[1].innerHTML = `<span>$${yearlyPrice[1]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
+    prices[2].innerHTML = `<span>$${yearlyPrice[2]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
     setTime(true);
   } else {
-    prices[0].innerHTML = `$${monthlyPrice[0]}/mo`;
-    prices[1].innerHTML = `$${monthlyPrice[1]}/mo`;
-    prices[2].innerHTML = `$${monthlyPrice[2]}/mo`;
+    prices[0].innerHTML = `<span>$${monthlyPrice[0]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
+    prices[1].innerHTML = `<span>$${monthlyPrice[1]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
+    prices[2].innerHTML = `<span>$${monthlyPrice[2]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
     setTime(false);
   }
 };
