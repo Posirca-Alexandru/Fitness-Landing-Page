@@ -8,29 +8,26 @@ const loggedOut = document.getElementById("logged-out");
 
 const logoutWithGoogle = () => {
   if (confirm("Are you sure you want to log out?") == true) {
-  auth
-    .signOut()
-    .then((response) => {
-      console.log(response);
-      // window.location.assign('./profile.html');
-      scroll(0, 0);
-      popup.classList.add("open-popup");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    auth
+      .signOut()
+      .then(() => {
+        // window.location.assign('./profile.html');
+        scroll(0, 0);
+        popup.classList.add("open-popup");
+        console.log("User logged out successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 };
 
 logoutBtn.addEventListener("click", logoutWithGoogle);
 
 onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    logoutBtn.style.display = "block";
-    loggedIn.style.display = "block";
-  } else {
-    logoutBtn.style.display = "none";
-    loggedIn.style.display = "none";
-    loggedOut.style.display = "block";
-  }
+  user != null
+    ? ((logoutBtn.style.display = "block"), (loggedIn.style.display = "block"))
+    : ((logoutBtn.style.display = "none"),
+      (loggedIn.style.display = "none"),
+      (loggedOut.style.display = "block"));
 });
