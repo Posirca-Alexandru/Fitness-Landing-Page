@@ -15,14 +15,14 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const plans = document.querySelectorAll(".plan-card");
 const addons = document.querySelectorAll(".box");
-
+const addonsSelected = document.querySelectorAll("#form-addons");
+const bttnStepThree = document.getElementById("step-3");
 
 const member = {
   plan: null,
-  addons: null,
-  status: "Pending"
+  addons: "No addons",
+  status: "Pending",
 };
-
 
 plans.forEach((plan) => {
   plan.addEventListener("click", () => {
@@ -34,27 +34,22 @@ plans.forEach((plan) => {
 });
 
 let allAddons = [];
-addons.forEach((addon) => {
-  addon.addEventListener("click", () => {
-    const addonSelect = addon.querySelector("label").innerText;
-    console.log(nameInput.value);
-console.log(member.name);
-    if (allAddons.includes(addonSelect)) {
-      let index = allAddons.indexOf(addonSelect);
-      allAddons.splice(index, 1);
-    } else {
-      allAddons.push(addonSelect);
-    }
-  });
-});
+submitJoinBtn
+  ? submitJoinBtn.addEventListener("click", () => {
+      addons.forEach((addon) => {
+        if (addon.classList.contains("ad-selected")) {
+          const addonSelect = addon.querySelector("label").innerText;
+          allAddons.push(addonSelect);
+        }
+      });
+    })
+  : false;
+
 member.addons = allAddons;
 
 onAuthStateChanged(auth, (user) => {
   const submitJoin = async () => {
-    let refCurrentUser = collection(
-      db,
-      `membersclub/${user.uid}/memberInfo`
-    );
+    let refCurrentUser = collection(db, `membersclub/${user.uid}/memberInfo`);
 
     const docRef = await addDoc(refCurrentUser, {
       name: nameInput.value,
@@ -62,7 +57,7 @@ onAuthStateChanged(auth, (user) => {
       phone: phoneInput.value,
       plan: member.plan,
       addons: member.addons,
-      status: member.status
+      status: member.status,
     })
       .then(() => {
         alert("Successfully joining in the fitness club");
@@ -71,5 +66,7 @@ onAuthStateChanged(auth, (user) => {
         alert("nu merge..." + error);
       });
   };
-  submitJoinBtn.onclick = submitJoin;
+  setTimeout(() => {
+    submitJoinBtn.onclick = submitJoin;
+  }, 1000);
 });

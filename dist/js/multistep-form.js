@@ -1,6 +1,8 @@
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
+import { auth } from "./main.js";
+
 const steps = document.querySelectorAll(".stp");
 const circleSteps = document.querySelectorAll(".step");
-const formInputs = document.querySelectorAll(".step-1 form input");
 const phoneError = document.getElementById("phone-error");
 const emailError = document.getElementById("email-error");
 const nameError = document.getElementById("name-error");
@@ -11,7 +13,7 @@ const switcher = document.querySelector(".switch");
 const addons = document.querySelectorAll(".box");
 const total = document.querySelector(".total b");
 const planPrice = document.querySelector(".plan-price");
-const closeForm = document.getElementById('close-form');
+const closeModalBtn = document.querySelectorAll("[data-close-button]");
 let time;
 let currentStep = 1;
 let currentCircle = 0;
@@ -45,8 +47,22 @@ steps.forEach((step) => {
       setTotal();
     }
     document.querySelector(`.step-${currentStep}`).style.display = "flex";
+
     circleSteps[currentCircle].classList.add("active");
+    const stepOne = document.getElementById("step-1");
+    stepOne.style.display = "none";
     summary(obj);
+  });
+});
+
+closeModalBtn.forEach((button) => {
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      button.addEventListener("click", () => {
+        currentStep = 1;
+        currentCircle = 0;
+      });
+    }
   });
 });
 
@@ -108,6 +124,9 @@ const validateForm = () => {
 
 validateForm();
 
+
+
+
 const checkDisable = () => {
   valuesInputs.forEach((input) => {
     input.addEventListener("keyup", () => {
@@ -128,28 +147,14 @@ const checkDisable = () => {
   });
 };
 checkDisable();
-// const validateForm = () => {
-//   let valid = true;
-//   for (let i = 0; i < formInputs.length; i++) {
-//     if (!formInputs[i].value) {
-//       valid = false;
-//       formInputs[i].classList.add("error");
-//       findLabel(formInputs[i]).nextElementSibling.style.display = "flex";
-//     } else {
-//       valid = true;
-//       formInputs[i].classList.remove("error");
-//       findLabel(formInputs[i]).nextElementSibling.style.display = "none";
-//     }
+
+// const findLabel = (el) => {
+//   const idVal = el.id;
+//   const labels = document.getElementsByTagName("label");
+//   for (let i = 0; i < labels.length; i++) {
+//     if (labels[i].htmlFor == idVal) return labels[i];
 //   }
-//   return valid;
 // };
-const findLabel = (el) => {
-  const idVal = el.id;
-  const labels = document.getElementsByTagName("label");
-  for (let i = 0; i < labels.length; i++) {
-    if (labels[i].htmlFor == idVal) return labels[i];
-  }
-};
 
 plans.forEach((plan) => {
   plan.addEventListener("click", () => {
@@ -161,7 +166,6 @@ plans.forEach((plan) => {
     obj.price = planPrice;
   });
 });
-
 
 switcher.addEventListener("click", () => {
   const val = switcher.querySelector("input").checked;
@@ -198,14 +202,26 @@ const switchPrice = (checked) => {
   const monthlyPrice = [9, 12, 15];
   const prices = document.querySelectorAll(".plan-priced");
   if (checked) {
-    prices[0].innerHTML = `<span>$${yearlyPrice[0]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
-    prices[1].innerHTML = `<span>$${yearlyPrice[1]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
-    prices[2].innerHTML = `<span>$${yearlyPrice[2]}</span>`  + `<span class="plan-per"> - Yearly </span>` ;
+    prices[0].innerHTML =
+      `<span>$${yearlyPrice[0]}</span>` +
+      `<span class="plan-per"> - Yearly </span>`;
+    prices[1].innerHTML =
+      `<span>$${yearlyPrice[1]}</span>` +
+      `<span class="plan-per"> - Yearly </span>`;
+    prices[2].innerHTML =
+      `<span>$${yearlyPrice[2]}</span>` +
+      `<span class="plan-per"> - Yearly </span>`;
     setTime(true);
   } else {
-    prices[0].innerHTML = `<span>$${monthlyPrice[0]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
-    prices[1].innerHTML = `<span>$${monthlyPrice[1]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
-    prices[2].innerHTML = `<span>$${monthlyPrice[2]}</span>`  + `<span class="plan-per"> - Monthly </span>` ;
+    prices[0].innerHTML =
+      `<span>$${monthlyPrice[0]}</span>` +
+      `<span class="plan-per"> - Monthly </span>`;
+    prices[1].innerHTML =
+      `<span>$${monthlyPrice[1]}</span>` +
+      `<span class="plan-per"> - Monthly </span>`;
+    prices[2].innerHTML =
+      `<span>$${monthlyPrice[2]}</span>` +
+      `<span class="plan-per"> - Monthly </span>`;
     setTime(false);
   }
 };
