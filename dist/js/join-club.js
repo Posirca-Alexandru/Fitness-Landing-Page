@@ -6,6 +6,10 @@ const closeModalBtn = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 const popup = document.getElementById("popup");
 const formContent = document.querySelectorAll(".content-step");
+const addons = document.querySelectorAll(".box");
+const stps = document.querySelectorAll(".stp");
+const stepSide = document.querySelectorAll(".step");
+const addonsPlan = document.getElementById("addons");
 
 openModalBtn.forEach((button) => {
   onAuthStateChanged(auth, (user) => {
@@ -21,6 +25,10 @@ openModalBtn.forEach((button) => {
       console.log("nelogat");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector(button.dataset.modalTarget);
+        const modalJoinForm = document.getElementById("form");
+        const modalJoinAuth = document.querySelector(".join-auth");
+        modalJoinAuth ? (modalJoinAuth.style.display = "block") : "none";
+        modalJoinForm.classList.remove("active");
         openModalJoin(modalJoin);
       });
     }
@@ -57,7 +65,32 @@ closeModalBtn.forEach((button) => {
         formContent.forEach((elem) => {
           const input = elem.querySelector("form input");
           const form = elem.querySelector("form");
-          input !== null ? form.reset() : form;
+          input !== null ? form.reset() : false;
+          const cardOne = elem.querySelector(".card-one");
+          const cardTwo = elem.querySelector(".card-two.selected");
+          const cardThree = elem.querySelector(".card-three.selected");
+          cardTwo
+            ? cardTwo.classList.remove("selected") ||
+              cardOne.classList.add("selected")
+            : cardThree
+            ? cardThree.classList.remove("selected") ||
+              cardOne.classList.add("selected")
+            : false;
+        });
+        stps.forEach((elem, index) =>
+          index == 0
+            ? (elem.style.display = "flex")
+            : (elem.style.display = "none")
+        );
+        stepSide.forEach((elem, index) =>
+          index > 0 ? elem.classList.remove("active") : false
+        );
+        addons.forEach((elem) => elem.classList.remove("ad-selected"));
+        const selectedAddons =
+          addonsPlan.getElementsByClassName("selected-addon");
+        const elemAddons = [...selectedAddons];
+        elemAddons.forEach((addon) => {
+          addon.remove();
         });
       });
     } else {
