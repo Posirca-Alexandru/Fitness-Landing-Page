@@ -99,14 +99,13 @@
             <button
               data-close-button
               class="close-button scale-[1.8] text-gray-light-300"
-              id="close-form"
             >
               &times;
             </button>
           </div>
         </div>
         <!-- step-1 -->
-        <div class="stp step-1">
+        <div class="stp step-1" id="step-1">
           <div class="content-step mb-[47px] md:mb-0">
             <div class="header">
               <h1 class="title">Personal info</h1>
@@ -173,7 +172,7 @@
               </p>
             </div>
             <form>
-              <div class="plan-card selected" id="plan-selected">
+              <div class="plan-card card-one selected" id="plan-selected">
                 <div class="icon-plan bg-purple-200">
                   <img src="./img/basic.png" alt="basic-lv" />
                 </div>
@@ -185,7 +184,7 @@
                   </div>
                 </div>
               </div>
-              <div class="plan-card">
+              <div class="plan-card card-two">
                 <div class="icon-plan bg-orange-100">
                   <img src="./img/advanced.png" alt="advanced-lv" />
                 </div>
@@ -197,7 +196,7 @@
                   </div>
                 </div>
               </div>
-              <div class="plan-card">
+              <div class="plan-card card-three">
                 <div class="icon-plan bg-pink">
                   <img src="./img/pro.png" alt="pro-lv" />
                 </div>
@@ -233,7 +232,7 @@
               <h1 class="title">Pick add-ons</h1>
               <p class="exp">Add-ons help enhance your workout.</p>
             </div>
-            <form>
+            <form id="form-addons">
               <div class="box" data-id="1">
                 <input type="checkbox" id="online" />
                 <div class="description">
@@ -262,13 +261,13 @@
           </div>
           <div class="bttns">
             <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="next-stp" id="step-3" type="submit">Next Step</button>
           </div>
         </div>
         <!-- step-4 -->
         <div class="stp step-4">
           <div class="content-step">
-            <div class="header">
+            <div class="header"> 
               <h1 class="title">Finishing up</h1>
               <p class="exp">
                 Double-check all before confirming.
@@ -283,7 +282,7 @@
                   <p class="plan-price">$9/mo</p>
                 </div>
                 <hr class="text-gray-light-200 opacity-[0.2]" />
-                <div class="addons">
+                <div class="addons" id="addons">
                   <template>
                     <div
                       class="selected-addon flex justify-between p-4 text-sm font-medium text-gray-light-100"
@@ -373,7 +372,7 @@
               </button>
             </div>
             <div
-              class="modal-join-club fixed left-1/2 top-1/2 z-30 rounded-xl bg-gray-light-400 p-3 pr-1 pt-2 transition delay-150 ease-in-out md:p-5 md:pr-4"
+              class="modal-join-club join-auth fixed left-1/2 top-1/2 z-30 rounded-xl bg-gray-light-400 p-3 pr-1 pt-2 transition delay-150 ease-in-out md:p-5 md:pr-4"
               id="modal-join-club"
             >
               <div class="modal-header flex justify-end pr-1">
@@ -397,7 +396,7 @@
                 </div>
               </div>
             </div>
-            <div class="cursor-pointer" id="overlay"></div>
+            <div data-close-button class="cursor-pointer overlay-join" id="overlay"></div>
           </div>
           <div
             class="info-workout relative flex justify-end pr-8 md:bottom-[130px] md:justify-normal md:pr-[230px] lg:ml-8 lg:mt-[-60px] lg:max-w-[599px] lg:pr-[197px] xl:bottom-[230px] xl:pl-[134px] xl:pr-0"
