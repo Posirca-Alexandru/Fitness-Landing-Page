@@ -14,6 +14,8 @@ const addons = document.querySelectorAll(".box");
 const total = document.querySelector(".total b");
 const planPrice = document.querySelector(".plan-price");
 const closeModalBtn = document.querySelectorAll("[data-close-button]");
+const bttnTwoDisable = document.getElementById("bttn-step-2");
+
 let time;
 let currentStep = 1;
 let currentCircle = 0;
@@ -64,6 +66,9 @@ closeModalBtn.forEach((button) => {
       });
     }
   });
+  // if(val === true) {
+  //   val = false;
+  // }
 });
 
 const validateForm = () => {
@@ -91,7 +96,7 @@ const validateForm = () => {
         emailError.style.display = "none";
       } else if (input == nameField) {
         if (
-          !valueInput.match(/^[A-Z]+[a-zA-Z_ ]*$/) ||
+          !valueInput.match(/^[A-Z\u0100-\u0218a-z\u0103-\u0219]+(?: [A-Z\u0100-\u0218a-z\u0103-\u0219]+)+$/) ||
           valueInput.match(/^\s*$/)
         ) {
           nameError.style.display = "block";
@@ -124,9 +129,6 @@ const validateForm = () => {
 
 validateForm();
 
-
-
-
 const checkDisable = () => {
   valuesInputs.forEach((input) => {
     input.addEventListener("keyup", () => {
@@ -148,28 +150,47 @@ const checkDisable = () => {
 };
 checkDisable();
 
-// const findLabel = (el) => {
-//   const idVal = el.id;
-//   const labels = document.getElementsByTagName("label");
-//   for (let i = 0; i < labels.length; i++) {
-//     if (labels[i].htmlFor == idVal) return labels[i];
-//   }
-// };
+const handleClick = (elemClicked) => {
+  plans.forEach((plan) => {
+    if (plan === elemClicked) {
+      plan.classList.add("selected");
+    } else {
+      plan.classList.remove("selected");
+    }
+  });
+  bttnTwoDisable.disabled = false;
+  bttnTwoDisable.classList.remove("disable");
+};
 
 plans.forEach((plan) => {
   plan.addEventListener("click", () => {
-    document.querySelector(".selected").classList.remove("selected");
-    plan.classList.add("selected");
     const planName = plan.querySelector("b");
     const planPrice = plan.querySelector(".plan-priced");
     obj.plan = planName;
     obj.price = planPrice;
+    handleClick(plan);
   });
 });
+
+const summary = (obj) => {
+  const planName = document.querySelector(".plan-name");
+  const planPrice = document.querySelector(".plan-price");
+  console.log(planName.innerHTML);
+  console.log(planPrice.innerHTML);
+  if (obj.plan !== null) {
+    planName.innerHTML = `${obj.plan.innerText} (${
+      obj.kind ? "yearly" : "monthly"
+    })`;
+  }
+  if (obj.price !== null) {
+    planPrice.innerHTML = `${obj.price.innerText}`;
+  }
+};
 
 switcher.addEventListener("click", () => {
   const val = switcher.querySelector("input").checked;
   if (val) {
+    console.log(val);
     document.querySelector(".monthly").classList.remove("sw-active");
     document.querySelector(".yearly").classList.add("sw-active");
   } else {
@@ -178,6 +199,34 @@ switcher.addEventListener("click", () => {
   }
   switchPrice(val);
   obj.kind = val;
+});
+
+closeModalBtn.forEach((button) => {
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      button.addEventListener("click", () => {
+        document.querySelector(".monthly").classList.add("sw-active");
+        document.querySelector(".yearly").classList.remove("sw-active");
+
+        const checkbox = document.querySelector(".switch input[type='checkbox']");
+        checkbox.checked = false;
+
+        const monthlyPrice = [9, 12, 15];
+        const prices = document.querySelectorAll(".plan-priced");
+        prices[0].innerHTML =
+          `<span>$${monthlyPrice[0]}</span>` +
+          `<span class="plan-per"> - Monthly </span>`;
+        prices[1].innerHTML =
+          `<span>$${monthlyPrice[1]}</span>` +
+          `<span class="plan-per"> - Monthly </span>`;
+        prices[2].innerHTML =
+          `<span>$${monthlyPrice[2]}</span>` +
+          `<span class="plan-per"> - Monthly </span>`;
+        obj.kind = false;
+        setTime(false);
+      });
+    }
+  });
 });
 
 addons.forEach((addon) => {
@@ -201,6 +250,7 @@ const switchPrice = (checked) => {
   const yearlyPrice = [90, 120, 150];
   const monthlyPrice = [9, 12, 15];
   const prices = document.querySelectorAll(".plan-priced");
+
   if (checked) {
     prices[0].innerHTML =
       `<span>$${yearlyPrice[0]}</span>` +
@@ -246,15 +296,6 @@ const showAddon = (ad, val) => {
       }
     });
   }
-};
-
-const summary = (obj) => {
-  const planName = document.querySelector(".plan-name");
-  const planPrice = document.querySelector(".plan-price");
-  planPrice.innerHTML = `${obj.price.innerText}`;
-  planName.innerHTML = `${obj.plan.innerText} (${
-    obj.kind ? "yearly" : "monthly"
-  })`;
 };
 
 const setTotal = () => {

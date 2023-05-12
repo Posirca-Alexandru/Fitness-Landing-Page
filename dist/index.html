@@ -48,12 +48,6 @@
         <div class="hidden" id="logout">
           <button class="btn" id="logout-btn">Log out</button>
         </div>
-        <div id="form-join-club" class="modal">
-          <!-- <form method="post" id="join">  -->
-          <input id="name-joiner" type="text" placeholder="Name" />
-          <!-- <button id="submit-join">Submit</button> -->
-          <!-- </form> -->
-        </div>
       </div>
     </header>
     <div
@@ -110,7 +104,7 @@
             <div class="header">
               <h1 class="title">Personal info</h1>
               <p class="exp">
-                Provide your name, email and number.
+                Provide your info to unlock the next step.
               </p>
             </div>
             <form name="personal-data" class="form-info">
@@ -118,7 +112,7 @@
                 <label for="name" id="name-label">Name<span>*</span></label>
                 <!-- <p class="error">This Field Is Required</p> -->
                 <span class="error-input hidden" id="name-error"
-                  >Name with a capital letter, and not be a number.</span
+                  >First name and last name, not special symbols.</span
                 >
               </div>
               <input type="text" required id="name" placeholder="Your name" />
@@ -172,7 +166,7 @@
               </p>
             </div>
             <form>
-              <div class="plan-card card-one selected" id="plan-selected">
+              <div class="plan-card card-one" id="plan-selected">
                 <div class="icon-plan bg-purple-200">
                   <img src="./img/basic.png" alt="basic-lv" />
                 </div>
@@ -209,9 +203,7 @@
                 </div>
               </div>
             </form>
-            <div
-              class="switcher flex items-center justify-center rounded-lg bg-gray-light-100 p-[14px]"
-            >
+            <div class="switcher flex items-center justify-center rounded-lg bg-gray-light-100 p-[14px]">
               <p class="monthly sw-active">Monthly</p>
               <label class="switch relative mx-6 inline-block h-5 w-[50px]">
                 <input type="checkbox" class="h-0 w-0 opacity-0" />
@@ -222,7 +214,7 @@
           </div>
           <div class="bttns mt-[-50px]">
             <button class="prev-stp" type="button">Go Back</button>
-            <button class="next-stp" type="submit">Next Step</button>
+            <button class="next-stp disable" type="submit" id="bttn-step-2" disabled>Next Step</button>
           </div>
         </div>
         <!-- step-3 -->
@@ -239,7 +231,7 @@
                   <label for="online">Online service</label>
                   <small>Workout Videos</small>
                 </div>
-                <p class="price">+$1/mo</p>
+                <p class="price">+$3</p>
               </div>
               <div class="box" data-id="2">
                 <input type="checkbox" id="larger" />
@@ -247,7 +239,7 @@
                   <label for="online">Larger storage</label>
                   <small>Workout Videos and plans</small>
                 </div>
-                <p class="price">+$2/mo</p>
+                <p class="price">+$4</p>
               </div>
               <div class="box" data-id="3">
                 <input type="checkbox" id="profile" />
@@ -255,7 +247,7 @@
                   <label for="online">Customizable Profile</label>
                   <small>Videos, plans and programs</small>
                 </div>
-                <p class="price">+3/mo</p>
+                <p class="price">+3$</p>
               </div>
             </form>
           </div>
@@ -278,8 +270,8 @@
                 <div
                   class="selected-plan flex justify-between p-4 text-sm font-medium"
                 >
-                  <p class="plan-name">Basic(Monthly)</p>
-                  <p class="plan-price">$9/mo</p>
+                  <p class="plan-name plan-basic"">Basic(Monthly)</p>
+                  <p class="plan-price price-basic">$9/mo</p>
                 </div>
                 <hr class="text-gray-light-200 opacity-[0.2]" />
                 <div class="addons" id="addons">
@@ -293,7 +285,7 @@
                   </template>
                 </div>
               </div>
-              <p class="total">Total (per month) <b>+$12/mo</b></p>
+              <p class="total">Total (per month) <b class="total-value">+$12/mo</b></p>
             </div>
           </div>
           <div class="bttns">

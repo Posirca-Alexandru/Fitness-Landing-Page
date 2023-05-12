@@ -173,7 +173,6 @@
             -webkit-transform: translateX(26px);
             -ms-transform: translateX(26px);
             transform: translateX(26px);
-            /* toDo */
           }
         }
         p {
@@ -184,7 +183,6 @@
         }
       }
       &.step-1 {
-        /* @apply h-[522.8px] flex justify-between; */
         .bttns {
           @apply justify-end;
           .disable {
@@ -192,9 +190,11 @@
           }
         }
       }
-      /* &.step-4 {
-        @apply justify-between h-[522.8px];
-      } */
+      &.step-2 {
+        .disable {
+          @apply bg-gray-light-200;
+        }
+      }
     }
     .step-2,
     .step-3,
