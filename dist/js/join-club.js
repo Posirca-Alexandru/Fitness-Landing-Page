@@ -10,6 +10,10 @@ const addons = document.querySelectorAll(".box");
 const stps = document.querySelectorAll(".stp");
 const stepSide = document.querySelectorAll(".step");
 const addonsPlan = document.getElementById("addons");
+const modalJoinAuth = document.querySelector(".join-auth");
+const bttnOneDisable = document.getElementById("bttn-step-1");
+const bttnTwoDisable = document.getElementById("bttn-step-2");
+const planCard = document.querySelectorAll(".plan-card");
 
 openModalBtn.forEach((button) => {
   onAuthStateChanged(auth, (user) => {
@@ -20,13 +24,13 @@ openModalBtn.forEach((button) => {
         if (modalJoin.classList.contains("active")) {
           popup.classList.remove("open-popup");
         }
+        modalJoinAuth.style.display = "none";
       });
     } else {
       console.log("nelogat");
       button.addEventListener("click", () => {
         const modalJoin = document.querySelector(button.dataset.modalTarget);
         const modalJoinForm = document.getElementById("form");
-        const modalJoinAuth = document.querySelector(".join-auth");
         modalJoinAuth ? (modalJoinAuth.style.display = "block") : "none";
         modalJoinForm.classList.remove("active");
         openModalJoin(modalJoin);
@@ -60,6 +64,10 @@ closeModalBtn.forEach((button) => {
   onAuthStateChanged(auth, (user) => {
     if (user != null) {
       button.addEventListener("click", () => {
+        bttnOneDisable.disabled = true;
+        bttnOneDisable.classList.add("disable");
+        bttnTwoDisable.disabled = true;
+        bttnTwoDisable.classList.add("disable");
         const modalJoin = document.querySelector("#form");
         closeModalJoin(modalJoin);
         formContent.forEach((elem) => {
@@ -91,6 +99,11 @@ closeModalBtn.forEach((button) => {
         const elemAddons = [...selectedAddons];
         elemAddons.forEach((addon) => {
           addon.remove();
+        });
+        planCard.forEach((plan) => {
+          if (plan.classList.contains("selected")) {
+            plan.classList.remove("selected");
+          }
         });
       });
     } else {
