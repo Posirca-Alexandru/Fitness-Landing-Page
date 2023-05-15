@@ -66,9 +66,6 @@ closeModalBtn.forEach((button) => {
       });
     }
   });
-  // if(val === true) {
-  //   val = false;
-  // }
 });
 
 const validateForm = () => {

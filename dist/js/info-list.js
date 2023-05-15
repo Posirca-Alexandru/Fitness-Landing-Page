@@ -1,10 +1,6 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { auth, db } from "./main.js";
 import {
-  getFirestore,
-  doc,
-  setDoc,
-  onSnapshot,
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js";
@@ -25,15 +21,6 @@ const member = {
   time_reg: null,
   total_pay_$: null,
 };
-
-// plans.forEach((plan) => {
-//   plan.addEventListener("click", () => {
-//     const planName = plan.querySelector("b");
-//     const planSelect =
-//       planName.innerText + " " + plan.querySelector(".plan-per").innerText;
-//     member.plan = planSelect;
-//   });
-// });
 
 const updateDateTime = () => {
   const now = new Date();
