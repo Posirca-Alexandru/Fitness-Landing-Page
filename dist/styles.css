@@ -1132,10 +1132,6 @@ ul {
                 color: rgb(238 55 74 / var(--tw-text-opacity));
               }
 
-/* .error {
-              @apply absolute right-0 top-[-3px] hidden font-bold text-red;
-            } */
-
 .form .form-container .stp .content-step form .label .error-input {
               margin-top: 0.25rem;
             }
@@ -2544,10 +2540,6 @@ ul {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -2918,11 +2910,6 @@ ul {
 .text-white-main {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
-}
-
-.text-green {
-  --tw-text-opacity: 1;
-  color: rgb(111 214 73 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
