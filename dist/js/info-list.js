@@ -13,10 +13,7 @@ const submitJoinBtn = document.getElementById("submit-join");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
-const plans = document.querySelectorAll(".plan-card");
 const addons = document.querySelectorAll(".box");
-const addonsSelected = document.querySelectorAll("#form-addons");
-const bttnStepThree = document.getElementById("step-3");
 const selectedPlan = document.querySelector(".plan-basic");
 const totalValue = document.querySelector(".total-value");
 
