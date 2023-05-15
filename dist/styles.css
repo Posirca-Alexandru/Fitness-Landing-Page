@@ -2920,6 +2920,11 @@ ul {
   color: rgb(250 250 249 / var(--tw-text-opacity));
 }
 
+.text-green {
+  --tw-text-opacity: 1;
+  color: rgb(111 214 73 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
