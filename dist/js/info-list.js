@@ -80,7 +80,7 @@ onAuthStateChanged(auth, (user) => {
         alert("Successfully joining in the fitness club");
       })
       .catch((error) => {
-        alert("nu merge..." + error);
+        alert("Don't join." + error);
       });
   };
   setTimeout(() => {
