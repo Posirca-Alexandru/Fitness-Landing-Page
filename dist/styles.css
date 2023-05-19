@@ -614,6 +614,22 @@ ul {
   outline-offset: 2px;
 }
 
+.bttn-join {
+  margin-top: 1rem;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(230 83 60 / var(--tw-bg-opacity));
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+.bttn-join button {
+    padding: 1rem;
+  }
+
 .more-details {
   margin-bottom: 0.5rem;
   display: flex;
@@ -652,6 +668,24 @@ ul {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+
+  .bttn-join {
+    position: static;
+    margin-top: 0px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .bttn-join {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: 1px;
+  }
+    .bttn-join button {
+      padding: 1.5rem;
+    }
 }
 
 .card-workout {
@@ -2592,10 +2626,6 @@ ul {
   scroll-behavior: smooth;
 }
 
-.rounded-\[10px\] {
-  border-radius: 10px;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -2615,11 +2645,6 @@ ul {
 .bg-black-main {
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity));
-}
-
-.bg-blue-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 112 201 / var(--tw-bg-opacity));
 }
 
 .bg-gray-dark-200 {
@@ -2670,11 +2695,6 @@ ul {
 .bg-orange-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 137 99 / var(--tw-bg-opacity));
-}
-
-.bg-orange-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 83 60 / var(--tw-bg-opacity));
 }
 
 .bg-pink {
@@ -2734,19 +2754,9 @@ ul {
   padding-right: 3rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .py-8 {
@@ -2849,10 +2859,6 @@ ul {
 
 .leading-\[20px\] {
   line-height: 20px;
-}
-
-.leading-\[22px\] {
-  line-height: 22px;
 }
 
 .leading-\[50px\] {
@@ -2963,10 +2969,6 @@ ul {
 }
 
 @media (min-width: 768px) {
-  .md\:static {
-    position: static;
-  }
-
   .md\:fixed {
     position: fixed;
   }
@@ -3101,6 +3103,10 @@ ul {
     margin-top: 1.25rem;
   }
 
+  .md\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .md\:mt-7 {
     margin-top: 1.75rem;
   }
@@ -3111,10 +3117,6 @@ ul {
 
   .md\:mt-\[100px\] {
     margin-top: 100px;
-  }
-
-  .md\:mt-\[28px\] {
-    margin-top: 28px;
   }
 
   .md\:mt-\[41px\] {
@@ -3261,11 +3263,6 @@ ul {
     padding-right: 0px;
   }
 
-  .md\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-
   .md\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -3284,11 +3281,6 @@ ul {
   .md\:px-\[142px\] {
     padding-left: 142px;
     padding-right: 142px;
-  }
-
-  .md\:px-\[14px\] {
-    padding-left: 14px;
-    padding-right: 14px;
   }
 
   .md\:px-\[18px\] {
@@ -3326,8 +3318,8 @@ ul {
     padding-bottom: 6px;
   }
 
-  .md\:pb-\[75px\] {
-    padding-bottom: 75px;
+  .md\:pb-\[34px\] {
+    padding-bottom: 34px;
   }
 
   .md\:pb-\[77px\] {
@@ -3514,10 +3506,6 @@ ul {
     justify-content: space-between;
   }
 
-  .lg\:p-6 {
-    padding: 1.5rem;
-  }
-
   .lg\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -3579,11 +3567,6 @@ ul {
     line-height: 1.5rem;
   }
 
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .lg\:leading-6 {
     line-height: 1.5rem;
   }
@@ -3618,16 +3601,16 @@ ul {
     left: 110px;
   }
 
+  .xl\:right-0 {
+    right: 0px;
+  }
+
   .xl\:right-\[-246px\] {
     right: -246px;
   }
 
   .xl\:right-\[-305px\] {
     right: -305px;
-  }
-
-  .xl\:right-\[-76px\] {
-    right: -76px;
   }
 
   .xl\:top-\[-23px\] {
