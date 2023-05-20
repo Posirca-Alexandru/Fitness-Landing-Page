@@ -38,6 +38,17 @@
   }
 }
 
+.content-modal {
+  @apply fixed left-1/2 top-1/2 z-40 mx-auto w-[375px] shadow transition delay-150 ease-in-out;
+}
+
+.btn-container {
+  @apply mb-[48px];
+  .btn {
+    @apply uppercase text-2xl;
+  }
+}
+
 @media (min-width: 768px) {
   .more-details {
     a {
@@ -52,6 +63,12 @@
   }
   .bttn-join {
     @apply static mt-0 text-base;
+  }
+  .btn-container {
+    @apply mb-0;
+    .btn {
+      @apply text-sm;
+    }
   }
 }
 

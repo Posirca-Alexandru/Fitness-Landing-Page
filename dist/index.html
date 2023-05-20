@@ -17,6 +17,7 @@
     <script src="js/join-club.js" defer type="module"></script>
     <script src="js/info-list.js" defer type="module"></script>
     <script src="js/multistep-form.js" defer type="module"></script>
+    <script src="js/my-account.js" defer type="module"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="min-h-[100vh] bg-black-main font-inter text-white-main">
@@ -39,19 +40,67 @@
               <li><a href="#healthy">Healthy Living</a></li>
               <li><a href="#comunity">Comunity</a></li>
               <li><a href="#about">About</a></li>
+              <li><button data-modal-targete="#modal-join-account" data-modal-target="#modal-join-club" class="uppercase">
+                My Account
+              </button></li>
             </ul>
           </nav>
         </div>
-        <div class="hidden" id="login">
+        <div class="hidden btn-container" id="login">
           <button class="btn" id="login-btn">Sign in</button>
         </div>
-        <div class="hidden" id="logout">
+        <div class="hidden btn-container" id="logout">
           <button class="btn" id="logout-btn">Log out</button>
         </div>
       </div>
     </header>
+    <div class="my-account content-modal bg-white-main rounded-2xl w-auto max-w-[100%]" id="my-account">
+      <div class="modal-header flex justify-between p-2">
+        <h1 class="uppercase px-4 py-2 md:py-4 md:px-6 text-2xl leading-7 font-bold text-blue-400 md:text-[28px] md:leading-[37px]">Personal Info</h1>
+        <button data-close-button class="close-button text-gray-light-200 md:px-5 py-1 md:h-[70px]">&times;</button>
+      </div>
+      <table class="flex p-6 pt-0 md:p-8 md:pt-0">
+        <thead>
+          <tr class="flex flex-col items-start mr-5 w-max">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Status Join</th>
+            <th>Date Join</th>
+            <th>Of Pay ($)</th>
+            <th>Plan</th>
+            <th>Addons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="member-name"></td>
+          </tr>
+          <tr>
+            <td id="member-email"></td>
+          </tr>
+          <tr>
+            <td id="member-phone"></td>
+          </tr>
+          <tr>
+            <td id="member-status"></td>
+          </tr>
+          <tr>
+            <td id="member-date"></td>
+          </tr>
+          <tr>
+            <td id="member-pay"></td>
+          </tr>
+          <tr>
+            <td id="member-plan"></td>
+          </tr>
+          <tr id="member-addons" class="flex flex-col">
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div
-      class="form fixed left-1/2 top-1/2 z-40 mx-auto w-[375px] text-black-main shadow transition delay-150 ease-in-out md:w-[700px] lg:w-[958px] xl:w-auto xl:max-w-[100%]"
+      class="form content-modal w-[375px] text-black-main md:w-[700px] lg:w-[958px] xl:w-auto xl:max-w-[100%]"
       id="form"
     >
       <div
@@ -92,7 +141,7 @@
           <div class="absolute right-[9px] top-[10px] md:left-[9px] md:right-0">
             <button
               data-close-button
-              class="close-button scale-[1.8] text-gray-light-300"
+              class="close-button scale-[1.8] text-white-main"
             >
               &times;
             </button>
