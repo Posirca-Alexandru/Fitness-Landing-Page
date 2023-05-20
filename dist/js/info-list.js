@@ -3,7 +3,12 @@ import { auth, db } from "./main.js";
 import {
   collection,
   addDoc,
+  getDocs,
+  query,
+  orderBy,
+  limit
 } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js";
+
 
 const submitJoinBtn = document.getElementById("submit-join");
 const nameInput = document.getElementById("name");
@@ -12,6 +17,14 @@ const phoneInput = document.getElementById("phone");
 const addons = document.querySelectorAll(".box");
 const selectedPlan = document.querySelector(".plan-basic");
 const totalValue = document.querySelector(".total-value");
+const nameMember = document.getElementById('member-name');
+const emailMember = document.getElementById('member-email');
+const phoneMember = document.getElementById('member-phone');
+const statusMember = document.getElementById('member-status');
+const payMember = document.getElementById('member-pay');
+const dateMember = document.getElementById('member-date');
+const planMember = document.getElementById('member-plan');
+const addonsMember = document.getElementById('member-addons');
 
 const member = {
   addons: "No addons",
@@ -61,8 +74,33 @@ submitJoinBtn
 
 member.addons = allAddons;
 
+         
+onAuthStateChanged(auth, (user) => {
+  const getAllDataOnce = async () => {
+    const refDoc = collection(db, `membersclub/${user.uid}/memberInfo`);
+    const querySnapshot = await getDocs(query(refDoc, orderBy("time_reg", "desc"), limit(1)));
+
+    querySnapshot.forEach(doc => {
+      const member = doc.data();
+      nameMember.innerHTML = member.name;
+      emailMember.innerHTML = member.email;
+      phoneMember.innerHTML = member.phone;
+      statusMember.innerHTML = member.status_join;
+      dateMember.innerHTML = member.date_reg;
+      payMember.innerHTML = member.total_pay_$;
+      planMember.innerHTML = member.plan;
+      member.addons.forEach((elem) => {
+      addonsMember.innerHTML += `<td>${elem}</td>`;
+      });
+    })
+  }
+window.onload = getAllDataOnce();
+});
+
+
 onAuthStateChanged(auth, (user) => {
   const submitJoin = async () => {
+
     let refCurrentUser = collection(db, `membersclub/${user.uid}/memberInfo`);
 
     const docRef = await addDoc(refCurrentUser, {
@@ -76,13 +114,27 @@ onAuthStateChanged(auth, (user) => {
       time_reg: member.time_reg,
       total_pay_$: member.total_pay_$,
     })
-      .then(() => {
+    .then(() => {
+        getAllDataOnce()
+        // console.log(docRef);
         alert("Successfully joining in the fitness club");
       })
       .catch((error) => {
         alert("Don't join." + error);
       });
+
+      // setTimeout(() => {
+      //   onValue(refCurrentUser, (snapshot) => {
+      //     snapshot.forEach((childSnapshot) => {
+      //       // document.querySelector('#info-member').innerHTML = `<div>${childSnapshot.val()}</div>`
+      //       // const childKey = childSnapshot.key;
+      //       // const childData = childSnapshot.val();
+      //       console.log(childSnapshot + 'aleleleleel');
+      //     })
+      //   })
+      // }, 2000)
   };
+
   setTimeout(() => {
     submitJoinBtn.onclick = submitJoin;
   }, 1000);

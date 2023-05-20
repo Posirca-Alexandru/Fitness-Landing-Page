@@ -1,0 +1,58 @@
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
+import { auth } from "./main.js";
+
+const openModalBtn = document.querySelectorAll("[data-modal-targete]");
+const overlay = document.getElementById("overlay");
+const closeModalBtn = document.querySelectorAll("[data-close-button]");
+
+openModalBtn.forEach((button) => {
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      button.addEventListener("click", () => {
+        console.log("alex");
+        const modalJoin = document.querySelector("#my-account");
+        openModalJoin(modalJoin);
+      });
+    } else {
+      console.log("nelogat");
+      //logica cand nu e autentificat
+    }
+  });
+});
+
+const openModalJoin = (modalJoin) => {
+  if (modalJoin == null) return;
+  modalJoin.classList.add("active");
+  overlay.classList.add("active");
+};
+
+const closeModalJoin = (modalJoin) => {
+  if (modalJoin == null) return;
+  modalJoin.classList.remove("active");
+  overlay.classList.remove("active");
+};
+
+overlay.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".my-account.active");
+  modals.forEach((modalJoin) => {
+    closeModalJoin(modalJoin);
+  });
+});
+
+closeModalBtn.forEach((button) => {
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      button.addEventListener("click", () => {
+        console.log("merge close");
+        const modalJoin = document.querySelector("#my-account");
+        closeModalJoin(modalJoin);
+      });
+    } else {
+      console.log("logout succesfull");
+      button.addEventListener("click", () => {
+        const modalJoin = document.querySelector("#modal-join-account");
+        closeModalJoin(modalJoin);
+      });
+    }
+  });
+});
