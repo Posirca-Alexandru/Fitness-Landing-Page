@@ -1,7 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 import { auth } from "./main.js";
 
-const openModalBtn = document.querySelectorAll("[data-modal-targete]");
+const openModalBtn = document.querySelectorAll("[data-modal-account]");
 const overlay = document.getElementById("overlay");
 const closeModalBtn = document.querySelectorAll("[data-close-button]");
 

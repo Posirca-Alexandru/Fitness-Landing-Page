@@ -25,6 +25,7 @@ const payMember = document.getElementById('member-pay');
 const dateMember = document.getElementById('member-date');
 const planMember = document.getElementById('member-plan');
 const addonsMember = document.getElementById('member-addons');
+const dataAccount = document.getElementById('data-account');
 
 const member = {
   addons: "No addons",
@@ -79,7 +80,8 @@ onAuthStateChanged(auth, (user) => {
   const getAllDataOnce = async () => {
     const refDoc = collection(db, `membersclub/${user.uid}/memberInfo`);
     const querySnapshot = await getDocs(query(refDoc, orderBy("time_reg", "desc"), limit(1)));
-
+    let addedElements = [];
+    let htmlContent = '';
     querySnapshot.forEach(doc => {
       const member = doc.data();
       nameMember.innerHTML = member.name;
@@ -90,11 +92,18 @@ onAuthStateChanged(auth, (user) => {
       payMember.innerHTML = member.total_pay_$;
       planMember.innerHTML = member.plan;
       member.addons.forEach((elem) => {
-      addonsMember.innerHTML += `<td>${elem}</td>`;
+        if (addedElements.indexOf(elem) === -1) {
+          addedElements.push(elem);
+          htmlContent += `<td>${elem}</td>`;
+        }
+        addonsMember.innerHTML = htmlContent;
       });
     })
   }
-window.onload = getAllDataOnce();
+  dataAccount.addEventListener('click', () => {
+    getAllDataOnce();
+  })
+// window.onload = getAllDataOnce();
 });
 
 
@@ -115,24 +124,12 @@ onAuthStateChanged(auth, (user) => {
       total_pay_$: member.total_pay_$,
     })
     .then(() => {
-        getAllDataOnce()
-        // console.log(docRef);
+      // getAllDataOnce();
         alert("Successfully joining in the fitness club");
       })
       .catch((error) => {
         alert("Don't join." + error);
       });
-
-      // setTimeout(() => {
-      //   onValue(refCurrentUser, (snapshot) => {
-      //     snapshot.forEach((childSnapshot) => {
-      //       // document.querySelector('#info-member').innerHTML = `<div>${childSnapshot.val()}</div>`
-      //       // const childKey = childSnapshot.key;
-      //       // const childData = childSnapshot.val();
-      //       console.log(childSnapshot + 'aleleleleel');
-      //     })
-      //   })
-      // }, 2000)
   };
 
   setTimeout(() => {
