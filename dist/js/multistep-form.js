@@ -81,7 +81,9 @@ const validateForm = () => {
       const valueInput = input.value;
       if (input == emailField) {
         if (
-          !valueInput.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)
+          !valueInput.match(
+            /^[A-Za-z\._\-0-9]{1,36}[@][A-Za-z]{1,36}[\.][a-z]{2,4}$/
+          )
         ) {
           emailError.style.display = "block";
           if (valueInput == null || valueInput == "") {
@@ -93,7 +95,9 @@ const validateForm = () => {
         emailError.style.display = "none";
       } else if (input == nameField) {
         if (
-          !valueInput.match(/^[A-Z\u0100-\u0218a-z\u0103-\u0219]+(?: [A-Z\u0100-\u0218a-z\u0103-\u0219]+)+$/) ||
+          !valueInput.match(
+            /^(?=.{1,47}$)[A-Z\u0100-\u0218a-z\u0103-\u0219]+(?: [A-Z\u0100-\u0218a-z\u0103-\u0219]+)+$/
+          ) ||
           valueInput.match(/^\s*$/)
         ) {
           nameError.style.display = "block";
@@ -205,7 +209,9 @@ closeModalBtn.forEach((button) => {
         document.querySelector(".monthly").classList.add("sw-active");
         document.querySelector(".yearly").classList.remove("sw-active");
 
-        const checkbox = document.querySelector(".switch input[type='checkbox']");
+        const checkbox = document.querySelector(
+          ".switch input[type='checkbox']"
+        );
         checkbox.checked = false;
 
         const monthlyPrice = [9, 12, 15];

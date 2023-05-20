@@ -107,12 +107,12 @@ onAuthStateChanged(auth, (user) => {
     };
     dataAccount.addEventListener("click", getAllDataOnce);
   }
-  // window.onload = getAllDataOnce();
 });
 
 const checkAuth = () => {
   let dataInfoAttr = dataAccount.getAttribute("data-info");
-  if (dataInfoAttr === "false") {
+  let dataInfoModal = dataAccount.getAttribute("data-member");
+  if (dataInfoAttr === "false" || !dataInfoModal === "true") {
     alert("You must be logged in to access account info");
   }
 };
