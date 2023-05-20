@@ -40,7 +40,7 @@
               <li><a href="#healthy">Healthy Living</a></li>
               <li><a href="#comunity">Comunity</a></li>
               <li><a href="#about">About</a></li>
-              <li><button data-modal-account="#modal-join-account" class="uppercase" id="data-account">
+              <li><button data-modal-account="#modal-join-account" data-info="false" class="uppercase" id="data-account">
                 My Account
               </button></li>
             </ul>
@@ -54,12 +54,12 @@
         </div>
       </div>
     </header>
-    <div class="my-account content-modal bg-white-main rounded-2xl w-auto max-w-[100%]" id="my-account">
+    <div class="my-account content-modal bg-white-main rounded-2xl w-auto max-w-[100%]" data-member="false" id="my-account">
       <div class="modal-header flex justify-between p-2">
         <h1 class="uppercase px-4 py-2 md:py-4 md:px-6 text-2xl leading-7 font-bold text-blue-400 md:text-[28px] md:leading-[37px]">Personal Info</h1>
         <button data-close-button class="close-button text-gray-light-200 md:px-5 py-1 md:h-[70px]">&times;</button>
       </div>
-      <table class="flex p-6 pt-0 md:p-8 md:pt-0">
+      <table class="table-data flex p-6 pt-0 md:p-8 md:pt-0">
         <thead>
           <tr class="flex flex-col items-start mr-5 w-max">
             <th>Name</th>

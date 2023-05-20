@@ -4,15 +4,20 @@ import { auth } from "./main.js";
 const openModalBtn = document.querySelectorAll("[data-modal-account]");
 const overlay = document.getElementById("overlay");
 const closeModalBtn = document.querySelectorAll("[data-close-button]");
+const myAccount = document.getElementById("my-account");
 
 openModalBtn.forEach((button) => {
   onAuthStateChanged(auth, (user) => {
     if (user != null) {
-      button.addEventListener("click", () => {
-        console.log("alex");
-        const modalJoin = document.querySelector("#my-account");
-        openModalJoin(modalJoin);
-      });
+      myAccount.setAttribute("data-member", "true");
+      let dataInfoAttr = myAccount.getAttribute("data-member");
+      if (dataInfoAttr === "true") {
+        button.addEventListener("click", () => {
+          console.log("alex");
+          const modalJoin = document.querySelector("#my-account");
+          openModalJoin(modalJoin);
+        });
+      }
     } else {
       console.log("nelogat");
       //logica cand nu e autentificat
@@ -22,8 +27,11 @@ openModalBtn.forEach((button) => {
 
 const openModalJoin = (modalJoin) => {
   if (modalJoin == null) return;
-  modalJoin.classList.add("active");
-  overlay.classList.add("active");
+  let dataInfoAttr = myAccount.getAttribute("data-member");
+  if (dataInfoAttr === "true") {
+    modalJoin.classList.add("active");
+    overlay.classList.add("active");
+  }
 };
 
 const closeModalJoin = (modalJoin) => {

@@ -15,15 +15,18 @@ const closePopup = document.getElementById("close-popup");
 const overlay = document.getElementById("overlay");
 const loggedIn = document.getElementById("logged-in");
 const loggedOut = document.getElementById("logged-out");
+const dataAccount = document.getElementById("data-account");
+const myAccount = document.getElementById('my-account');
 
 const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((response) => {
-      // window.location.assign('./profile.html');
       console.log(response.user);
       popup.classList.add("open-popup");
       scroll(0, 0);
+      dataAccount.setAttribute("data-info", "true");
+      myAccount.setAttribute("data-member", "true");
     })
     .catch((err) => {
       const errorMessage = err.message;

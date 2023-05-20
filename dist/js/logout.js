@@ -5,15 +5,22 @@ const logoutBtn = document.getElementById("logout");
 const popup = document.getElementById("popup");
 const loggedIn = document.getElementById("logged-in");
 const loggedOut = document.getElementById("logged-out");
+const dataAccount = document.getElementById("data-account");
+const myAccount = document.getElementById("my-account");
+const cells = document.querySelectorAll(".table-data tbody tr td");
 
 const logoutWithGoogle = () => {
   if (confirm("Are you sure you want to log out?") == true) {
     auth
       .signOut()
       .then(() => {
-        // window.location.assign('./profile.html');
         scroll(0, 0);
         popup.classList.add("open-popup");
+        dataAccount.setAttribute("data-info", "false");
+        myAccount.setAttribute("data-member", "false");
+        cells.forEach((cell) => {
+          cell.innerHTML = "";
+        });
         console.log("User logged out successfully");
       })
       .catch((err) => {
