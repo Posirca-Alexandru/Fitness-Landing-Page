@@ -60,6 +60,7 @@
         <button data-close-button class="close-button text-gray-light-200 md:px-5 py-1 h-10 md:h-[63px]">&times;</button>
       </div>
       <div class="p-6 pt-0 md:p-8 md:pt-0">
+      <div id="info-profile">
       <table class="table-data flex">
         <thead>
           <tr class="flex flex-col items-start mr-5 w-max">
@@ -107,6 +108,10 @@
         </div>
       </div>
     </div>
+    <div id="must-join">
+      <p class="text-blue-400 w-[321px] md:w-[365px]">You must join the fitness club to register and see info about your personal account.</p>
+    </div>
+  </div>
     </div>
     <div
       class="form content-modal w-[375px] text-black-main md:w-[700px] lg:w-[958px] xl:w-auto xl:max-w-[100%]"
@@ -358,8 +363,10 @@
             />
             <div class="header mb-[25px] flex flex-col items-center">
               <h1 class="title">Thank you!</h1>
-              <p class="exp exp-thank w-[99%] text-center">
-                Thank you for choosing the subscription! Payment details will be sent via the email provided. If you ever need support, please don't hesitate to email us at support@workout.com
+              <p class="exp exp-thank text-center">
+                Thank you for choosing the subscription! <br class="md:my-1">
+                You can access your info in My Account. <br class="md:my-1">
+                Payment details will be sent to the email.
               </p>
             </div>
           </div>
@@ -729,7 +736,7 @@
       <div
         class="flex items-center justify-center text-sm text-gray-dark-100 md:text-base"
       >
-        <a href="#">Terms & Conditions</a>
+        <a class="" href="#">Terms & Conditions</a>
         <img
           class="mx-2 w-[8px]"
           src="./img/privacy-bullet.png"

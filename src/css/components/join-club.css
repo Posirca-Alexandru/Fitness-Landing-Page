@@ -231,7 +231,7 @@
               @apply text-[28px] leading-[37px];
             }
             .exp {
-              @apply mb-[23px] mt-[11px] text-[15px] tracking-normal;
+              @apply mb-[23px] mt-[11px] text-sm leading-7 tracking-normal;
             }
             .exp-thank {
               @apply mt-[14px] w-full;

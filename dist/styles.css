@@ -614,6 +614,18 @@ ul {
   outline-offset: 2px;
 }
 
+.join-active {
+  display: none;
+}
+
+#info-profile {
+  display: none;
+}
+
+#info-profile.info-active {
+    display: block;
+  }
+
 .bttn-join {
   margin-top: 1rem;
   width: -moz-max-content;
@@ -1972,7 +1984,11 @@ ul {
               margin-top: 11px;
             }
             .form .form-container .stp .content-step .header .exp {
-              font-size: 15px;
+              font-size: 0.875rem;
+              line-height: 1.25rem;
+            }
+            .form .form-container .stp .content-step .header .exp {
+              line-height: 1.75rem;
             }
             .form .form-container .stp .content-step .header .exp {
               letter-spacing: 0em;
@@ -2669,10 +2685,6 @@ ul {
   width: 8px;
 }
 
-.w-\[99\%\] {
-  width: 99%;
-}
-
 .w-auto {
   width: auto;
 }
@@ -3226,6 +3238,11 @@ ul {
 
   .md\:z-10 {
     z-index: 10;
+  }
+
+  .md\:my-1 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
   }
 
   .md\:my-9 {
