@@ -59,7 +59,8 @@
         <h1 class="uppercase px-4 py-2 md:py-4 md:px-6 text-2xl leading-7 font-bold text-blue-400 md:text-[28px] md:leading-[37px]">Personal Info</h1>
         <button data-close-button class="close-button text-gray-light-200 md:px-5 py-1 md:h-[70px]">&times;</button>
       </div>
-      <table class="table-data flex p-6 pt-0 md:p-8 md:pt-0">
+      <div class="p-6 pt-0 md:p-8 md:pt-0">
+      <table class="table-data flex">
         <thead>
           <tr class="flex flex-col items-start mr-5 w-max">
             <th>Name</th>
@@ -98,6 +99,14 @@
           </tr>
         </tbody>
       </table>
+    <hr class="text-gray-light-200 my-4">
+      <div class="text-black-main flex flex-col items-end" id="reset-content">
+        <p class="text-sm text-blue-400 w-[321px] md:w-[365px]">You can refill your subscription plan until you receive a payment email.</p>
+        <div class="text-white-main w-max rounded-xl bg-orange-400 text-xs font-semibold md:static md:text-base lg:text-lg lg:tracking-[1px]">
+          <button class="p-4" id="reset-join" data-modal-target="#modal-join-club">Reset plan</button>
+        </div>
+      </div>
+    </div>
     </div>
     <div
       class="form content-modal w-[375px] text-black-main md:w-[700px] lg:w-[958px] xl:w-auto xl:max-w-[100%]"
