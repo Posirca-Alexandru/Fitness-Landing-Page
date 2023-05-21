@@ -20,7 +20,7 @@ openModalBtn.forEach((button) => {
       }
     } else {
       console.log("nelogat");
-      //logica cand nu e autentificat
+      //logic for logout
     }
   });
 });

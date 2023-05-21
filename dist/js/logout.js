@@ -8,6 +8,8 @@ const loggedOut = document.getElementById("logged-out");
 const dataAccount = document.getElementById("data-account");
 const myAccount = document.getElementById("my-account");
 const cells = document.querySelectorAll(".table-data tbody tr td");
+const bttnsJoin = document.querySelectorAll(".bttn-join");
+const bttnsJoinInput = document.querySelectorAll(".bttn-join button");
 
 const logoutWithGoogle = () => {
   if (confirm("Are you sure you want to log out?") == true) {
@@ -20,6 +22,16 @@ const logoutWithGoogle = () => {
         myAccount.setAttribute("data-member", "false");
         cells.forEach((cell) => {
           cell.innerHTML = "";
+        });
+        bttnsJoin.forEach((bttn) => {
+          bttn.setAttribute("status-join", "false");
+          let statusJoin = bttn.getAttribute("status-join");
+          if (statusJoin === "false") {
+            bttnsJoinInput.forEach((bttn) => {
+              bttn.disabled = false;
+              bttn.innerHTML = "Join Club Now";
+            });
+          }
         });
         console.log("User logged out successfully");
       })

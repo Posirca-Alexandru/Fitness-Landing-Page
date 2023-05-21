@@ -26,6 +26,8 @@ const planMember = document.getElementById("member-plan");
 const addonsMember = document.getElementById("member-addons");
 const dataAccount = document.getElementById("data-account");
 const myAccount = document.getElementById("my-account");
+const bttnsJoinInput = document.querySelectorAll(".bttn-join button");
+const bttnsJoin = document.querySelectorAll(".bttn-join");
 
 const member = {
   addons: "No addons",
@@ -79,7 +81,7 @@ onAuthStateChanged(auth, (user) => {
   if (user != null) {
     const getAllDataOnce = async () => {
       let dataInfoAttr = myAccount.getAttribute("data-member");
-      if (dataInfoAttr === "true") {
+      if (dataInfoAttr) {
         const refDoc = collection(db, `membersclub/${user.uid}/memberInfo`);
         const querySnapshot = await getDocs(
           query(refDoc, orderBy("time_reg", "desc"), limit(1))
@@ -112,7 +114,7 @@ onAuthStateChanged(auth, (user) => {
 const checkAuth = () => {
   let dataInfoAttr = dataAccount.getAttribute("data-info");
   let dataInfoModal = dataAccount.getAttribute("data-member");
-  if (dataInfoAttr === "false" || !dataInfoModal === "true") {
+  if (dataInfoAttr === "false" || !dataInfoModal) {
     alert("You must be logged in to access account info");
   }
 };
@@ -123,7 +125,19 @@ onAuthStateChanged(auth, (user) => {
   const submitJoin = async () => {
     let refCurrentUser = collection(db, `membersclub/${user.uid}/memberInfo`);
     let dataInfoAttr = myAccount.getAttribute("data-member");
-    if (dataInfoAttr === "true") {
+    bttnsJoin.forEach((bttn) => {
+      bttn.setAttribute("status-join", "true");
+      localStorage.setItem("status-join", "true");
+      let statusJoin = bttn.getAttribute("status-join");
+      if (statusJoin) {
+        bttnsJoinInput.forEach((bttn) => {
+          bttn.disabled = true;
+          bttn.innerHTML = "Joining pending";
+        });
+      }
+    });
+
+    if (dataInfoAttr) {
       const docRef = await addDoc(refCurrentUser, {
         name: nameInput.value,
         email: emailInput.value,
@@ -136,7 +150,6 @@ onAuthStateChanged(auth, (user) => {
         total_pay_$: member.total_pay_$,
       })
         .then(() => {
-          // getAllDataOnce();
           alert("Successfully joining in the fitness club");
         })
         .catch((error) => {
@@ -148,4 +161,24 @@ onAuthStateChanged(auth, (user) => {
   setTimeout(() => {
     submitJoinBtn.onclick = submitJoin;
   }, 1000);
+});
+
+window.addEventListener("load", () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      const storedValue = localStorage.getItem("status-join");
+      if (storedValue) {
+        bttnsJoin.forEach((bttn) => {
+          bttn.setAttribute("status-join", storedValue);
+          let statusJoin = bttn.getAttribute("status-join");
+          if (statusJoin) {
+            bttnsJoinInput.forEach((bttn) => {
+              bttn.disabled = true;
+              bttn.innerHTML = "Joining pending";
+            });
+          }
+        });
+      }
+    }
+  });
 });
