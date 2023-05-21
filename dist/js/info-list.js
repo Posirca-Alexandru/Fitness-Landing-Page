@@ -111,15 +111,17 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-const checkAuth = () => {
-  let dataInfoAttr = dataAccount.getAttribute("data-info");
-  let dataInfoModal = dataAccount.getAttribute("data-member");
-  if (dataInfoAttr === "false" || !dataInfoModal) {
-    alert("You must be logged in to access account info");
+onAuthStateChanged(auth, (user) => {
+  if (user == null) {
+    const checkAuth = () => {
+      let dataInfoAttr = dataAccount.getAttribute("data-info");
+      if (dataInfoAttr === "false") {
+        alert("You must be logged in to access account info");
+      }
+    };
+    dataAccount.addEventListener("click", checkAuth);
   }
-};
-
-dataAccount.addEventListener("click", checkAuth);
+});
 
 onAuthStateChanged(auth, (user) => {
   const submitJoin = async () => {
@@ -150,7 +152,7 @@ onAuthStateChanged(auth, (user) => {
         total_pay_$: member.total_pay_$,
       })
         .then(() => {
-          alert("Successfully joining in the fitness club");
+          //logic for successfully
         })
         .catch((error) => {
           alert("Don't join." + error);

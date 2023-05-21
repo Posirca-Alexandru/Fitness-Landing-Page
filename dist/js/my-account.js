@@ -13,7 +13,6 @@ openModalBtn.forEach((button) => {
       let dataInfoAttr = myAccount.getAttribute("data-member");
       if (dataInfoAttr === "true") {
         button.addEventListener("click", () => {
-          console.log("alex");
           const modalJoin = document.querySelector("#my-account");
           openModalJoin(modalJoin);
         });

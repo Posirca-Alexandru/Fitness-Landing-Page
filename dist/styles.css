@@ -2454,14 +2454,14 @@ ul {
   margin-bottom: 0.25rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mb-1 {
@@ -2596,6 +2596,10 @@ ul {
   height: 0px;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -2617,10 +2621,6 @@ ul {
   height: max-content;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -2639,6 +2639,10 @@ ul {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-\[321px\] {
+  width: 321px;
 }
 
 .w-\[375px\] {
@@ -2680,10 +2684,6 @@ ul {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[321px\] {
-  width: 321px;
 }
 
 .max-w-\[100\%\] {
@@ -2874,11 +2874,6 @@ ul {
 .bg-white-main {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 249 / var(--tw-bg-opacity));
-}
-
-.bg-orange-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 83 60 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\.\/img\/sidebar\.png\'\)\] {
@@ -3326,10 +3321,6 @@ ul {
     margin-top: 62px;
   }
 
-  .md\:mt-2 {
-    margin-top: 0.5rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -3346,16 +3337,12 @@ ul {
     height: 600px;
   }
 
-  .md\:h-\[70px\] {
-    height: 70px;
+  .md\:h-\[63px\] {
+    height: 63px;
   }
 
   .md\:h-auto {
     height: auto;
-  }
-
-  .md\:h-\[63px\] {
-    height: 63px;
   }
 
   .md\:w-10 {
@@ -3364,6 +3351,10 @@ ul {
 
   .md\:w-\[146\%\] {
     width: 146%;
+  }
+
+  .md\:w-\[365px\] {
+    width: 365px;
   }
 
   .md\:w-\[49\%\] {
@@ -3393,14 +3384,6 @@ ul {
   .md\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .md\:w-\[357px\] {
-    width: 357px;
-  }
-
-  .md\:w-\[365px\] {
-    width: 365px;
   }
 
   .md\:flex-row-reverse {
@@ -3750,10 +3733,6 @@ ul {
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:p-6 {
-    padding: 1.5rem;
   }
 
   .lg\:px-6 {
