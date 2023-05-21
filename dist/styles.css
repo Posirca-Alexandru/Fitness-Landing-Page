@@ -2617,6 +2617,10 @@ ul {
   height: max-content;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .min-h-\[100vh\] {
   min-height: 100vh;
 }
@@ -3348,6 +3352,10 @@ ul {
 
   .md\:h-auto {
     height: auto;
+  }
+
+  .md\:h-\[63px\] {
+    height: 63px;
   }
 
   .md\:w-10 {
