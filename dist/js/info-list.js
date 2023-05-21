@@ -28,6 +28,8 @@ const dataAccount = document.getElementById("data-account");
 const myAccount = document.getElementById("my-account");
 const bttnsJoinInput = document.querySelectorAll(".bttn-join button");
 const bttnsJoin = document.querySelectorAll(".bttn-join");
+const infoProfile = document.getElementById('info-profile');
+const mustJoin = document.getElementById('must-join');
 
 const member = {
   addons: "No addons",
@@ -68,6 +70,12 @@ submitJoinBtn
 
       const matchResult = totalValue.innerText.match(/\d+/);
       const valuePlan = matchResult ? matchResult[0] : "";
+
+      infoProfile.classList.add('info-active');
+      localStorage.setItem('info-active', true)
+
+      mustJoin.classList.add('join-active');
+      localStorage.setItem('join-active', true);
 
       member.total_pay_$ = valuePlan;
       member.plan = selectedPlan.innerText;
@@ -139,6 +147,7 @@ onAuthStateChanged(auth, (user) => {
       }
     });
 
+
     if (dataInfoAttr) {
       const docRef = await addDoc(refCurrentUser, {
         name: nameInput.value,
@@ -180,6 +189,14 @@ window.addEventListener("load", () => {
             });
           }
         });
+      }
+      const infoActive = localStorage.getItem('info-active');
+      if(infoActive) {
+        infoProfile.classList.add('info-active');
+      }
+      const joinActive = localStorage.getItem('join-active');
+      if(joinActive) {
+        mustJoin.classList.add('join-active');
       }
     }
   });

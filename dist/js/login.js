@@ -16,7 +16,7 @@ const overlay = document.getElementById("overlay");
 const loggedIn = document.getElementById("logged-in");
 const loggedOut = document.getElementById("logged-out");
 const dataAccount = document.getElementById("data-account");
-const myAccount = document.getElementById('my-account');
+const myAccount = document.getElementById("my-account");
 
 const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider();
@@ -30,7 +30,7 @@ const signInWithGoogle = () => {
     })
     .catch((err) => {
       const errorMessage = err.message;
-      return errorMessage ? alert("Popup closed") : alert("Popup on")
+      return errorMessage ? alert("Popup closed") : alert("Popup on");
     });
 };
 
